@@ -55,6 +55,8 @@ Linux 内核没有这样的限制，但可能取决于使用的 [引导加载程
 - 打开“控制面板”
 - 系统和安全 -> Bitlocker 驱动器加密
 
+![32.Bitlocker](D:\elab\HXCN-Halo-Archives\20240605-dual-boot-ubuntu-2204-and-windows-11\32.Bitlocker.png)
+
 ### 关闭 Bitlocker
 
 如果所有驱动器处于“Bitlocker 已关闭”状态，请前往 [下一步](#关闭快速启动和休眠)
@@ -63,20 +65,20 @@ Linux 内核没有这样的限制，但可能取决于使用的 [引导加载程
 
 - 点击“备份恢复密钥”，保存到 Microsoft 帐户或者保存到文件。如果保存到文件，请尽可能对恢复密钥进行多次备份，避免恢复密钥丢失。
 
-- 点击“关闭 Bitlocker”，并等待解密完成
-- 如果无法关闭 Bitlocker，请先关闭“设备加密”
+- 点击“关闭 Bitlocker”，并等待解密完成。
+- 如果无法关闭 Bitlocker，请先关闭“设备加密”。
 
 ### 关闭设备加密
 
-- 按 Win + s ，在 Windows 搜索栏输入“设备加密设置”
+- 按 Win + s ，在 Windows 搜索栏输入“设备加密设置”。
 
   ![设备加密关闭1](https://cfdn-img.hx-cn.top/file/ec32fedacd0bec7369512.png)
 
-  在设备加密栏位，设置为“关闭”
+  在设备加密栏位，设置为“关闭”。
 
   ![关闭设备加密2](https://cfdn-img.hx-cn.top/file/b22fc44763a7e62821aac.png)
 
-  系统会提醒您是否需要关闭设备加密，点选“关闭”即可关闭设备加密
+  系统会提醒您是否需要关闭设备加密，点选“关闭”即可关闭设备加密。
 
   ![关闭设备加密3](https://cfdn-img.hx-cn.top/file/a6ef358180b7cb6dedb2b.png)
 
