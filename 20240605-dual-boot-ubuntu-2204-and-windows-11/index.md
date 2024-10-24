@@ -304,8 +304,8 @@ Ubuntu 官网要求 25 GB 可用硬盘空间。如果计划将 Ubuntu 作为日�
 
 | 挂载点    | 文件系统  | 大小（推荐）           |
 | --------- | --------- | ---------------------- |
-| /boot/efi | FAT       | 1000 M                 |
-| /boot     | ext4      | 1000 M                 |
+| /boot/efi | EFI System Partition | 1000 M                 |
+| /boot     | Reserved BIOS boot area | 1000 M                 |
 | /         | ext4      | 根据实际情况或者喜好确定           |
 | /swap     | linuxswap | 设置为电脑运行内存大小 |
 
