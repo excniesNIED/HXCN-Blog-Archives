@@ -236,8 +236,6 @@ Ubuntu 官网要求 25 GB 可用硬盘空间。如果计划将 Ubuntu 作为日�
 
 选择一个 PE 工具，推荐 [微PE工具箱](https://www.wepe.com.cn/)、[FirPE ](https://www.firpe.cn/?sid=U3FOqN)等优秀 PE 工具。在 PE 工具箱生成可启动的 ISO 文件，复制到 U 盘即可。你也可以直接在 [猹盘](https://ed.qcea.top/ChaIndex/Softwares/Windows/System/PE) 下载各种PE 的 ISO 镜像，复制到 U 盘并校验。
 
-
-
 ### 从 U 盘启动
 
 先插入启动盘，重启进入 BIOS。
@@ -321,7 +319,7 @@ Ubuntu 官网要求 25 GB 可用硬盘空间。如果计划将 Ubuntu 作为日�
 
 ![安装完成](https://gastigado.cnies.org/d/halo202406062045/28.png?sign=SfyKEPMpQm7zRO1O-OLoMnGOtlH8rZtf-1YAxoxa_1Q=:0)
 
-8. 安装完成后，重启，拔出 U 盘后按下回车键即可
+9. 安装完成后，重启，拔出 U 盘后按下回车键即可
 
 ![移除安装介质](https://gastigado.cnies.org/d/halo202406062045/29.png?sign=7aLpeNdQ8zU5Z2aBOlCnav8MzXQEKQPtMEAggQKu7C8=:0)
 
