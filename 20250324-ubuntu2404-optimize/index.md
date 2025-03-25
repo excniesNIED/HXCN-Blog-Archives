@@ -90,7 +90,7 @@ Ubuntu24.04新机配置指南：从常用软件安装到使用技巧全攻略
 
 如果想要设置 125%、150% 等倍数的缩放，需要先打开“Fractional Scaling”：
 
-![Fractional Scaling](./config (1).png)
+![Fractional Scaling](https://gastigado.cnies.org/d/halo20250324ubuntu2404_optimize/config_1_.png?sign=8NJE5MPBEkRq-AJJA7cXo-lDluEzJ2lOCmbwygTd1SY=:0)
 
 ## 修改用户的默认目录为英文
 
@@ -110,7 +110,7 @@ LANG=en_US xdg-user-dirs-gtk-update
 
 注销后重新登陆，勾选“Don't ask me this again”，然后选择“Keep Old Names”即可。
 
-![xdg-user-dirs-gtk-update](./config (2).png)
+![xdg-user-dirs-gtk-update](https://gastigado.cnies.org/d/halo20250324ubuntu2404_optimize/config_2_.png?sign=3ULsFDEIpDBPDWxb8KiCJWeZNZkHja4wXluRhU9wRBM=:0)
 
 也可以参考下面教程进行修改：
 
@@ -805,7 +805,7 @@ sudo apt install steam-installer steam-devices
 
 如果游戏仅支持 Windows，可通过以下路径启用Steam Play（若尚未激活）：进入Steam -> 设置 -> Steam Play，勾选“为支持的游戏启用Steam Play”及“为所有其他游戏启用Steam Play”选项。
 
-![](./steam.webp)
+![](https://gastigado.cnies.org/d/halo20250324ubuntu2404_optimize/steam.webp?sign=1zhR5MVsAntCOQ92AvG-AR9vsW-hwLKVMo513krdTys=:0)
 
 此时“适用于Windows”的提示信息应已消失，游戏页面上的“安装”按钮现在应显示为蓝色且可点击状态，就可以畅玩 Windows 游戏啦！
 
