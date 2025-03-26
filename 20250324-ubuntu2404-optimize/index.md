@@ -817,9 +817,9 @@ OBS Studio 是一款功能强大的开源软件，专用于视频录制与直播
 sudo apt install obs-studio
 ```
 
-### calibre：电子书管理神器
+### Calibre
 
-alibre是一款功能强大且开源的电书管理软件，专为满足电子书读者与作者的多元化需求而设计。
+Calibre是一款功能强大且开源的电书管理软件，专为满足电子书读者与作者的多元化需求而设计。
 
 ```bash
 sudo apt install calibre
