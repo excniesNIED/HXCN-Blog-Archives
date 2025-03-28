@@ -90,7 +90,7 @@ Ubuntu24.04新机配置指南：从常用软件安装到使用技巧全攻略
 
 如果想要设置 125%、150% 等倍数的缩放，需要先打开“Fractional Scaling”：
 
-![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/8c28951735194e1987d9306863377adf.png#pic_center)
+![Fractional Scaling](https://gastigado.cnies.org/d/halo20250324ubuntu2404_optimize/config_1_.png?sign=8NJE5MPBEkRq-AJJA7cXo-lDluEzJ2lOCmbwygTd1SY=:0)
 
 ## 修改用户的默认目录为英文
 
@@ -108,10 +108,9 @@ Ubuntu系统的个人主目录`~`（即`/home/username`）采用本地语言命�
 LANG=en_US xdg-user-dirs-gtk-update
 ```
 
-注销后重新登陆，勾选“Don't ask me this again”，然后选择“Update Names”即可。
+注销后重新登陆，勾选“Don't ask me this again”，然后选择“Keep Old Names”即可。
 
-![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/b11a970cdeda47cbb5b15a6d03b37489.png#pic_center)
-
+![xdg-user-dirs-gtk-update](https://gastigado.cnies.org/d/halo20250324ubuntu2404_optimize/config_2_.png?sign=3ULsFDEIpDBPDWxb8KiCJWeZNZkHja4wXluRhU9wRBM=:0)
 
 也可以参考下面教程进行修改：
 
@@ -168,8 +167,8 @@ sudo apt install libfuse2
 安装完成后，需要赋予 AppImage 权限，然后即可运行：
 
 ```bash
-sudo chmod +x <appimage软件包名>.AppImage
-./<appimage软件包名>.AppImage
+sudo chmod +x soft.AppImage
+./soft.AppImage
 ```
 
 ## 必备软件
@@ -181,7 +180,7 @@ Ubuntu 默认预装 Firefox 浏览器，初期配置我们使用它来下载软�
 访问QQ官网（https://im.qq.com）,点击“下载” - “Linux”后，向下滑动出现下载按钮，选择“X86 版下载” - “deb”（根据系统架构进行安装），下载完成后终端切换到 `Downloads` 目录，使用 命令安装即可：
 
 ```bash
-sudo apt install ./<QQ_3.版本号_amd64_01>.deb
+sudo apt install ./QQ_3.x.xx_xxxxxx_amd64_01.deb
 ```
 
 Tim 暂时没有 Linux 版原生支持。
@@ -211,8 +210,13 @@ sudo apt install gnome-tweaks
 外观美化方面将单独写写一篇文章介绍。
 
 ### 科学上网
-请参考：
-[Ubuntu24.04新机配置指南：从常用软件安装到使用技巧全攻略——优化](https://hs.cnies.org/archives/ubuntu2404-optimize#%E4%BC%98%E5%8C%96)
+
+推荐 V2raya 和 Clash Verge。如果前期不方便访问 Github 下载软件包，可以用 QQ/微信发送过来。
+
+V2raya 需要在Web控制台（127.0.0.1:2017）的设置中开启透明代理（GFWList模式）、端口转发、IPv6代理支持和绕过大陆IP。Clash Verge 需要开启系统代理，如果需要在虚拟机或容器使用代理可以开启虚拟网卡模式（TUN 模式）和局域网连接。
+
+想要两者开机启动，需要在“优化”（Tweaks）设置开机启动程序。
+
 ### 输入法
 
 #### Fcitx5
@@ -385,7 +389,7 @@ git-fetch-with-cli = true
 在 Gitee 打开[星火应用商店 Release 界面](https://gitee.com/spark-store-project/spark-store/releases)，根据系统架构下载最新版 deb 安装包，然后使用命令进行安装，如：
 
 ```bash
-sudo apt install ./<spark-store_版本号_amd64>.deb
+sudo apt install ./spark-store_4.5.2-1_amd64.deb
 ```
 
 ***对于 Ubuntu 22.04***，在执行安装后，需要输入下面命令：
@@ -409,7 +413,7 @@ sudo apt install gdebi
 安装后可以使用 `gdebi` 代替 `apt` 包管理器：
 
 ```bash
-sudo gdebi <package_name>.deb
+sudo gdebi package_name.deb
 ```
 
 ## 文本办公
@@ -801,8 +805,7 @@ sudo apt install steam-installer steam-devices
 
 如果游戏仅支持 Windows，可通过以下路径启用Steam Play（若尚未激活）：进入Steam -> 设置 -> Steam Play，勾选“为支持的游戏启用Steam Play”及“为所有其他游戏启用Steam Play”选项。
 
-![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/eff9eff48c0443b58764d037a985a81d.webp#pic_center)
-
+![](https://gastigado.cnies.org/d/halo20250324ubuntu2404_optimize/steam.webp?sign=1zhR5MVsAntCOQ92AvG-AR9vsW-hwLKVMo513krdTys=:0)
 
 此时“适用于Windows”的提示信息应已消失，游戏页面上的“安装”按钮现在应显示为蓝色且可点击状态，就可以畅玩 Windows 游戏啦！
 
