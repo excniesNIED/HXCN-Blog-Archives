@@ -8,7 +8,7 @@ Visual Studio Code（以下简称 VS Code）无疑是当下最常用的代码编
 
 微软坚称这些数据仅用于漏洞追踪等“正当用途”，这或许是真的。但现数据一旦离手，谁又能保证它不会被别有用心之人（甚至是规则变更后的官方）用于其他目的？
 
-你当然可以手动关闭VS Code的遥测上报功能，但别忘了：作为商业公司，微软完全有机会在未来版本中悄悄加入其他“隐蔽功能”——这些改动可能藏在冗长的更新日志里，稍不留意就会从你眼前滑过。
+你当然可以手动关闭 VS Code 的遥测上报功能，但别忘了：作为商业公司，微软完全有机会在未来版本中悄悄加入其他“隐蔽功能”——这些改动可能藏在冗长的更新日志里，稍不留意就会从你眼前滑过。
 
 [VSCodium](https://vscodium.com/) 是微软 Visual Studio Code 的一个 100% 免费且开源克隆版本。它是由社区驱动、采用自由许可的二进制发行版，不包含微软的遥测/跟踪功能。
 
@@ -44,11 +44,11 @@ Visual Studio Code 将其 keybindings.json 和 settings.json 文件存储于以�
 
 VSCodium 是一个基于 VSCode 的编辑器，通过安装 VS Code 扩展可以获得额外的功能。但是，由于微软禁止其他产品使用 Microsoft Marketplace（市场），也禁止从市场中重新分发 “.vsix” 文件，因此，在非微软产品中使用 VS Code 扩展需要以不同的方式安装。
 
-默认情况下，`product.json`文件设置为使用 [open-vsx.org](https://open-vsx.org/) 作为扩展程序库，该库具有适配器，可以使用 VS Code 使用的 Marketplace API。由于这是一个相对较新的项目，您可能会错过一些您从 VS Code Marketplace 中了解的扩展程序。您有以下选项来获取这些缺失的扩展：
+默认情况下，`product.json` 文件设置为使用 [open-vsx.org](https://open-vsx.org/) 作为扩展程序库，该库具有适配器，可以使用 VS Code 使用的 Marketplace API。由于这是一个相对较新的项目，您可能会错过一些您从 VS Code Marketplace 中了解的扩展程序。您有以下选项来获取这些缺失的扩展：
 
-- 请求扩展程序维护者在[open-vsx.org](https://open-vsx.org/)上发布扩展程序，以补充 VS Code Marketplace。发布过程在[Open VSX Wiki](https://github.com/eclipse/openvsx/wiki/Publishing-Extensions)中得到说明。
-- 在[此存储库](https://github.com/open-vsx/publish-extensions)上创建拉取请求，让[@open-vsx](https://github.com/open-vsx)服务帐户为您发布扩展程序。
-- 下载并[安装 vsix 文件](https://code.visualstudio.com/docs/editor/extension-gallery#_install-from-a-vsix)，例如从源代码库的发布页面。
+- 请求扩展程序维护者在 [open-vsx.org](https://open-vsx.org/) 上发布扩展程序，以补充 VS Code Marketplace。发布过程在 [Open VSX Wiki](https://github.com/eclipse/openvsx/wiki/Publishing-Extensions) 中得到说明。
+- 在 [此存储库](https://github.com/open-vsx/publish-extensions) 上创建拉取请求，让 [@open-vsx](https://github.com/open-vsx) 服务帐户为您发布扩展程序。
+- 下载并 [安装 vsix 文件](https://code.visualstudio.com/docs/editor/extension-gallery#_install-from-a-vsix)，例如从源代码库的发布页面。
 
 在 `安装根目录/resources/app/product.json` 文件中的修改 `extensionsGallery` 键设置 VSCodium 采用微软官方扩展源：
 
