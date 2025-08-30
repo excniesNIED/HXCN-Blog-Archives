@@ -1,4 +1,4 @@
-# 基于Lagrange.OneBot协议搭建NoneBot的聊天QQ机器人
+# Lagrange.OneBot+NoneBot搭建QQ机器人详细指南
 
 Lagrange.Core 是基于 NTQQ 协议的纯 C# 实现，可为 QQ 账号提供协议层支持；NoneBot 则是一款跨平台的 Python 异步聊天机器人框架，具备高扩展性和易用性。本文将详细介绍如何在 Debian 12 系统上部署一套基于 Lagrange.OneBot 协议的 NoneBot QQ 机器人。
 
