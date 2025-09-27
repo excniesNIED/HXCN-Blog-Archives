@@ -139,42 +139,42 @@ nb create
 
 **选择项目模板**：推荐`simple`（简洁模板，适合新手）
 
-![image-20250830215110495](https://gastigado.cnies.org/d/halo20250830_lagrange_onebot_nonebot/image_20250830215110495.png?sign=UDdNg7vf5kUQ3ddtLgNIGYICcBi40RsBRcCOsCvQ5i8=:0)
+![image-20250830215110495](https://gastigado.cnies.org/d/halo20250830_lagrange_onebot_nonebot/image_20250830215110495.png)
 
 **输入项目名称**：例如`chatbot`（自定义，小写无空格）
 
-![image-20250830215150320](https://gastigado.cnies.org/d/halo20250830_lagrange_onebot_nonebot/image_20250830215150320.png?sign=AonzoQu93N83sZuDH6l2fPw9V-1VT5CfEifEzgl8uu8=:0)
+![image-20250830215150320](https://gastigado.cnies.org/d/halo20250830_lagrange_onebot_nonebot/image_20250830215150320.png)
 
 **选择适配器**：按 <kbd>空格</kbd> 选中`OneBot V11`（必须选，用于连接 Lagrange），然后按 <kbd>Enter</kbd> 下一步
 
-![image-20250830215232794](https://gastigado.cnies.org/d/halo20250830_lagrange_onebot_nonebot/image_20250830215232794.png?sign=n1D0zCMMnggWLWzC-uTfdfcdaXR1KjIjHOk-YVue1iM=:0)
+![image-20250830215232794](https://gastigado.cnies.org/d/halo20250830_lagrange_onebot_nonebot/image_20250830215232794.png)
 
 **选择驱动器**：默认`FastAPI`（NoneBot 推荐，性能稳定）
 
-![image-20250830215401640](https://gastigado.cnies.org/d/halo20250830_lagrange_onebot_nonebot/image_20250830215401640.png?sign=hYns5jG6ZD4GglRfxDbQENwySBR-CxFhU6cCM9z410s=:0)
+![image-20250830215401640](https://gastigado.cnies.org/d/halo20250830_lagrange_onebot_nonebot/image_20250830215401640.png)
 
 **插件存储位置**：推荐`src`（规范目录结构，便于管理插件）
 
-![image-20250830215525614](https://gastigado.cnies.org/d/halo20250830_lagrange_onebot_nonebot/image_20250830215525614.png?sign=CwR34TOLrfQ0mjTqtLY5x-1CuSJCRH-5WWPexu3mMl8=:0)
+![image-20250830215525614](https://gastigado.cnies.org/d/halo20250830_lagrange_onebot_nonebot/image_20250830215525614.png)
 
 **安装依赖**：输入`y`（自动安装项目所需依赖）
 
-![image-20250830215614661](https://gastigado.cnies.org/d/halo20250830_lagrange_onebot_nonebot/image_20250830215614661.png?sign=ViGgVDj2XOd3PcNCAXH4yZoY275O9rx1ixeJ8ojuJgk=:0)
+![image-20250830215614661](https://gastigado.cnies.org/d/halo20250830_lagrange_onebot_nonebot/image_20250830215614661.png)
 
 **创建虚拟环境**：
 
 - 若已在独立虚拟环境中操作，输入`n`；
 - 若直接在系统环境操作，输入`y`（避免依赖冲突）。
 
-![image-20250830215642893](https://gastigado.cnies.org/d/halo20250830_lagrange_onebot_nonebot/image_20250830215642893.png?sign=LDkj16YJs_8KWrbpChTsdughPsZORyP0TSOZXpjfIlA=:0)
+![image-20250830215642893](https://gastigado.cnies.org/d/halo20250830_lagrange_onebot_nonebot/image_20250830215642893.png)
 
 **安装内置插件**：推荐全选便于测试机器人基础功能
 
-![image-20250830215802429](https://gastigado.cnies.org/d/halo20250830_lagrange_onebot_nonebot/image_20250830215802429.png?sign=fHo3ZRZsZmtYy8LMicCJ0W69L0n3apnbp6VnW5dtvEk=:0)
+![image-20250830215802429](https://gastigado.cnies.org/d/halo20250830_lagrange_onebot_nonebot/image_20250830215802429.png)
 
 安装成功会出现下面提示：
 
-![image-20250830215859407](https://gastigado.cnies.org/d/halo20250830_lagrange_onebot_nonebot/image_20250830215859407.png?sign=knoVTfN7CnRS38v1pyRGMFxk1NWUSbMOunL2ES5aO4I=:0)
+![image-20250830215859407](https://gastigado.cnies.org/d/halo20250830_lagrange_onebot_nonebot/image_20250830215859407.png)
 
 ### 启动 NoneBot 并验证连接
 
@@ -277,7 +277,7 @@ async def Test_send(bot: Bot, event: GroupMessageEvent, state: T_State):
 
 在群聊发送“测试”，如果看到机器人回复，则机器人正常运行：
 
-![image-20250830221108484](https://gastigado.cnies.org/d/halo20250830_lagrange_onebot_nonebot/image_20250830221108484.png?sign=vhHsZ0gH9C2G-INOmGktyy6FpvAGa4UTjAqs44J6cmQ=:0)
+![image-20250830221108484](https://gastigado.cnies.org/d/halo20250830_lagrange_onebot_nonebot/image_20250830221108484.png)
 
 此时恭喜你成功搭建了一个QQ聊天机器人。
 
