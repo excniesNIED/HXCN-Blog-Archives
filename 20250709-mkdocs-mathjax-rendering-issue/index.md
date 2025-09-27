@@ -22,7 +22,7 @@ $$
 
 当时，页面上渲染出的错误效果大致如下。
 
-![在此处插入截图：\boldsymbol命令渲染失败，显示红色文本](https://gastigado.cnies.org/d/halo20250709_mkdocs_mathjax_rendering_issue/1_1752071975499_35.png?sign=qfHFmgwMTfxe7wyJhblKd6ggxKhwuD_dOtfHa3h_B-g=:0 "错误渲染效果")
+![在此处插入截图：\boldsymbol命令渲染失败，显示红色文本](https://gastigado.cnies.org/d/halo20250709_mkdocs_mathjax_rendering_issue/1_1752071975499_35.png "错误渲染效果")
 
 ## 尝试一：规避Markdown解析冲突
 
@@ -148,6 +148,6 @@ extra_javascript:
 
 在重启服务并强制清空浏览器缓存后，问题终于得到了圆满解决。
 
-![在此处插入截图：\boldsymbol命令被正确渲染为粗斜体](https://gastigado.cnies.org/d/halo20250709_mkdocs_mathjax_rendering_issue/2_1752071974972_56.png?sign=aB6hTVigQnDYWGck1SNlc31LFMTrxMPZrDg3j1W413A=:0 "正确渲染效果")
+![在此处插入截图：\boldsymbol命令被正确渲染为粗斜体](https://gastigado.cnies.org/d/halo20250709_mkdocs_mathjax_rendering_issue/2_1752071974972_56.png "正确渲染效果")
 
 现在，无论页面是首次加载还是经过无数次实时重载，`\boldsymbol` 命令都能被稳定、正确地渲染出来。这次排查经历虽然曲折，但它让我对 Web 前端的脚本加载机制以及 MkDocs 主题的定制化有了更深刻的理解。在现代Web开发工作流中，问题的解决往往需要贯穿后端配置、前端脚本、资源加载时序等多个层面进行综合考量。通过这次实践，我不仅解决了眼前的技术难题，也掌握了在 MkDocs 生态中进行深度定制的可靠方法。

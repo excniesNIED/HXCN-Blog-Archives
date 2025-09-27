@@ -4,7 +4,7 @@
 
 近期，本人在使用 MkDocs 构建项目文档时，遇到了一个颇为棘手的路径问题。我的 Markdown 文件在本地编辑器 Typora 中显示完全正常，所有图片都能正确加载。然而，通过 `mkdocs serve` 启动本地服务后，网站页面上的一部分图片却无法显示。这个现象引发了我的深入排查。
 
-<img src="https://gastigado.cnies.org/d/halo20250709_mkdocs_404_imgs/pic_404_error.png?sign=gHj4BlOvGR-6gsr5C1POlog3hcMJBvFUDSoRK9KtgmQ=:0" style="zoom:50%;" />
+<img src="https://gastigado.cnies.org/d/halo20250709_mkdocs_404_imgs/pic_404_error.png" style="zoom:50%;" />
 
 #### 问题现象与初步分析
 

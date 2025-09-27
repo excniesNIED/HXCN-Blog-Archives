@@ -42,13 +42,13 @@ Conda 生态还缓解了跨平台编译难题。Windows 环境下配置科学计
 
 访问 Anaconda 官网 [https://www.anaconda.com](https://www.anaconda.com)，选择右上角“Free Download”，点击“Skip registration”，左侧为 Anaconda，右侧为 Miniconda，根据需求下载即可。
 
-![image-20250513111933309](https://gastigado.cnies.org/d/halo20250513/anaconda_website_download.png?sign=_7YU6IIhGD9yTGd8gW0pyXPEAe4sUbcQacE2NpTlvPc=:0)
+![image-20250513111933309](https://gastigado.cnies.org/d/halo20250513/anaconda_website_download.png)
 
 国内网络环境可能下载速度较慢，可以访问 [清华大学镜像网站下载最新版 Anaconda](https://mirrors.tuna.tsinghua.edu.cn/anaconda/)：
 
 Anaconda 需要找的日期最新的版本进行下载，Miniconda 下载 `Miniconda3-latest` 即可：
 
-![tsinghua](https://gastigado.cnies.org/d/halo20250513/tsinghua.png?sign=EQTOqvu0YNO7522RGXYIT7Nz7qhl4lqJvPWASmmCsrg=:0)
+![tsinghua](https://gastigado.cnies.org/d/halo20250513/tsinghua.png)
 
 ## 安装
 
@@ -56,53 +56,53 @@ Anaconda 需要找的日期最新的版本进行下载，Miniconda 下载 `Minic
 
 右键安装包，选择“以管理员身份运行”：
 
-![run-as-admin](https://gastigado.cnies.org/d/halo20250513/run_as_admin.png?sign=WFNCeJcFsy7wOC_QiSBfHxPBt24FBQ9ZmUPsw78b8ko=:0)
+![run-as-admin](https://gastigado.cnies.org/d/halo20250513/run_as_admin.png)
 
 进入安装界面，点击下一步即可：
 
-![anaconda-setup-1](https://gastigado.cnies.org/d/halo20250513/anaconda_setup_1.png?sign=VH6un1OiBJh5JsmF9m0N99PQuQiH3qIFO058G43clTU=:0)
+![anaconda-setup-1](https://gastigado.cnies.org/d/halo20250513/anaconda_setup_1.png)
 
 同意许可证：
 
-![anaconda-setup-2](https://gastigado.cnies.org/d/halo20250513/anaconda_setup_2.png?sign=IMwvxkCGDxGoIsocWc-WjoRTHsRXEhJAxsJVB2vTBZE=:0)
+![anaconda-setup-2](https://gastigado.cnies.org/d/halo20250513/anaconda_setup_2.png)
 
 选择为所有用户安装：
 
-![anaconda-setup-3](https://gastigado.cnies.org/d/halo20250513/anaconda_setup_3.png?sign=II1rcIaSDqFyXKVdw61vuntx6GwfsTx2vNISrbqYbVo=:0)
+![anaconda-setup-3](https://gastigado.cnies.org/d/halo20250513/anaconda_setup_3.png)
 
 选择一个安装位置。Anaconda 本体、系统级别的 conda 环境（如果以管理员身份安装）都会存储在这个位置，会占用很大空间，请根据自己需求修改位置。
 
 值得注意的是，用户级别的虚拟环境会安装在 C 盘（通常在 `C:\Users\用户名\.conda\envs`），后面有修改虚拟环境位置的教程。
 
-![anaconda-setup-4](https://gastigado.cnies.org/d/halo20250513/anaconda_setup_4.png?sign=qXyN1KbU96NqruVffJNzTfI9FOwhpDE9hhNRdBmr60E=:0)
+![anaconda-setup-4](https://gastigado.cnies.org/d/halo20250513/anaconda_setup_4.png)
 
 推荐全部勾选：
 
-![anaconda-setup-5](https://gastigado.cnies.org/d/halo20250513/anaconda_setup_5.png?sign=eC4NnD0Voasx6BfUD1DPVzBx5qTBoPEg6rOXF2eNX9g=:0)
+![anaconda-setup-5](https://gastigado.cnies.org/d/halo20250513/anaconda_setup_5.png)
 
 等待全部安装，点击下一步，然后一直下一步即可：
 
-![anaconda-setup-6](https://gastigado.cnies.org/d/halo20250513/anaconda_setup_6.png?sign=OU66ihWJcX1drYqfkY44r-XLW1sxkbe80vBKEUxMuS4=:0)
+![anaconda-setup-6](https://gastigado.cnies.org/d/halo20250513/anaconda_setup_6.png)
 
-![anaconda-setup-7](https://gastigado.cnies.org/d/halo20250513/anaconda_setup_7.png?sign=ryFxqNQHQCfYzRe_xx7n4jbB7BJ33ksRuii11OESP0k=:0)
+![anaconda-setup-7](https://gastigado.cnies.org/d/halo20250513/anaconda_setup_7.png)
 
-![anaconda-setup-8](https://gastigado.cnies.org/d/halo20250513/anaconda_setup_8.png?sign=PRV0jHFt3l7RLy1whWSixrAVZzXtcERzUa6dR0Y30yA=:0)
+![anaconda-setup-8](https://gastigado.cnies.org/d/halo20250513/anaconda_setup_8.png)
 
 按照下面方法找到 Anaconda 的安装路径，备用：
 
-![install-path](https://gastigado.cnies.org/d/halo20250513/install_path.png?sign=LxE9Xtu0MmeHSR7NkT4SSUFQ7DHGUIN5lB3e8NYayCs=:0)
+![install-path](https://gastigado.cnies.org/d/halo20250513/install_path.png)
 
 按 <kbd>Win</kbd> + <kbd>s</kbd> 搜索“环境变量”，在弹出窗口点击“环境变量”，选择“系统变量”下的“Path”，然后点击“编辑”：
 
-![env](https://gastigado.cnies.org/d/halo20250513/env.png?sign=UFmqjJVWjCbhqtqLXYSZlZsV00ScdU3yiQJNd00mup8=:0)
+![env](https://gastigado.cnies.org/d/halo20250513/env.png)
 
 将 `<安装目录>`、`<安装目录>/Scripts`、`<安装目录>/Library/bin` 添加到环境变量中，然后一路点击“确定”后生效：
 
-![env-2](https://gastigado.cnies.org/d/halo20250513/env_2.png?sign=U9TlqgzsW0GdLILxYKBhA2eP6C2rTpGXybQplawvFlU=:0)
+![env-2](https://gastigado.cnies.org/d/halo20250513/env_2.png)
 
 想要验证环境变量是否配置成功，按 <kbd>Win</kbd> + <kbd>x</kbd>，选择“终端”，输入 `conda --version`，终端输出版本号，证明配置成功：
 
-![ps-var](https://gastigado.cnies.org/d/halo20250513/ps_var.png?sign=Brz74GcMVyD6ajXKni-N-FA0gPcVFhHXHPF7UisFPlI=:0)
+![ps-var](https://gastigado.cnies.org/d/halo20250513/ps_var.png)
 
 ## 初始化
 
@@ -162,7 +162,7 @@ Set-ExecutionPolicy Unrestricted -Scope LocalMachine
 
 重启终端，当命令行开头出现 `base`，初始化成功：
 
-![conda-init](https://gastigado.cnies.org/d/halo20250513/conda_init.png?sign=MbXPcQvY2h8KyN1HZfmwgkgubH77BmpW3ZeCQAb-ZLc=:0)
+![conda-init](https://gastigado.cnies.org/d/halo20250513/conda_init.png)
 
 ## 修改虚拟环境地址
 
@@ -200,7 +200,7 @@ pkgs_dirs:
 
 重启终端，输入 `conda info`，就可以看到修改默认环境路径成功
 
-![condarc](https://gastigado.cnies.org/d/halo20250513/condarc.png?sign=z3qLsw5a0LTBofkUe2YXxIFKp8IcQ2pGP8hqjhhHqBM=:0)
+![condarc](https://gastigado.cnies.org/d/halo20250513/condarc.png)
 
 ### 方法二：使用conda config命令
 
@@ -398,7 +398,7 @@ conda activate myenv
 
 左侧括号内 `base` 编程 `myenv`，激活成功：
 
-![conda-activate](https://gastigado.cnies.org/d/halo20250513/conda_activate.png?sign=HGEFCaSn1kG7ebjDwLQn5e-3LvEFYMUhk5BwGtTHCYU=:0)
+![conda-activate](https://gastigado.cnies.org/d/halo20250513/conda_activate.png)
 
 激活环境会修改系统的 `PATH` 环境变量，将当前激活环境的脚本和可执行文件路径置于优先位置。
 
@@ -775,19 +775,19 @@ python -m pip install --upgrade pip
 
 打开一个项目，点击设置，根据下面步骤添加本地解释器：
 
-![pyc_inpl](https://gastigado.cnies.org/d/halo20250513/pyc_inpl.png?sign=6eN3f0LCR080iCYRw9QE-d4_LB_UfLrqG31KUemPOOc=:0)
+![pyc_inpl](https://gastigado.cnies.org/d/halo20250513/pyc_inpl.png)
 
 如果预先创建好了虚拟环境，点击“选择现有”；如果需要创建新的环境，点击“生成新的”，“类型”选择“conda”，Python 版本根据需求自行填写。如果无法识别 conda 的路径，点击浏览，找到 `<conda的安装目录>/condabin/conda.bat` 即可。
 
-![pyc_inpl-2](https://gastigado.cnies.org/d/halo20250513/pyc_inpl_2.png?sign=19Z0tQx1sG3iU1KY2pIn4NPunfSct7zzXKRkVRTnS44=:0)
+![pyc_inpl-2](https://gastigado.cnies.org/d/halo20250513/pyc_inpl_2.png)
 
 添加 Python 解释器后，在设置中选择添加的解释器，或者在右下角修改解释器：
 
-![pyc_inpl-3](https://gastigado.cnies.org/d/halo20250513/pyc_inpl_3.png?sign=KO23J2V9em1XMEyDw2_ngAdXKFAB-EObS04J9H0dLNg=:0)
+![pyc_inpl-3](https://gastigado.cnies.org/d/halo20250513/pyc_inpl_3.png)
 
 ## VSCode使用conda虚拟环境
 
-![vscode_impl](https://gastigado.cnies.org/d/halo20250513/vscode_impl.png?sign=xU7GNAHg0D6gfoLfr-VNmZW0_iY5mPzowBncuDw55lw=:0)
+![vscode_impl](https://gastigado.cnies.org/d/halo20250513/vscode_impl.png)
 
 点击右下角“选择解释器”，然后根据需求创建虚拟环境或者选择解释器。如果没有检测出需要的解释器，选择“输入解释器路径”后输入对应虚拟环境目录下的 `python.exe` 即可。
 
