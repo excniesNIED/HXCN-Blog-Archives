@@ -1,4 +1,4 @@
-# 如何在Rocky Linux 8单节点集群上安装Apache Hadoop
+# 在Rocky Linux 8单节点集群上安装Apache Hadoop超详细教程
 
 Apache Hadoop 是一个基于 Java 编写的免费开源软件框架，通过 MapReduce 技术用于实现大数据的分布式存储与处理。它通过将海量数据集分割为大型数据块，并将其分布在集群中的多台计算机上，从而处理超大规模的数据集。
 

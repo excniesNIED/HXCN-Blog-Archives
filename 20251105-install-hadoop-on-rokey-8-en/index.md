@@ -1,4 +1,4 @@
-# How to Install Apache Hadoop on a Single-Node Cluster in Rocky Linux 8
+# Apache Hadoop Single Node Installation on Rocky Linux 8: Complete Step-by-Step Tutorial
 
 Apache Hadoop is a free and open-source software framework written in Java. It is designed for the distributed storage and processing of big data using the MapReduce programming model. The framework processes massive datasets by splitting them into large blocks and distributing them across multiple computers in a cluster.
 
