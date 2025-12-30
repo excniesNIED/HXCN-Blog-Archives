@@ -12,11 +12,11 @@
 
 然而，Academia.edu 的流程堪称「迷宫」。官网没有明确的自助退款入口，只有一篇“如何取消自动续费”的教程。按照指引，我必须先完成一长串问卷、拒绝数次“专属折扣”与“不可错过的会员福利”，才能真正关闭 PayPal 的自动扣款权限。这只是止血，而非拿回已被扣走的 89 美元。
 
-https://support.academia.edu/hc/en-us/articles/32143117608599-Cancel-my-Academia-Premium-subscription-Auto-Renewal
+[Cancel my Academia Premium subscription Auto-Renewal – Academia Support](https://support.academia.edu/hc/en-us/articles/32143117608599-Cancel-my-Academia-Premium-subscription-Auto-Renewal)
 
 我们这些计算机爱好者和从业者，一直以来都对国产软件中那些隐蔽的自动续费和流氓收费政策深恶痛绝，但现在看来，Academia.edu 的做法甚至有过之而无不及。无奈之下，我开始在网络上寻找同路人的经验，我看到一篇 Reddit 的帖子发现不少人被Academia.edu悄悄扣除了几百甚至上千美元。
 
-https://www.reddit.com/r/academia/comments/1cyyxqf/any_chance_to_get_academiaedu_refund/
+[Any chance to get Academia.edu Refund? : r/academia](https://www.reddit.com/r/academia/comments/1cyyxqf/any_chance_to_get_academiaedu_refund/)
 
 主包参照帖子的做法，向官方支持邮箱“support@academia.edu”发送了第一封申诉邮件，态度还算客气，希望能和平解决。
 
@@ -24,11 +24,11 @@ https://www.reddit.com/r/academia/comments/1cyyxqf/any_chance_to_get_academiaedu
 >
 >Dear Academia.edu Support Team,
 >
->I am writing to request a refund for a recent charge of $89.00 made to my PayPal account (exc\*\*\*\*\*com) for an annual premium subscription.
+>I am writing to request a refund for a recent charge of &dollar;89.00 made to my PayPal account (exc\*\*\*\*\*com) for an annual premium subscription.
 >
->I have not used the Academia.edu premium services in the past month, and I was not aware that my subscription was set to auto-renew. This charge of $89.00 was unexpected.
+>I have not used the Academia.edu premium services in the past month, and I was not aware that my subscription was set to auto-renew. This charge of &dollar;89.00 was unexpected.
 >
->Given that I have not been using the premium features, I kindly request a full refund of this $89.00 charge.
+>Given that I have not been using the premium features, I kindly request a full refund of this &dollar;89.00 charge.
 >
 >I have already gone into my PayPal account and canceled the automatic payment agreement to prevent any future charges.
 >
@@ -40,7 +40,7 @@ https://www.reddit.com/r/academia/comments/1cyyxqf/any_chance_to_get_academiaedu
 
 几天过去，邮件石沉大海，杳无音信。我意识到，邮件可能无法引起对方的重视。于是，我找到了官网的工单提交系统，将我的申诉正式作为工单提交。经过搜索，发现提交工单的途径如下：
 
-https://support.academia.edu/hc/en-us/requests/new
+[Submit a request – Academia Support](https://support.academia.edu/hc/en-us/requests/new)
 
 主包提交工单的同时，也向支持邮箱同步发送了一封，邮件内容如下：
 
@@ -48,11 +48,11 @@ https://support.academia.edu/hc/en-us/requests/new
 >
 > Dear Academia.edu Support Team,
 >
-> I am writing to request a refund for a recent charge of $89.00 made to my PayPal account (exc\*\*\*\*\*com) for an annual premium subscription.
+> I am writing to request a refund for a recent charge of &dollar;89.00 made to my PayPal account (exc\*\*\*\*\*com) for an annual premium subscription.
 >
-> I have not used the Academia.edu premium services in the past month, and I was not aware that my subscription was set to auto-renew. This charge of $89.00 was unexpected.
+> I have not used the Academia.edu premium services in the past month, and I was not aware that my subscription was set to auto-renew. This charge of &dollar;89.00 was unexpected.
 >
-> Given that I have not been using the premium features, I kindly request a full refund of this $89.00 charge.
+> Given that I have not been using the premium features, I kindly request a full refund of this &dollar;89.00 charge.
 >
 > I have already gone into my PayPal account and canceled the automatic payment agreement to prevent any future charges.
 >
@@ -84,7 +84,7 @@ https://support.academia.edu/hc/en-us/requests/new
 
 我感到极大的讽刺和愤怒。在查阅了另一篇名为《Academia Refund Warning》的博文后，我决定强硬表示我的态度。我必须清晰地表明我的立场：这不是一次常规的“续订”，而是一次未被告知、未经授权的扣款。我打算再次提交工单，明确指出他们的行为侵犯了我的消费者知情权，并威胁如果问题得不到解决，我将采取一切必要的后续手段。
 
-https://leehopkinswriter.com/academia-refund-warning/
+[Academia.edu charged me $371.80 AUD without warning—and refused to refund it - Lee Hopkins, Writer](https://leehopkinswriter.com/academia-refund-warning/)
 
 我的第二次申诉邮件语气强硬了许多，我详细阐述了这笔交易的背景，并正式引用了他们的30天退款保证政策。我明确告知他们，如果退款被拒绝，我将立即通过 PayPal 发起“未经授权的交易”拒付申请，并向美国商业改进局（BBB）和联邦贸易委员会（FTC）提交正式投诉。
 
@@ -92,19 +92,19 @@ https://leehopkinswriter.com/academia-refund-warning/
 >
 > Dear Academia.edu Support Team,
 >
-> I am writing to formally dispute the denial of my refund request concerning the $89.00 charge processed on October 23, 2025 (Ticket ID # 9\*\*092). Your previous response stating that refunds are not processed for "subscription renewals" is unacceptable. This situation is not a standard renewal; it is a case of deceptive billing and a failure to secure informed consent.
+> I am writing to formally dispute the denial of my refund request concerning the &dollar;89.00 charge processed on October 23, 2025 (Ticket ID # 9\*\*092). Your previous response stating that refunds are not processed for "subscription renewals" is unacceptable. This situation is not a standard renewal; it is a case of deceptive billing and a failure to secure informed consent.
 >
-> My interaction with your platform was extremely limited. On September 6, 2025, I paid a fee of \$1.00. This payment was intended solely to access two specific documents required for my participation in the CUMCM (National College Student Mathematical Modeling competition). This transaction was understood to be a one-time access fee. At no point was I made clearly aware that this action enrolled me in an $89.00 annual subscription.
+> My interaction with your platform was extremely limited. On September 6, 2025, I paid a fee of &dollar;1.00. This payment was intended solely to access two specific documents required for my participation in the CUMCM (National College Student Mathematical Modeling competition). This transaction was understood to be a one-time access fee. At no point was I made clearly aware that this action enrolled me in an &dollar;89.00 annual subscription.
 >
-> Following this single interaction, I did not use the Academia.edu platform again. I received no email notifications, reminders, or invoices between September 6 and October 23. There was no communication indicating that a trial period was ending or that a significant charge of $89.00 was imminent. This lack of transparency is a failure to meet basic consumer protection standards. Had I been properly notified, I would have canceled the service immediately.
+> Following this single interaction, I did not use the Academia.edu platform again. I received no email notifications, reminders, or invoices between September 6 and October 23. There was no communication indicating that a trial period was ending or that a significant charge of &dollar;89.00 was imminent. This lack of transparency is a failure to meet basic consumer protection standards. Had I been properly notified, I would have canceled the service immediately.
 >
-> The \$89.00 charge on October 23 was unauthorized. It was drawn from my PayPal account (exc\*\*\*\*\*com) without my explicit knowledge or recent consent. This sum represents my school subsidy, and its unexpected removal has caused significant financial distress. Your justification that this payment "helps connect researchers" is an inappropriate deflection. I have already paid for the documents I accessed. This $89.00 charge is for a premium service I never knowingly requested, never used, and never intended to purchase.
+> The &dollar;89.00 charge on October 23 was unauthorized. It was drawn from my PayPal account (exc\*\*\*\*\*com) without my explicit knowledge or recent consent. This sum represents my school subsidy, and its unexpected removal has caused significant financial distress. Your justification that this payment "helps connect researchers" is an inappropriate deflection. I have already paid for the documents I accessed. This &dollar;89.00 charge is for a premium service I never knowingly requested, never used, and never intended to purchase.
 >
 > Furthermore, my initial request cited your 30-day money-back guarantee. The charge was posted on October 23. My request for a refund was submitted well within this 30-day window. Your refusal to honor this policy for a charge I was not even aware of is unjustifiable.
 >
 > I have already canceled the automatic payment authorization within my PayPal account to prevent future charges.
 >
-> Please consider this my final attempt to resolve this matter amicably. I request an immediate and full refund of the $89.00 charge.
+> Please consider this my final attempt to resolve this matter amicably. I request an immediate and full refund of the &dollar;89.00 charge.
 >
 > If this refund is not processed promptly, I will be forced to escalate this issue. I will proceed with filing a formal chargeback with PayPal, classifying this as an "Unauthorized Transaction." I will also submit official complaints to the Better Business Bureau (BBB) and the U.S. Federal Trade Commission (FTC). These complaints will detail Academia.edu's deceptive billing practices and predatory auto-renewal policies.
 >
@@ -136,17 +136,17 @@ https://leehopkinswriter.com/academia-refund-warning/
 >
 >Dear [Academia.edu](https://academia.edu/) Support Team,
 >
->This is my final communication to amicably resolve the issue of the unauthorized $89.00 charge to my PayPal account ([exc\*\*\*\*\*com](mailto:exc\*\*\*\*\*com)) on October 23, 2025. Your repeated, identical responses under ticket IDs #922092, #922677, and #922679, which state that refunds are not processed for "subscription renewals," are entirely unacceptable and fail to address the specific, serious nature of my complaint.
+>This is my final communication to amicably resolve the issue of the unauthorized &dollar;89.00 charge to my PayPal account ([exc\*\*\*\*\*com](mailto:exc\*\*\*\*\*com)) on October 23, 2025. Your repeated, identical responses under ticket IDs #922092, #922677, and #922679, which state that refunds are not processed for "subscription renewals," are entirely unacceptable and fail to address the specific, serious nature of my complaint.
 >
->My interaction with your platform was a single, isolated incident on September 6, 2025. I paid a \$1.00 fee to access two specific documents for my participation in the National College Student Mathematical Modeling competition (CUMCM). This was understood to be a one-time, pay-per-view style transaction. At no point was I clearly and transparently informed that this action would enroll me in a recurring annual subscription of $89.00.
+>My interaction with your platform was a single, isolated incident on September 6, 2025. I paid a &dollar;1.00 fee to access two specific documents for my participation in the National College Student Mathematical Modeling competition (CUMCM). This was understood to be a one-time, pay-per-view style transaction. At no point was I clearly and transparently informed that this action would enroll me in a recurring annual subscription of &dollar;89.00.
 >
->Crucially, your company failed to provide any form of communication between September 6 and October 23. I received no email notifications, no reminders of a trial period ending, and no invoices warning of an imminent significant charge. This complete lack of notification is a severe breach of consumer rights and transparent billing practices. Had I been properly informed, I would have taken immediate action to prevent this charge. A "renewal" implies prior consent, which was never established for this $89.00 amount. The charge was therefore not authorized.
+>Crucially, your company failed to provide any form of communication between September 6 and October 23. I received no email notifications, no reminders of a trial period ending, and no invoices warning of an imminent significant charge. This complete lack of notification is a severe breach of consumer rights and transparent billing practices. Had I been properly informed, I would have taken immediate action to prevent this charge. A "renewal" implies prior consent, which was never established for this &dollar;89.00 amount. The charge was therefore not authorized.
 >
->Your company's justification that this payment supports researchers globally is an inappropriate deflection from what are clearly unethical billing practices. It is profoundly ironic to claim to support research while imposing financial hardship on an undergraduate student. The $89.00 charged to my account constituted my school subsidy, and its unexpected seizure has caused me considerable financial distress. I am a student aspiring to a career in research, and this experience has been disillusioning. While your terms of service may be constructed to permit such actions, they are in direct conflict with ethical business conduct and consumer protection standards.
+>Your company's justification that this payment supports researchers globally is an inappropriate deflection from what are clearly unethical billing practices. It is profoundly ironic to claim to support research while imposing financial hardship on an undergraduate student. The &dollar;89.00 charged to my account constituted my school subsidy, and its unexpected seizure has caused me considerable financial distress. I am a student aspiring to a career in research, and this experience has been disillusioning. While your terms of service may be constructed to permit such actions, they are in direct conflict with ethical business conduct and consumer protection standards.
 >
 >I must also point out your refusal to honor your own 30-day money-back guarantee. The charge was processed on October 23, and my initial refund request was submitted well within this period. Your dismissal of this policy in my case is unjustifiable.
 >
->Consider this your final opportunity to rectify this situation internally. I demand an immediate and full refund of the $89.00 charge.
+>Consider this your final opportunity to rectify this situation internally. I demand an immediate and full refund of the &dollar;89.00 charge.
 >
 >If this refund is not confirmed within the next 24 hours, I will proceed with the following actions without further notice:
 >
@@ -156,7 +156,7 @@ https://leehopkinswriter.com/academia-refund-warning/
 >
 >Third, I will publicly document this entire experience. I will share my correspondence with your team on my personal website and social media platforms to warn other students and researchers. I will also engage an associate, who maintains a combined audience of 2.3 million followers on YouTube and TikTok, to ensure this warning about your company's unethical practices reaches the widest possible audience.
 >
->I expect a prompt confirmation that my full refund of $89.00 has been processed.
+>I expect a prompt confirmation that my full refund of &dollar;89.00 has been processed.
 >
 >Sincerely,
 >
