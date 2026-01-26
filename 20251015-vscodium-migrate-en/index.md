@@ -66,8 +66,27 @@ You can also use the following environment variables:
 - `VSCODE_GALLERY_SERVICE_URL='https://marketplace.visualstudio.com/_apis/public/gallerymatchCondition`
 - `VSCODE_GALLERY_ITEM_URL='https://marketplace.visualstudio.com/items'
 - `VSCODE_GALLERY_CACHE_URL='https://vscode.blob.core.windows.net/gallery/index'
-- `VSCODE_GALLERY_CONTROL_URL ''
-`
+- `VSCODE_GALLERY_CONTROL_URL ''`
+
+## Remote development: WSL / SSH extensions blocked by “official VS Code only” checks
+
+If you switched VSCodium’s extension source to **Microsoft Marketplace** (or installed some extensions from Marketplace manually), you may run into environment checks when using **Remote - WSL** or **Remote - SSH**: a dialog says something like “this extension can only be used with the official Microsoft Visual Studio Code”, and remote connections fail. fileciteturn0file0
+
+In most cases, this is **not** a WSL/SSH configuration issue. It happens because some Microsoft Remote extensions **check the product branding/identity (e.g., product.json / application name)** and refuse to run on non-Microsoft builds such as **VSCodium** or **Code - OSS**.
+
+### Fix: use open-remote-wsl / open-remote-ssh (open-source alternatives)
+
+Use the community-maintained open-source replacements (feature-aligned with the Remote extensions, but without the “must be official VS Code” restriction):
+
+- open-remote-wsl: https://github.com/jeanp413/open-remote-wsl
+- open-remote-ssh: https://github.com/jeanp413/open-remote-ssh
+
+Recommended installation options (pick one):
+
+1) **Install from Open VSX**: search and install `open-remote-wsl` / `open-remote-ssh` from the Extensions view in VSCodium (if available there).  
+2) **Install from GitHub Releases (VSIX)**: download the `.vsix` from the Releases page of the repo above, then choose “Install from VSIX…” in VSCodium.
+
+> Tip: If you already installed Microsoft’s official `Remote - WSL` / `Remote - SSH`, consider uninstalling them to avoid conflicts, and keep only the `open-remote-*` versions for remote development.
 
 ## References
 

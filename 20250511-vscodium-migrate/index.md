@@ -70,6 +70,26 @@ VSCodium 是一个基于 VSCode 的编辑器，通过安装 VS Code 扩展可以
 - `VSCODE_GALLERY_CACHE_URL='https://vscode.blob.core.windows.net/gallery/index'`
 - `VSCODE_GALLERY_CONTROL_URL=''`
 
+## 远程开发
+
+如果你把 VSCodium 的扩展源改成了 Microsoft Marketplace（或通过 Marketplace 手动安装了某些扩展），你可能会在使用 **Remote - WSL** 或 **Remote - SSH** 时遇到扩展的环境检测：弹出提示称“只有微软官方的 Visual Studio Code 才能使用该扩展”，从而导致无法连接/远程开发。
+
+这通常不是你的 WSL/SSH 配置问题，而是 **部分微软官方 Remote 系列扩展会检查产品标识（branding/product.json 等）**，在非微软发行版（如 VSCodium、Code - OSS）上直接拒绝工作。
+
+### 解决方案：使用 open-remote-wsl / open-remote-ssh（社区开源替代）
+
+可以改装社区维护的开源版本 Remote 扩展（功能对齐 Remote 系列，且不会做“必须官方 VS Code”的限制）：
+
+- open-remote-wsl：https://github.com/jeanp413/open-remote-wsl
+- open-remote-ssh：https://github.com/jeanp413/open-remote-ssh
+
+安装方式建议（任选其一）：
+
+1) **从 Open VSX 安装**：在 VSCodium 扩展面板直接搜索 `open-remote-wsl` / `open-remote-ssh` 安装（若能搜到版本）。  
+2) **从 GitHub Release 安装 VSIX**：在上述仓库的 Releases 下载 `.vsix`，然后在 VSCodium 里选择“从 VSIX 安装…”。
+
+> 提醒：如果你同时装了微软官方的 `Remote - WSL` / `Remote - SSH`，建议卸载它们，避免同类扩展冲突；然后只保留 `open-remote-*` 版本进行连接与远程开发。
+
 ## 参考资料
 
 [VSCodium - Open Source Binaries of VSCode](https://vscodium.com/)
