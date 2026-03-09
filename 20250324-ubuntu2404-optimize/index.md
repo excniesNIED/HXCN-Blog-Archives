@@ -211,8 +211,17 @@ sudo apt install gnome-tweaks
 外观美化方面将单独写写一篇文章介绍。
 
 ### 科学上网
-请参考：
-[Ubuntu24.04新机配置指南：从常用软件安装到使用技巧全攻略——优化](https://hs.cnies.org/archives/ubuntu2404-optimize#%E4%BC%98%E5%8C%96)
+
+推荐 **v2rayA**（https://github.com/v2rayA/v2rayA）、**Clash Verge**（https://www.clashverge.dev）和 **FClash**（https://github.com/chen08209/FlClash）。如果前期不方便访问 GitHub 下载软件包，也可以通过 QQ 或微信发送安装包。
+
+**v2rayA** 需要在 Web 控制台（`127.0.0.1:2017`）的设置中开启透明代理（GFWList 模式）、端口转发、IPv6 代理支持和绕过大陆 IP。
+
+**Clash Verge** 需要开启系统代理；如果需要在虚拟机或容器中使用代理，可以开启虚拟网卡模式（TUN 模式）和局域网连接。
+
+**FClash** 适合喜欢更简洁界面或需要兼容 Clash/Mihomo 配置的用户，同样适合作为日常代理客户端使用；如需在虚拟机、容器或局域网设备中共享代理，也建议按需开启 TUN 模式或局域网访问相关选项。
+
+如果想让这三者开机启动，需要在[“优化”（Tweaks）](https://hs.cnies.org/archives/ubuntu2404-optimize#优化)中设置开机启动程序。
+
 ### 输入法
 
 #### Fcitx5
@@ -614,13 +623,7 @@ curl -fsS https://dl.brave.com/install.sh | sh
 
 #### Chrome
 
-```bash
-wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmour -o /usr/share/keyrings/chrome.gpg
-sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/chrome.gpg]  \
-http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google.list'
-sudo apt update
-sudo apt install google-chrome-stable
-```
+访问 https://www.google.com/chrome/，选择 `.deb` 下载安装即可。
 
 #### Chromium
 
