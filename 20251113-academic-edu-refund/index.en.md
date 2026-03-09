@@ -4,7 +4,7 @@ The story began on September 6, 2025. At the time, I was participating in the CU
 
 Fast forward to October 23rd. A PayPal notification email struck like a bolt from the blue. It revealed my account had been charged &dollar;89 by Academia.edu. This deduction occurred the day after I received my university research grant, leaving sufficient funds in my bank account for the withdrawal. My heart skipped a beat. Since September 6th, I hadn't received any email reminders about the renewal.
 
-![PixPin_2025-11-13_02-05-37](https://gastigado.cnies.org/d/halo20251113_academic_edu_refund/PixPin_2025-11-13_02-05-37.png)
+![SnowShot_2026-02-18_14-01-11](https://gastigado.cnies.org/d/background/SnowShot_2026-02-18_14-01-11.webp)
 
 A similar experience occurred not long ago. I was once charged &dollar;10 by Scribd because I forgot to cancel the auto-renewal. However, that refund process was incredibly smooth. By following the instructions from the AI chatbot in the bottom-right corner of the platform, the refund was processed quickly.
 
