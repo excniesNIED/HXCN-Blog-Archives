@@ -280,7 +280,7 @@
 2. 系统会按当前课表内容生成图片文件。
 3. 发给没在用平台的同学，或者打印、发群都方便。
 
-![大二下课表-课表-2026-03-12](https://gastigado.cnies.org/d/background/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E8%AF%BE%E8%A1%A8-%E8%AF%BE%E8%A1%A8-2026-03-12.webp)
+![大二下课表-课表-2026-03-12](https://gastigado.cnies.org/d/halo20251012csguide/%25E5%25A4%25A7%25E4%25BA%258C%25E4%25B8%258B%25E8%25AF%25BE%25E8%25A1%25A8-%25E8%25AF%25BE%25E8%25A1%25A8-2026-03-12.webp)
 
 #### 6.2 导出 ICS 文件
 
