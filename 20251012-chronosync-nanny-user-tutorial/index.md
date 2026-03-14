@@ -71,7 +71,7 @@
 3.  按页面提示填写学号、姓名、班级、密码等信息，输入邮箱和验证码，绑定邮箱后续方便找回密码。
 4.  点击“**注册**”按钮完成操作。
 
-![image-20260309185737407](https://gastigado.cnies.org/d/background/image-20260309185737407.webp)
+![image-20260309185737407](https://gastigado.cnies.org/d/halo20251012csguide/image-20260309185737407_1773482780601_79.webp)
 
 ### 2. 登录平台
 
@@ -79,7 +79,7 @@
 2. 点击“登录”进入工作台。
 3. 登录后常用页面一般包括“我的课表”“团队视图”“找空教室”“个人中心”。
 
-![image-20260309185950451](https://gastigado.cnies.org/d/background/image-20260309185950451.webp)
+![image-20260309185950451](https://gastigado.cnies.org/d/halo20251012csguide/image-20260309185950451_1773482782341_18.webp)
 
 ### 3. 认识导航
 
@@ -90,7 +90,7 @@
 - `找空教室`：独立登录教务系统后查询空闲教室。
 - `个人中心`：资料、邮箱、密码、登录记录。
 
-![image-20260309202525305](https://gastigado.cnies.org/d/background/image-20260309202525305.webp)
+![image-20260309202525305](https://gastigado.cnies.org/d/halo20251012csguide/image-20260309202525305_1773482782925_60.webp)
 
 
 ## 第二部分：我的课表
@@ -102,7 +102,7 @@
 新建课表步骤：
 
 1. 选择“新建课表”。
-   ![image-20260309203603701](https://gastigado.cnies.org/d/background/image-20260309203603701.webp)
+   ![image-20260309203603701](https://gastigado.cnies.org/d/halo20251012csguide/image-20260309203603701_1773482784195_96.webp)
 
 2. 填写以下内容：
    - 课表名称
@@ -111,7 +111,7 @@
    - 总周数
    - 课程时间设置（支持 1-11 节）
 
-   ![image-20260309203738038](https://gastigado.cnies.org/d/background/image-20260309203738038.webp)
+   ![image-20260309203738038](https://gastigado.cnies.org/d/halo20251012csguide/image-20260309203738038_1773482785907_95.webp)
 
 3. 点击“创建课表”。
 
@@ -120,7 +120,7 @@
 - `已隐藏` 和 `已结束` 的课表不会被团队成员看到，不适合作为团队协作中的活跃课表。
 - 如果你想修改课表名称、学期信息或课程时间，也是在“课表操作”里的“课表设置”中完成。
 
- ![image-20260309210636882](https://gastigado.cnies.org/d/background/image-20260309210636882.webp)
+ ![image-20260309210636882](https://gastigado.cnies.org/d/halo20251012csguide/image-20260309210636882_1773482788819_0.webp)
 
 ### 2. 切换四种视图
 
@@ -138,7 +138,7 @@
 - `今天`：快速定位到今天。
 - 日期按钮：用弹出式日期选择器直接跳转。
 
-![image-20260309210919064](https://gastigado.cnies.org/d/background/image-20260309210919064.webp)
+![image-20260309210919064](https://gastigado.cnies.org/d/halo20251012csguide/image-20260309210919064_1773482792002_62.webp)
 
 ### 3. 导入课表
 
@@ -151,9 +151,9 @@
 3. 选择“导入课表”。
 4. 再选择具体导入方式。
 
-![image-20260309211004749](https://gastigado.cnies.org/d/background/image-20260309211004749.webp)
+![image-20260309211004749](https://gastigado.cnies.org/d/halo20251012csguide/image-20260309211004749_1773482793129_38.webp)
 
-![image-20260309211122500](https://gastigado.cnies.org/d/background/image-20260309211122500.webp)
+![image-20260309211122500](https://gastigado.cnies.org/d/halo20251012csguide/image-20260309211122500_1773482795058_20.webp)
 
 #### 3.1 从教务系统导入
 
@@ -173,7 +173,7 @@
 5. 点击“立即导入”。
 6. 导入成功后，页面会显示解析到的姓名、班级、年级、专业等信息，并把课程写入目标课表。
 
-![image-20260309211231136](https://gastigado.cnies.org/d/background/image-20260309211231136.webp)
+![image-20260309211231136](https://gastigado.cnies.org/d/halo20251012csguide/image-20260309211231136_1773482797607_28.webp)
 
 注意事项：
 
@@ -211,7 +211,7 @@
 
 保存后会立即显示在当前视图中。
 
-![image-20260312145912133](https://gastigado.cnies.org/d/background/image-20260312145912133.webp)
+![image-20260312145912133](https://gastigado.cnies.org/d/halo20251012csguide/image-20260312145912133_1773482800344_29.webp)
 
 #### 编辑或删除日程
 
@@ -219,7 +219,7 @@
 2. 先打开详情弹窗。
 3. 再进入编辑，修改信息后保存；或者直接删除该事件。
 
-![image-20260312145807357](https://gastigado.cnies.org/d/background/image-20260312145807357.webp)
+![image-20260312145807357](https://gastigado.cnies.org/d/halo20251012csguide/image-20260312145807357_1773482802308_94.webp)
 
 ### 5. 放假调休
 
@@ -243,7 +243,7 @@
 
 例如：把下周四课程整体调到本周六。
 
-![image-20260312150238289](https://gastigado.cnies.org/d/background/image-20260312150238289.webp)
+![image-20260312150238289](https://gastigado.cnies.org/d/halo20251012csguide/image-20260312150238289_1773482805097_40.webp)
 
 #### 设置假期
 
@@ -257,7 +257,7 @@
 
 例如：设置10月1日到10月8日为国庆节假期。
 
-![image-20260312150734932](https://gastigado.cnies.org/d/background/image-20260312150734932.webp)
+![image-20260312150734932](https://gastigado.cnies.org/d/halo20251012csguide/image-20260312150734932_1773482805918_40.webp)
 
 ### 6. 分享与导出课表
 
@@ -272,7 +272,7 @@
 - 导出到 ICS
 - 链接分享
 
-![image-20260312151124715](https://gastigado.cnies.org/d/background/image-20260312151124715.webp)
+![image-20260312151124715](https://gastigado.cnies.org/d/halo20251012csguide/image-20260312151124715_1773482808674_57.webp)
 
 #### 6.1 导出 PNG 图片
 
@@ -310,7 +310,7 @@
    - 当前访问次数
 6. 需要停用某条分享时，在历史记录中点击“撤销”即可。
 
-![image-20260312151345420](https://gastigado.cnies.org/d/background/image-20260312151345420.webp)
+![image-20260312151345420](https://gastigado.cnies.org/d/halo20251012csguide/image-20260312151345420_1773482826729_28.webp)
 
 #### 6.4 导入别人分享给你的课表
 
@@ -324,7 +324,7 @@
 
 分享页当前支持周视图和月视图浏览。
 
-![image-20260312151528539](https://gastigado.cnies.org/d/background/image-20260312151528539.webp)
+![image-20260312151528539](https://gastigado.cnies.org/d/halo20251012csguide/image-20260312151528539_1773482829504_10.webp)
 
 ### 7. 课表设置
 
@@ -338,7 +338,7 @@
 - 总周数
 - 1-11 节课程时间
 
-![image-20260312151731274](https://gastigado.cnies.org/d/background/image-20260312151731274.webp)
+![image-20260312151731274](https://gastigado.cnies.org/d/halo20251012csguide/image-20260312151731274_1773482831399_38.webp)
 
 ### 8. 个性化
 
@@ -357,7 +357,7 @@
 
 如果你经常用甘特或周列表看课，个性化设置会很有帮助。
 
-![image-20260312151857004](https://gastigado.cnies.org/d/background/image-20260312151857004.webp)
+![image-20260312151857004](https://gastigado.cnies.org/d/halo20251012csguide/image-20260312151857004_1773482832992_16.webp)
 
 ---
 
@@ -376,7 +376,7 @@
 - 团队代码
 - 成员预览
 
-![image-20260312152009474](https://gastigado.cnies.org/d/background/image-20260312152009474.webp)
+![image-20260312152009474](https://gastigado.cnies.org/d/halo20251012csguide/image-20260312152009474_1773482835921_57.webp)
 
 ### 2. 普通团队成员怎么用
 
@@ -389,14 +389,14 @@
 3. 点击“加入团队”。
 4. 输入团队代码并确认。
 
-![image-20260312152049492](https://gastigado.cnies.org/d/background/image-20260312152049492.webp)
+![image-20260312152049492](https://gastigado.cnies.org/d/halo20251012csguide/image-20260312152049492_1773482836148_35.webp)
 
 #### 2.2 查看团队课表
 
 1. 在团队卡片上点击“查看课表”。
 2. 进入团队课表页后，可以查看团队成员的聚合课程安排。
 
-![image-20260312152230894](https://gastigado.cnies.org/d/background/image-20260312152230894.webp)
+![image-20260312152230894](https://gastigado.cnies.org/d/halo20251012csguide/image-20260312152230894_1773482839109_54.webp)
 
 团队课表页里可以：
 
@@ -413,9 +413,9 @@
 
 同一个时间段里谁有课、叠了几门课，点开就能看清。
 
-![image-20260312152301099](https://gastigado.cnies.org/d/background/image-20260312152301099.webp)
+![image-20260312152301099](https://gastigado.cnies.org/d/halo20251012csguide/image-20260312152301099_1773482840170_13.webp)
 
-![image-20260312152400868](https://gastigado.cnies.org/d/background/image-20260312152400868.webp)
+![image-20260312152400868](https://gastigado.cnies.org/d/halo20251012csguide/image-20260312152400868_1773482842252_13.webp)
 
 #### 2.3 使用筛选找时间
 
@@ -432,7 +432,7 @@
 - 想约几个人开会时，先按成员筛选。
 - 想看某个班或某个年级什么时候有空时，先按班级或年级筛选。
 
-![image-20260312152433998](https://gastigado.cnies.org/d/background/image-20260312152433998.webp)
+![image-20260312152433998](https://gastigado.cnies.org/d/halo20251012csguide/image-20260312152433998_1773482844288_25.webp)
 
 #### 2.4 退出团队
 
@@ -449,7 +449,7 @@
 - 退出后会失去该团队的访问权限。
 - 如果以后还要回来，需要重新用团队代码加入。
 
-![image-20260312152607511](https://gastigado.cnies.org/d/background/image-20260312152607511.webp)
+![image-20260312152607511](https://gastigado.cnies.org/d/halo20251012csguide/image-20260312152607511_1773482844413_62.webp)
 
 ### 3. 团队管理员怎么用
 
@@ -466,7 +466,7 @@
 4. 点击“创建团队”。
 5. 创建成功后，系统会生成 8 位团队代码。
 
-![image-20260312152823954](https://gastigado.cnies.org/d/background/image-20260312152823954.webp)
+![image-20260312152823954](https://gastigado.cnies.org/d/halo20251012csguide/image-20260312152823954_1773482846917_25.webp)
 
 #### 3.2 管理团队资料和团队代码
 
@@ -482,7 +482,7 @@
 
 团队代码一般用在拉人入组时，直接发给成员即可。
 
-![image-20260312152858508](https://gastigado.cnies.org/d/background/image-20260312152858508.webp)
+![image-20260312152858508](https://gastigado.cnies.org/d/halo20251012csguide/image-20260312152858508_1773482849755_20.webp)
 
 #### 3.3 添加与移除成员
 
@@ -499,13 +499,13 @@
 
 如果只是普通团队管理，通常这两项最常用。
 
-![image-20260312152936313](https://gastigado.cnies.org/d/background/image-20260312152936313.webp)
+![image-20260312152936313](https://gastigado.cnies.org/d/halo20251012csguide/image-20260312152936313_1773482850677_19.webp)
 
 #### 3.4 团队管理员权限边界
 
 团队管理员不只是能看课表，也能处理日常管理。普通成员点击这个按钮设置管理员。
 
-![image-20260312153021800](https://gastigado.cnies.org/d/background/image-20260312153021800.webp)
+![image-20260312153021800](https://gastigado.cnies.org/d/halo20251012csguide/image-20260312153021800_1773482852387_18.webp)
 
 团队管理员可以：
 
@@ -563,7 +563,7 @@
 
 入口：侧边栏 `找空教室`
 
-![image-20260312153118138](https://gastigado.cnies.org/d/background/image-20260312153118138.webp)
+![image-20260312153118138](https://gastigado.cnies.org/d/halo20251012csguide/image-20260312153118138_1773482854645_8.webp)
 
 ### 第一次使用
 
@@ -604,11 +604,11 @@
 - 用卡片视图查看
 - 导出为 CSV / Excel / PDF
 
-![image-20260312153530059](https://gastigado.cnies.org/d/background/image-20260312153530059.webp)
+![image-20260312153530059](https://gastigado.cnies.org/d/halo20251012csguide/image-20260312153530059_1773482856806_99.webp)
 
-![image-20260312153557046](https://gastigado.cnies.org/d/background/image-20260312153557046.webp)
+![image-20260312153557046](https://gastigado.cnies.org/d/halo20251012csguide/image-20260312153557046_1773482860026_68.webp)
 
-![image-20260312153614403](https://gastigado.cnies.org/d/background/image-20260312153614403.webp)
+![image-20260312153614403](https://gastigado.cnies.org/d/halo20251012csguide/image-20260312153614403_1773482861991_74.webp)
 
 ---
 
@@ -618,7 +618,7 @@
 
 个人中心现在把资料、安全信息和登录记录放到了一处。
 
-![image-20260312153739987](https://gastigado.cnies.org/d/background/image-20260312153739987.webp)
+![image-20260312153739987](https://gastigado.cnies.org/d/halo20251012csguide/image-20260312153739987_1773482862265_65.webp)
 
 ### 1. 修改个人资料
 
@@ -642,7 +642,7 @@
 - 上传本地图片
 - 使用预设头像
 
-![image-20260312153805263](https://gastigado.cnies.org/d/background/image-20260312153805263.webp)
+![image-20260312153805263](https://gastigado.cnies.org/d/halo20251012csguide/image-20260312153805263_1773482863408_27.webp)
 
 ### 3. 绑定或更换邮箱
 
