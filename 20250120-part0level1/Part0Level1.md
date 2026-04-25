@@ -1,4 +1,15 @@
-# Part 0 Level 1
+---
+title: Part 0 Level 1：Typora 安装激活与 Markdown 排版笔记
+pubDatetime: 2025-01-20T00:00:00.000+08:00
+slug: part0level1
+tags:
+  - Typora
+  - Markdown
+  - Linux
+  - 排版规范
+category: 技术笔记
+description: Typora 与 Markdown 学习笔记，记录 Linux 下 Typora 安装激活流程、Rust 编译环境、License 生成步骤，以及 Markdown 标题、空格、标点、全角半角和中文排版规范。适合整理写作环境与排版习惯的用户。
+---
 
 ## 通过 NodeInject 和 Yporaject 在 Linux 安装激活 Typora
 

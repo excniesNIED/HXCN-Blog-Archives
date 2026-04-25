@@ -1,4 +1,18 @@
-# Deploying VitePress + Slidev on Cloudflare Pages: The Single-Pages Approach
+---
+title: Deploying VitePress + Slidev on Cloudflare Pages
+pubDatetime: 2026-03-09T00:00:00.000+08:00
+slug: vitepress-slidev-intergration-on-cloudflare-en
+tags:
+  - Cloudflare Pages
+  - VitePress
+  - Slidev
+  - Static Deployment
+  - Vite
+category: 
+  - 配置环境的日常
+  - 踩坑日志
+description: VitePress and Slidev deployment guide for Cloudflare Pages, explaining how to move from local multi-service development to one merged static output, configure build scripts, Slidev base/out paths, route layout, SPA fallbacks, an embed component, and production optimizations. Suitable for docs and course sites.
+---
 
 `VitePress` and `Slidev` make a very nice pair for documentation sites, course websites, and knowledge bases. `VitePress` handles navigation, structure, and prose. `Slidev` handles the presentation layer. Put them together, and you get a site that can serve both as a reading space and a slide library.
 

@@ -1,4 +1,17 @@
-# 在Rocky Linux 8单节点集群上安装Apache Hadoop超详细教程
+---
+title: 在 Rocky Linux 8 单节点集群上安装 Apache Hadoop 超详细教程
+pubDatetime: 2025-10-21T00:00:00.000+08:00
+slug: install-hadoop-on-rokey-8
+tags:
+  - Hadoop
+  - Rocky Linux
+  - HDFS
+  - YARN
+category: 
+  - 配置环境的日常
+  - 折腾Linux的日常
+description: Rocky Linux 8 安装 Apache Hadoop 单节点集群教程，从零讲解 OpenJDK 8、Hadoop 用户、SSH 免密、伪分布式配置、环境变量、防火墙、HDFS/YARN 启动和示例任务测试。适合搭建大数据学习环境的新手。
+---
 
 Apache Hadoop 是一个基于 Java 编写的免费开源软件框架，通过 MapReduce 技术用于实现大数据的分布式存储与处理。它通过将海量数据集分割为大型数据块，并将其分布在集群中的多台计算机上，从而处理超大规模的数据集。
 

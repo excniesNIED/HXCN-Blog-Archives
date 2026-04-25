@@ -1,5 +1,15 @@
 ---
-An Introduction to Algorithms: STL Usage and Time & Space Complexity
+title: An Introduction to Algorithms: STL Usage and Time & Space Complexity
+pubDatetime: 2025-10-15T00:00:00.000+08:00
+slug: algorithm-STL-time-complexity-en
+tags:
+  - Algorithms
+  - C++
+  - STL
+  - Complexity
+  - C
+category: 被算法折磨的日常
+description: Beginner-friendly algorithms and C++ STL guide, covering Big O notation, time and space complexity analysis, stack, queue, vector, sort, string, set, deque, priority_queue, map, nested STL usage, and practice problems. Suitable for competitive programming and C++ learners.
 ---
 
 ## 1. Time & Space Complexity

@@ -1,3 +1,16 @@
+---
+title: 使用 WSL 编译并运行 Webots 的踩坑记录
+pubDatetime: 2024-10-03T18:23:38.000+08:00
+slug: wsl-webots
+tags:
+  - WSL
+  - Webots
+  - Ubuntu
+  - 仿真
+category: 配置环境的日常
+description: WSL 编译运行 Webots 教程，从放弃 Windows MSYS2 编译开始，讲解克隆仓库与子模块、安装 Linux 依赖、处理 PEP 668、配置 emsdk PATH、make 构建 Webots 和运行 WSL GUI 应用。适合在 Windows 上构建 Webots 的用户。
+---
+
 刚开始我在 Windows 使用 MSYS2 MinGW 编译 Webots，但 Win 下涉及依赖和环境变量太多，难以逐一排查；链接库也出现很多问题。遂放弃 MSYS2 编译，转而使用 WSL 编译，参考 [仓库 Wiki 教程](https://github.com/cyberbotics/webots/wiki/Linux-installation/) 通过 WSL GUI 运行 Webots。
 
 ## 仓库克隆和子仓库克隆

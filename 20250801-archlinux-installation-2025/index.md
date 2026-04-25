@@ -1,5 +1,14 @@
 ---
-【2025年】从零开始Archlinux安装和基础配置实录
+title: 2025 年从零开始 Arch Linux 安装和基础配置实录
+pubDatetime: 2025-08-01T00:00:00.000+08:00
+slug: archlinux-installation-2025
+tags:
+  - Arch Linux
+  - Linux
+  - 系统安装
+  - KDE
+category: 技术教程
+description: Arch Linux 安装与基础配置实录，从零记录安装前准备、启动盘制作、联网与分区、Btrfs 挂载、系统安装、引导配置、KDE 桌面和常用应用，并附个人硬件踩坑记录。适合有 Linux 基础、想挑战 Arch 的用户。
 ---
 
 ## 写在前面

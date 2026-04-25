@@ -1,3 +1,16 @@
+---
+title: OpenClaw 迁移 Hermes Agent 教程写作提纲与参考资料
+pubDatetime: 2026-04-17T00:00:00.000+08:00
+slug: openclaw2hermes-migration-architecture
+tags:
+  - AI Agent
+  - OpenClaw
+  - Hermes Agent
+  - 写作提纲
+category: 写作资料
+description: OpenClaw 迁移 Hermes Agent 教程写作提纲，汇总导语、Hermes 介绍、OpenClaw 对比、社区反馈、插图文字和参考语料，并预留迁移操作章节。适合作为小白向 AI Agent 迁移教程的写作素材。
+---
+
 - 我在写一个从Openclaw迁移到Hermas Agents的技术教程，用于面向小白和获取新闻咨询的技术爱好者操作。主要分为四大部分：导语、介绍、对比和操作。
 
   导语+爱马仕介绍+claw与爱马仕对比，前三三部分字数控制在600-1200字左右，帮我给出前三部分到index中。使用 /de-ai-writings 去ai味。第四部分只留一个标题。下面给了很多每个部分的参考语料。最后的迁移不要看，只预留题目。

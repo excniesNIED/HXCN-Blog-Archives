@@ -1,5 +1,14 @@
 ---
-【MkDocs踩坑】MathJax渲染\boldsymbol问题的排查与解决
+title: 【MkDocs踩坑】解决MathJax公式渲染失败问题（以\boldsymbol不生效为例）
+pubDatetime: 2025-07-09T00:00:00.000+08:00
+slug: mkdocs-mathjax-rendering-issue
+tags:
+  - MkDocs
+  - MathJax
+  - LaTeX
+  - HTML
+category: 踩坑日志
+description: MkDocs 中 MathJax 渲染 \boldsymbol 失败的排查教程，从实时重载现象、arithmatex 与 superfences 配置、MathJax 重新渲染、ams 宏包加载竞速，到主题覆盖注入配置逐步定位。适合维护数学文档站的用户。
 ---
 
 ## 问题的初现

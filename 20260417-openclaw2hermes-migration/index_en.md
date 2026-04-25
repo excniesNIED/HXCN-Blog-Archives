@@ -1,4 +1,15 @@
-# Leaving the Lobster Farm: A Step-by-Step Guide to Migrating from OpenClaw to Hermes Agent
+---
+title: Leaving the Lobster Farm: Migrating from OpenClaw to Hermes Agent
+pubDatetime: 2026-04-17T00:00:00.000+08:00
+slug: openclaw2hermes-migration-en
+tags:
+  - AI Agent
+  - OpenClaw
+  - Hermes Agent
+  - Migration
+category: Technical Tutorial
+description: OpenClaw to Hermes Agent migration guide, covering why Hermes is gaining traction, how its harness, memory, and skill system differ from OpenClaw, and the practical setup path for installation, provider configuration, platform binding, and service startup. Suitable for AI agent users moving workflows to Hermes.
+---
 
 ## Why this "horse" is taking off
 

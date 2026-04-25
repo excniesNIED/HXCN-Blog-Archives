@@ -1,5 +1,16 @@
 ---
-2026年最新Windows11下VSCode配置GCC开发C语言环境保姆级教程
+title: 2026 年最新 Windows11 下 VSCode 配置 GCC 开发 C 语言环境保姆级教程
+pubDatetime: 2026-03-23T00:00:00.000+08:00
+slug: vscode-gcc-setup
+tags:
+  - VSCode
+  - GCC
+  - C
+  - MSYS2
+  - Windows
+  - C++
+category: 配置环境的日常
+description: Windows 11 下 VS Code 配置 GCC 开发 C 语言环境教程，从零讲解安装 MSYS2、配置 GCC/GDB 与环境变量、安装 VS Code 和 C/C++ 扩展、编写 tasks/launch/settings 配置，并附 F5 调试流程。适合 C 语言初学者。
 ---
 
 网上关于 VS Code 配 C 语言环境的教程很多，但不少写法要么太旧，还停留在手动装 MinGW；要么太省事，直接让你装一堆插件，最后能跑是能跑，出了问题也不知道该改哪里。

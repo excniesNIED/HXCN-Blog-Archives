@@ -1,4 +1,16 @@
-# Must-Read Before Swapping SIMs: Using ADB to Export and Filter All SMS Messages by Specific SIM Card
+---
+title: Using ADB to Export and Filter SMS Messages by SIM Card
+pubDatetime: 2025-11-11T00:00:00.000+08:00
+slug: sim-message-export-en
+tags:
+  - ADB
+  - Android
+  - SMS Export
+  - SIM Card
+  - Python
+category: 踩坑日志
+description: ADB SMS export tutorial for filtering messages by a specific SIM card, covering USB debugging, Android content provider queries, raw SMS text export, Python parsing into CSV, and spreadsheet filtering with sub_id. Useful before replacing a phone number tied to many accounts.
+---
 
 ## Prequel
 

@@ -1,4 +1,18 @@
-# 时序同笺 (SDNUChronoSync)
+---
+title: 时序同笺 (SDNUChronoSync)
+pubDatetime: 2025-10-12T00:00:00.000+08:00
+slug: chronosync
+tags:
+  - 时序同笺
+  - SDNU
+  - 正方教务
+  - 课表
+  - SDNUChronoSync
+  - 团队协作
+  - Astro
+category: 天空之镜
+description: 一个现代化的响应式多用户课表与日程管理 Web 应用，专为山东师范大学设计。功能包括个人与团队日历视图、ICS 导出以及用于用户和日程管理的管理员权限。A modern, responsive multi-user schedule management web app for SDNU. Features include personal and team calendar views, ICS export, and admin controls for user and schedule management. Built with a Python (FastAPI) backend and a TypeScript (Astro, Vue.js) frontend.
+---
 
 ## 🌐 在线访问
 

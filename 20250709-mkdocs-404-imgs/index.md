@@ -1,5 +1,13 @@
 ---
-【MkDocs踩坑】图片路径问题的排查与解决
+title: 【MkDocs踩坑】图片路径问题的排查与解决
+pubDatetime: 2025-07-09T00:00:00.000+08:00
+slug: mkdocs-404-imgs
+tags:
+  - MkDocs
+  - HTML
+  - Markdown
+category: 技术教程
+description: MkDocs 图片路径 404 排查教程，从现象定位讲解 use_directory_urls、Markdown 图片与 HTML img 标签解析差异、相对路径修正和目录结构调整，并附本地预览与部署路径不一致的解决思路。适合维护技术文档站的用户。
 ---
 
 近期，本人在使用 MkDocs 构建项目文档时，遇到了一个颇为棘手的路径问题。我的 Markdown 文件在本地编辑器 Typora 中显示完全正常，所有图片都能正确加载。然而，通过 `mkdocs serve` 启动本地服务后，网站页面上的一部分图片却无法显示。这个现象引发了我的深入排查。

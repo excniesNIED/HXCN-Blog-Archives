@@ -1,4 +1,18 @@
-# Cloudflare Pages 部署 VitePress + Slidev：单 Pages 方案
+---
+title: Cloudflare Pages 部署 VitePress + Slidev：单 Pages 方案
+pubDatetime: 2026-03-09T00:00:00.000+08:00
+slug: vitepress-slidev-intergration-on-cloudflare
+tags:
+  - Cloudflare Pages
+  - VitePress
+  - Slidev
+  - 静态部署
+  - Vite
+category: 
+  - 配置环境的日常
+  - 踩坑日志
+description: Cloudflare Pages 部署 VitePress + Slidev 教程，从本地多服务开发到生产单 Pages 合并产物，讲解构建脚本、Slidev base/out、路由组织、SPA fallback、嵌入组件和生产优化。适合文档站与课件站一体化部署。
+---
 
 `VitePress` 和 `Slidev` 这对组合，用来做课程站、文档站或者社团知识库，体验其实很好。`VitePress` 负责目录、导航和正文，`Slidev` 负责演示文稿，两边各做各的，本地开发时再嵌到一起，基本就能把“文档 + 课件”这一类站点搭起来。
 

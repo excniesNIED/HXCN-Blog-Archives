@@ -1,4 +1,15 @@
-# 从 OpenClaw 迁移到 Hermes Agent 保姆级教程
+---
+title: 从 OpenClaw 迁移到 Hermes Agent 保姆级教程
+pubDatetime: 2026-04-17T00:00:00.000+08:00
+slug: openclaw2hermes-migration-cc-4-7
+tags:
+  - AI Agent
+  - OpenClaw
+  - Hermes Agent
+  - 迁移
+category: 技术教程
+description: OpenClaw 迁移 Hermes Agent 教程改写稿，从 Hermes 爆火背景、Harness 概念、技能与记忆机制、OpenClaw 稳定性和安全问题对比入手，并预留迁移操作步骤。适合了解 AI Agent 迁移思路的技术爱好者。
+---
 
 ## 导语
 

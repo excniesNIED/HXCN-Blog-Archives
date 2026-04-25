@@ -1,4 +1,16 @@
-# How to Set Up FlashInbox on Cloudflare for a Private Temp Mail Service
+---
+title: How to Set Up FlashInbox on Cloudflare for a Private Temp Mail Service
+pubDatetime: 2026-03-13T00:00:00.000+08:00
+slug: build-flashinbox-en
+tags:
+  - Cloudflare
+  - Temporary Email
+  - Workers
+  - D1
+  - Mail
+category: 配置环境的日常
+description: FlashInbox deployment guide for a private temporary email service on Cloudflare, covering Workers, Email Routing, D1, Turnstile, domain routing, secrets, the inbound mail worker, scheduled cleanup, and common delivery checks. Suitable for users who want a self-managed temp inbox.
+---
 
 This guide walks through deploying `FlashInbox` on Cloudflare as a self-managed temporary email service.
 

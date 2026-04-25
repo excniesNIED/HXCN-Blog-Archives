@@ -1,4 +1,14 @@
-# Migrating Visual Studio Code Settings and Extensions to VSCodium
+---
+title: Migrating Visual Studio Code Settings and Extensions to VSCodium
+pubDatetime: 2025-10-15T00:00:00.000+08:00
+slug: vscodium-migrate-en
+tags:
+  - VSCodium
+  - VS Code
+  - Open Source
+category: 配置环境的日常
+description: VS Code to VSCodium migration guide, covering VSCodium installation, extension migration, settings and keybinding paths, extension gallery configuration, Microsoft Marketplace caveats, and open-source Remote WSL/SSH alternatives. Suitable for developers who want a FLOSS editor build without telemetry.
+---
 
 Visual Studio Code (hereinafter referred to as VS Code) is undoubtedly one of the most widely used code editors today. Although the source code of Microsoft's VS Code is open-sourced under the MIT License (meaning the core code is transparent), the final user license agreement (EULA) of the "Visual Studio Code" client that users actually download and use is **not a Free and Open Source Software (Non-FLOSS)** license**, and it includes a "telemetry" feature built-in. Microsoft clearly states in the license:
 

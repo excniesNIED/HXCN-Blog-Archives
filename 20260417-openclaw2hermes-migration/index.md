@@ -1,4 +1,18 @@
-# 龙虾跑路指南：从 OpenClaw 迁移到 Hermes Agent 保姆级教程
+---
+title: 龙虾跑路指南：从 OpenClaw 迁移到 Hermes Agent 保姆级教程
+pubDatetime: 2026-04-17T00:00:00.000+08:00
+slug: openclaw2hermes-migration
+tags:
+  - AI Agent
+  - OpenClaw
+  - Hermes Agent
+  - Harness Engineering
+  - macOS
+category: 
+  - 配置环境的日常
+  - 折腾Linux的日常
+description: OpenClaw 迁移到 Hermes Agent 保姆级教程，从趋势背景讲解 Hermes 的记忆与技能机制、OpenClaw 与 Hermes 的稳定性和安全差异、安装 Hermes、迁移配置、接入模型提供商和飞书机器人。适合想从 OpenClaw 平滑迁移的 AI Agent 用户。
+---
 
 ## 这匹「马」为什么火了
 

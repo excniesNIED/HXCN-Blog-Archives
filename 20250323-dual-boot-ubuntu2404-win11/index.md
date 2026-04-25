@@ -1,3 +1,16 @@
+---
+title: 从零开始：2026年Ubuntu 24.04 LTS + Win11双系统安装教程
+pubDatetime: 2025-03-23T00:00:00.000+08:00
+slug: dual-boot-ubuntu2404-win11
+tags:
+  - Ubuntu
+  - Windows 11
+  - 双系统
+  - Linux
+category: 折腾Linux的日常
+description: Ubuntu 24.04 LTS 与 Windows 11 双系统安装教程，从零讲解关闭设备加密、BitLocker、快速启动和 Windows 更新，使用 Ventoy 制作启动盘，BIOS 安全启动与 VMD 设置，Ubuntu 安装、分区和启动切换。适合新手搭建 Linux 开发环境。
+---
+
 Linux 是开源操作系统内核，广泛用于服务器和开发环境。Ubuntu 是一个基于 Linux 的开源操作系统，以用户友好和稳定性著称。Ubuntu 以高安全性著称，漏洞少，权限管理严格。相较于 Windows 系统它的稳定性和性能优异，适合各种硬件。
 
 对于开发者而言，Ubuntu 预装了众多开发工具，如 GCC 编译器和 Python 解释器，方便快速上手。POSIX 兼容环境的重要性再怎么强调都不为过。当您在 Windows 上为 CRLF 换行符导致的构建错误抓狂时，Git 在 Ubuntu 中会自然地保持 LF 格式的纯粹性；当您需要编译 Rust crate 时，不必在 MSVC 和 MinGW 之间做两难选择。

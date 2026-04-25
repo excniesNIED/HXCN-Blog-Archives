@@ -1,4 +1,15 @@
-# 安装前的准备工作
+---
+title: Ubuntu 22.04 LTS 与 Windows 11 双系统安装教程
+pubDatetime: 2024-06-05T00:00:00.000+08:00
+slug: dual-boot-ubuntu-2204-and-windows-11-full
+tags:
+  - Ubuntu
+  - Windows 11
+  - 双系统
+  - Linux
+category: 技术教程
+description: Ubuntu 22.04 LTS 与 Windows 11 双系统安装完整稿，从 BIOS 模式和 GPT 检查、BitLocker 处理、快速启动关闭、启动盘制作、磁盘分区、U 盘引导、Ubuntu 安装到 Windows/Ubuntu 切换逐步说明。适合需要保留 Windows 的 Linux 新手。
+---
 
 ## 确认 BIOS 模式和磁盘分区表类型
 

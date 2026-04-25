@@ -1,5 +1,15 @@
 ---
-Windows系统Anaconda/Miniconda的安装、配置、基础使用、清理缓存空间和Pycharm/VSCode配置指南
+title: Conda配置完全指南：Windows系统Anaconda/Miniconda的安装、配置、基础使用、清理缓存空间和Pycharm/VSCode配置指南
+pubDatetime: 2025-05-13T00:00:00.000+08:00
+slug: conda-win
+tags:
+  - Conda
+  - Anaconda
+  - VSCodium
+  - Python
+  - Pycharm
+category: 配置环境的日常
+description: Windows 系统 Anaconda 与 Miniconda 配置教程，从零讲解 conda 与 venv 区别、下载安装、环境变量、conda init、PowerShell 执行策略、虚拟环境创建、缓存清理、镜像源和 PyCharm/VS Code 配置。适合 Python 科研与开发新手。
 ---
 
 Conda 是一个开源的跨平台**包管理与环境管理工具**，广泛应用于数据科学、机器学习及 Python 开发领域。它不仅能帮助用户快速安装、更新和卸载第三方库，还能创建相互**隔离的虚拟环境，解决不同项目之间的依赖冲突**问题。例如，项目 A 依赖 Python 3.7 和 NumPy 1.0，而项目 B 需要 Python 3.10 和 NumPy 2.0，通过 conda 可分别创建独立环境，避免版本冲突。此外，conda 不仅支持 Python 包，还能管理 R、C/C++ 等非 Python 依赖，极大提升了跨语言开发的便捷性。

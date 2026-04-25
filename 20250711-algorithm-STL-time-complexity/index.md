@@ -1,5 +1,15 @@
 ---
-算法入门：STL用法与时空复杂度
+title: 算法入门：STL 用法与时空复杂度
+pubDatetime: 2025-07-11T00:00:00.000+08:00
+slug: algorithm-STL-time-complexity
+tags:
+  - 算法
+  - C++
+  - STL
+  - 时空复杂度
+  - C
+category: 被算法折磨的日常
+description: 算法入门与 C++ STL 教程，从时间复杂度、空间复杂度和 Big O 分析讲起，逐步介绍 stack、queue、vector、sort、string、set、deque、priority_queue、map 等容器与算法，并附练习题。适合算法竞赛和 C++ 初学者。
 ---
 
 ## 1. 时空复杂度 (Time & Space Complexity)

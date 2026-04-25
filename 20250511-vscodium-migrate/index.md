@@ -1,5 +1,14 @@
 ---
-迁移 Visual Studio Code 设置和扩展到 VSCodium
+title: 迁移 Visual Studio Code 设置和扩展到 VSCodium
+pubDatetime: 2025-05-11T00:00:00.000+08:00
+slug: vscodium-migrate
+tags:
+  - VSCodium
+  - VS Code
+  - 开源软件
+  - 远程开发
+category: 技术教程
+description: VS Code 迁移到 VSCodium 教程，从零讲解安装 VSCodium、迁移扩展与 settings/keybindings、配置 Open VSX 或 Microsoft Marketplace，并附远程开发扩展受限的替代方案。适合关注开源许可和遥测隐私的开发者。
 ---
 
 Visual Studio Code（以下简称 VS Code）无疑是当下最常用的代码编辑器。尽管微软的 VS Code 源代码采用 MIT 协议开源（意味着核心代码是开放透明的），但用户实际下载使用的「Visual Studio Code」客户端，其最终用户许可协议（EULA）**并非自由开源软件（Non-FLOSS）许可**，且内置了“遥测追踪”功能。微软在协议中直白写道：

@@ -1,3 +1,16 @@
+---
+title: 从零开始安装 Windows 11 和 Ubuntu 22.04 双系统
+pubDatetime: 2024-06-05T00:00:00.000+08:00
+slug: dual-boot-ubuntu-2204-and-windows-11
+tags:
+  - Ubuntu
+  - Windows 11
+  - 双系统
+  - Linux
+category: 折腾Linux的日常
+description: Ubuntu 22.04 LTS 与 Windows 11 双系统安装教程，从零讲解安装前准备、关闭 BitLocker 与快速启动、下载镜像、制作启动盘、磁盘分区、BIOS 启动、安全启动、Ubuntu 安装和系统切换，并附引导与时间问题参考。适合新手搭建 Linux 开发环境。
+---
+
 ## 安装前的准备工作
 
 ### 确认 BIOS 模式和磁盘分区表类型

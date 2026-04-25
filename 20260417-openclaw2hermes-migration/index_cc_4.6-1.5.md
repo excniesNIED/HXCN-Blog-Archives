@@ -1,4 +1,15 @@
-# 龙虾跑路指南：从 OpenClaw 迁移到 Hermes Agent
+---
+title: 龙虾跑路指南：从 OpenClaw 迁移到 Hermes Agent
+pubDatetime: 2026-04-17T00:00:00.000+08:00
+slug: openclaw2hermes-migration-cc-4-6-1-5
+tags:
+  - AI Agent
+  - OpenClaw
+  - Hermes Agent
+  - 长程任务
+category: 技术教程
+description: OpenClaw 迁移 Hermes Agent 深度对比稿，从 Hermes 增长、Harness Engineering、自进化技能、分层记忆和本地数据主权讲起，对比 OpenClaw 的 token 成本、长程任务、安全风险和迁移路径。适合评估 Agent 工具替换的人群。
+---
 
 ## 最近这匹「马」为什么火了
 

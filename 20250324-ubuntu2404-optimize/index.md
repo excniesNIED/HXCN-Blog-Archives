@@ -1,5 +1,13 @@
 ---
-Ubuntu24.04新机配置指南：从常用软件安装到使用技巧全攻略
+title: Ubuntu 24.04 新机配置指南：从常用软件安装到使用技巧全攻略
+pubDatetime: 2025-03-24T00:00:00.000+08:00
+slug: ubuntu2404-optimize
+tags:
+  - Ubuntu
+  - Linux
+  - 系统优化
+category: 折腾Linux的日常
+description: Ubuntu 24.04 新机配置与优化指南，从终端补全和粘贴、显示设置、英文目录、软件源、AppImage、输入法、开发环境、包管理器、办公软件、浏览器、文件管理、虚拟机到常见应用安装逐步整理。适合装完 Ubuntu 后快速搭建工作环境。
 ---
 
 之前本人完成了 [Ubuntu 24.04 与 Windows 11 双系统的安装](https://hs.cnies.org/archives/dual-boot-ubuntu2404-win11)。本指南将手把手教你完成新系统部署后的关键配置，涵盖：系统级优化、Linux 生态必备工具链配置、跨平台生产力工具选型，助你打造媲美 Windows 的高效工作环境。

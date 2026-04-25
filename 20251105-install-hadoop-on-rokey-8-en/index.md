@@ -1,4 +1,18 @@
-# Apache Hadoop Single Node Installation on Rocky Linux 8: Complete Step-by-Step Tutorial
+---
+title: Apache Hadoop Single Node Installation on Rocky Linux 8
+pubDatetime: 2025-11-05T00:00:00.000+08:00
+slug: install-hadoop-on-rokey-8-en
+tags:
+  - MapReduce
+  - Yarn
+  - HDFS
+  - RHEL
+  - Hadoop
+  - RokeyLinux
+  - Linux
+category: 配置环境的日常
+description: Apache Hadoop single-node setup tutorial for Rocky Linux 8, covering OpenJDK 8, dedicated Hadoop user creation, passwordless SSH, pseudo-distributed configuration, firewall setup, HDFS/YARN startup, and MapReduce testing. Suitable for beginners building a local big data lab.
+---
 
 Apache Hadoop is a free and open-source software framework written in Java. It is designed for the distributed storage and processing of big data using the MapReduce programming model. The framework processes massive datasets by splitting them into large blocks and distributing them across multiple computers in a cluster.
 

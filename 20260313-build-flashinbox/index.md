@@ -1,4 +1,16 @@
-# 我用 Cloudflare 搭了一个 FlashInbox 临时邮箱
+---
+title: 我用 Cloudflare 搭了一个 FlashInbox 临时邮箱
+pubDatetime: 2026-03-13T00:00:00.000+08:00
+slug: build-flashinbox
+tags:
+  - Cloudflare
+  - 临时邮箱
+  - Workers
+  - D1
+  - 邮箱
+category: 配置环境的日常
+description: FlashInbox 私有临时邮箱部署教程，从零讲解 Cloudflare Workers、Email Routing、D1、Turnstile、域名路由、Secrets、邮件 Worker 和定时任务配置，并附常见收不到信的排查思路。适合想自建临时邮箱服务的用户。
+---
 
 我一直觉得，临时邮箱这种东西，能自己掌握还是自己掌握比较踏实。公共服务不是不能用，而是你用的时候总要多留个心眼：域名不是你的，地址不是你的，哪天规则变了、站点没了，或者数据清了，你也没什么办法。
 

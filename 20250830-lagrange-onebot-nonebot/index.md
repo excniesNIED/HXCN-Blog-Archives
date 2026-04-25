@@ -1,4 +1,15 @@
-# Lagrange.OneBot+NoneBot搭建QQ机器人详细指南
+---
+title: Lagrange.OneBot + NoneBot 搭建 QQ 机器人详细指南
+pubDatetime: 2025-08-30T00:00:00.000+08:00
+slug: lagrange-onebot-nonebot
+tags:
+  - 聊天机器人
+  - NoneBot
+  - Lagrange
+  - OneBot
+category: 配置环境的日常
+description: Lagrange.OneBot 与 NoneBot QQ 机器人部署教程，从零讲解 Debian 12 环境准备、Lagrange 协议层部署、NoneBot 项目创建、systemd 后台运行和端口调整，并附登录验证与连接排错。适合想自建 QQ 机器人服务的新手。
+---
 
 Lagrange.Core 是基于 NTQQ 协议的纯 C# 实现，可为 QQ 账号提供协议层支持；NoneBot 则是一款跨平台的 Python 异步聊天机器人框架，具备高扩展性和易用性。本文将详细介绍如何在 Debian 12 系统上部署一套基于 Lagrange.OneBot 协议的 NoneBot QQ 机器人。
 

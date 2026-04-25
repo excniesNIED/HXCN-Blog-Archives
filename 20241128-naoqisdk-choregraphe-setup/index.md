@@ -1,4 +1,17 @@
-# 从零配置 Choregraphe 和 NAOqi SDK
+---
+title: 从零配置 Choregraphe 和 NAOqi SDK
+pubDatetime: 2024-11-28T00:00:00.000+08:00
+slug: naoqisdk-choregraphe-setup
+tags:
+  - NAO
+  - NAOqi SDK
+  - Choregraphe
+  - Python 2.7
+  - Python
+  - Pycharm
+category: 技术教程
+description: Choregraphe 和 NAOqi SDK 环境配置教程，从零讲解安装 Python 2.7、配置环境变量、下载并设置 NAOqi SDK、在 PyCharm 中添加解释器、运行 ALProxy 测试和安装 Choregraphe 连接 NAO 机器人。适合机器人竞赛和 NAO 开发新手。
+---
 
 本教程适用于 **NAO 机器人连接、Choregraphe 安装、NAOqi SDK 配置** 等环境搭建内容，主要面向初学者完成比赛和开发前的基础配置。本文以 Windows 系统为例，Linux 系统配置思路同理。想要安装 Linux 双系统或者虚拟机请阅读下面教程：
 
@@ -105,4 +118,3 @@ Windows 下载安装版即可，Linux 可以根据需求下载安装脚本或者
 点击”连接” - “连接至”，输入机器人 IP 地址以连接。
 
 ![image.png](https://gastigado.cnies.org/d/halo20241128-naoqisdk-choregraphe-setup/image%209.webp)
-

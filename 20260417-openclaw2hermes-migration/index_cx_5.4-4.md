@@ -1,4 +1,15 @@
-# 从 OpenClaw 迁移到 Hermes Agent
+---
+title: 从 OpenClaw 迁移到 Hermes Agent
+pubDatetime: 2026-04-17T00:00:00.000+08:00
+slug: openclaw2hermes-migration-cx-5-4-4
+tags:
+  - AI Agent
+  - OpenClaw
+  - Hermes Agent
+  - 个人助理
+category: 技术教程
+description: OpenClaw 迁移 Hermes Agent 介绍稿，从 Hermes 在开发者社区走红讲起，说明个人 Agent 的长期记忆、技能积累、本地优先部署和 OpenClaw 维护成本差异，并预留迁移操作。适合关注个人 AI 助理的用户。
+---
 
 ## 导语
 

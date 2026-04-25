@@ -1,4 +1,16 @@
-# 更换SIM卡前必看：如何使用ADB导出并筛选指定SIM卡的全部短信
+---
+title: 换SIM卡不知道绑定了哪些账号？ADB+Python筛选双卡短信，搞定验证码换绑
+pubDatetime: 2025-11-11T00:00:00.000+08:00
+slug: sim-message-export
+tags:
+  - ADB
+  - Android
+  - 短信导出
+  - SIM卡
+  - Python
+category: 技术教程
+description: ADB 导出并筛选指定 SIM 卡短信教程，从换卡前账号排查场景出发，讲解开启 USB 调试、content query 导出短信、用 Python 将 key=value 文本结构化为 CSV、按 sub_id 在 Excel 中筛选，并附双卡短信整理思路。适合更换手机号前排查绑定账号。
+---
 
 ## 前情提要
 

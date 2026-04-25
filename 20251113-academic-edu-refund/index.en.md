@@ -1,4 +1,15 @@
-# The Refund Battle with Academia.edu: A True Account of Fighting for an $89 Annual Fee
+---
+title: How I Fought Academia.edu for an $89 Annual Subscription Refund
+pubDatetime: 2025-11-13T00:00:00.000+08:00
+slug: academic-edu-refund-en
+tags:
+  - Academia.edu
+  - PayPal
+  - Auto Renewal
+  - Consumer Dispute
+category: 踩坑日志
+description: Academia.edu refund dispute account, covering a $1 paper download, an unexpected $89 annual renewal, cancellation of auto-renewal, support emails, ticket escalation, refund-policy arguments, PayPal chargeback threats, BBB/FTC complaint pressure, and the final refund outcome. Useful for students and researchers facing subscription charges.
+---
 
 The story began on September 6, 2025. At the time, I was participating in the CUMCM (Contemporary Undergraduate Mathematical Contest in Modeling). To find reference materials, I paid &dollar;1 through the Academia.edu platform to download two crucial papers. Little did I realize that this seemingly routine transaction would sow the seeds for a storm brewing just one month later.
 
