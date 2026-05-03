@@ -5,7 +5,7 @@ slug: mimo-orbit-100t-application
 tags:
   - Xiaomi MiMo
   - AI Agent
-category: 技术教程
+category: 踩坑日志
 description: 手把手带你拿下 Xiaomi MiMo Orbit 百万亿 Token 计划：从注册、表单填写、小作文撰写到额外 2 亿 Token 的隐藏玩法，附 mimo-v2.5 与 DeepSeek、MiniMax 的速度横评。
 ---
 
@@ -120,19 +120,9 @@ Explain the concept of "quantum entanglement" to a high school student, includin
 Discuss the primary ethical challenges posed by the rapid development of autonomous vehicles.
 Write a short story about a sentient AI that discovers a hidden message within the internet's oldest data archives.
 ```
-<table>
-  <!-- 一行两列 -->
-  <tr>
-    <td>
-      <img src="https://gastigado.cnies.org/d/20260503_mimo_orbit_100t_application/image-20260503185437951.webp" alt="mimo-v2.5-pro">
-      <p>Mimo-V2.5 Pro 速度测试</p>
-    </td>
-    <td>
-      <img src="https://gastigado.cnies.org/d/20260503_mimo_orbit_100t_application/image-20260503182721147.webp" alt="mimo-v2.5">
-      <p>Mimo-V2.5 速度测试</p>
-    </td>
-  </tr>
-</table>
+| <img src="https://gastigado.cnies.org/d/20260503_mimo_orbit_100t_application/image-20260503185437951.webp" alt="mimo-v2.5-pro"><br/>      Mimo-V2.5 Pro 速度测试 | <img src="https://gastigado.cnies.org/d/20260503_mimo_orbit_100t_application/image-20260503185437951.webp" alt="mimo-v2.5-pro"><br/>Mimo-V2.5 Pro 速度测试 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+
 
 消耗情况如下：
 
@@ -142,7 +132,9 @@ Write a short story about a sentient AI that discovers a hidden message within t
 
 再对比一下 DeepSeek V4 Pro、DeepSeek V4 Flash、MiniMax M2.7（Token Plan Starter）：
 
-<table>   <!-- 第1行 -->   <tr>     <td>       <img src="https://gastigado.cnies.org/d/20260503_mimo_orbit_100t_application/image-20260503183426075.webp" alt="DeepSeek V4 Pro 速度测试">       <p>DeepSeek V4 Pro 速度测试</p>     </td>     <td>       <img src="https://gastigado.cnies.org/d/20260503_mimo_orbit_100t_application/image-20260503183635327.webp" alt="DeepSeek V4 Flash 速度测试">       <p>DeepSeek V4 Flash 速度测试</p>     </td>   </tr>    <!-- 第2行 -->   <tr>     <td>       <img src="https://gastigado.cnies.org/d/20260503_mimo_orbit_100t_application/image-20260503183924142.webp" alt="DeepSeek V4 测试费用消耗情况">       <p>DeepSeek V4 测试费用消耗情况</p>     </td>     <td>       <img src="https://gastigado.cnies.org/d/20260503_mimo_orbit_100t_application/image-20260503184658877.webp" alt="MiniMax M2.7（Token Plan Starter） 速度测试">       <p>MiniMax M2.7（Token Plan Starter） 速度测试</p>     </td>   </tr> </table>
+| <img src="https://gastigado.cnies.org/d/20260503_mimo_orbit_100t_application/image-20260503183426075.webp" alt="DeepSeek V4 Pro 速度测试">       DeepSeek V4 Pro 速度测试 | <img src="https://gastigado.cnies.org/d/20260503_mimo_orbit_100t_application/image-20260503183635327.webp" alt="DeepSeek V4 Flash 速度测试">       DeepSeek V4 Flash 速度测试 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| <img src="https://gastigado.cnies.org/d/20260503_mimo_orbit_100t_application/image-20260503183924142.webp" alt="DeepSeek V4 测试费用消耗情况">       <br/>DeepSeek V4 测试费用消耗情况 | <img src="https://gastigado.cnies.org/d/20260503_mimo_orbit_100t_application/image-20260503184658877.webp" alt="MiniMax M2.7（Token Plan Starter） 速度测试">       <br/>MiniMax M2.7（Token Plan Starter） 速度测试 |
 
 汇总到一张表里看：
 
