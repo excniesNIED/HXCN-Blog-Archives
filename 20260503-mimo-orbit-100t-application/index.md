@@ -1,6 +1,6 @@
 ---
 title: Xiaomi MiMo Orbit 百亿 Token 计划申请保姆级教程
-pubDatetime: 2026-05-03T00:00:00.000+08:00
+pubDatetime: 2026-05-03T20:00:00.000+08:00
 slug: mimo-orbit-100t-application
 tags:
   - Xiaomi MiMo
