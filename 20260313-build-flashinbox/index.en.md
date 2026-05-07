@@ -16,6 +16,8 @@ This guide walks through deploying `FlashInbox` on Cloudflare as a self-managed 
 
 `FlashInbox` is built around a simple stack: `Next.js` for the web app, Cloudflare Workers for runtime, Cloudflare Email Routing for inbound mail, and `D1` for storage. It is designed for temporary inboxes, not for full-featured email hosting.
 
+Online demo: [https://flashinbox.hxcn.top](https://flashinbox.hxcn.top) — you can open it to see the deployed result.
+
 Repository: `https://github.com/CtelSpecu/FlashInbox`
 
 By the end of this guide, the deployment should provide:

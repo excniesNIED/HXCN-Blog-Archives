@@ -16,6 +16,8 @@ description: FlashInbox 私有临时邮箱部署教程，从零讲解 Cloudflare
 
 刚好 `FlashInbox` 这套项目走的又是我比较喜欢的路线：前端 `Next.js`，部署在 Cloudflare Workers，收信靠 Cloudflare Email Routing，数据放进 `D1`。不需要自己折腾一整套传统邮件服务，成本和复杂度都低不少。
 
+在线演示地址：[https://flashinbox.hxcn.top](https://flashinbox.hxcn.top)，可以先打开看看部署好的效果。
+
 项目仓库在这里：`https://github.com/CtelSpecu/FlashInbox`
 
 我这次就是把它从仓库拉下来，按自己的域名和 Cloudflare 环境跑了一遍。装完之后，手里会有一套自己的临时邮箱服务：能匿名创建地址，能收邮件，能认领邮箱拿 Key，也能靠 `username + key` 把邮箱找回来。默认 Key 有效期是 15 天，拿来收验证码、接通知、做注册测试都挺顺手。
