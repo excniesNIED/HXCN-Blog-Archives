@@ -276,3 +276,133 @@ hermes model
 ![image-20260418152012768](https://gastigado.cnies.org/d/20260418_openclaw2hermes_migration/image-20260418152012768.webp)
 
 终端提示 `Default model set to: MiniMax-M2.7 (via MiniMax (China))`，模型设置完成。
+
+## 常见问题
+
+### Hermes 无法迁移 OpenClaw 的其他 workspace 怎么办
+
+执行 `hermes claw migrate --dry-run` 时，可能会看到 `workspace-agents  No workspace target was provided` 这类提示，并且某些自定义 workspace 没有被识别：
+
+```bash
+user@Mac ~ % hermes claw migrate --dry-run
+
+┌─────────────────────────────────────────────────────────┐
+│          ⚕ Hermes — OpenClaw Migration                 │
+└─────────────────────────────────────────────────────────┘
+
+
+◆ Migration Settings
+  Source:      /Users/user/.openclaw
+  Target:      /Users/user/.hermes
+  Preset:      full
+  Overwrite:   no (skip conflicts)
+  Secrets:     yes (allowlisted only)
+
+
+✗ Hermes gateway is running with active connections: feishu
+  Migrating bot tokens while the gateway is active will cause conflicts (Telegram, Discord, and Slack only allow one active session per token).
+  Recommendation: stop the gateway first with 'hermes stop'.
+
+Continue anyway? [y/N]: y
+
+
+◆ Migration Preview — 7 item(s) would be imported
+  No changes have been made yet. Review the list below:
+
+
+◆ Dry Run Results
+  No files were modified. This is a preview of what would happen.
+
+  ✓ Would migrate:
+      user-profile           → ~/.hermes/memories/USER.md
+      daily-memory           → ~/.hermes/memories/MEMORY.md
+      agent-config           → config.yaml agent/compression/terminal
+      env-var                → .env HERMES_GATEWAY_TOKEN
+      env-var                → .env ARK_API_KEY
+      env-var                → .env UNICOM_CLOUD_API_KEY
+      env-var                → .env MINIMAX_PORTAL_API_KEY
+
+  ⚠ Conflicts (skipped — use --overwrite to force):
+      soul                    Target exists and overwrite is disabled
+      provider-keys           Destination .env already has different values
+      model-config            Model already set and overwrite is disabled
+      shared-skills           Destination skill already exists
+      ......
+      personal-skills         Destination skill already exists
+      full-providers          Provider 'ark' already exists
+      full-providers          Provider 'unicom-cloud' already exists
+      full-providers          Provider 'minimax-portal' already exists
+
+  ─ Skipped:
+      workspace-agents        No workspace target was provided
+      memory                  Source file not found
+      ......
+
+  Summary: 7 would migrate, 157 conflict(s), 23 skipped
+
+  To execute the migration, run without --dry-run:
+    hermes claw migrate --preset full
+user@Mac ~ % ls .openclaw
+agents                  extensions              openclaw.json.bak.2     update-check.json
+browser                 identity                openclaw.json.bak.3     wechat-access-guid
+canvas                  logs                    openclaw.json.bak.4     workspace
+completions             media                   openclaw_副本.json      workspace-project-a
+cron                    memory                  qqbot                   workspace-project-b
+delivery-queue          openclaw.json           skills
+devices                 openclaw.json.bak       subagents
+exec-approvals.json     openclaw.json.bak.1     tasks
+```
+
+在 Hermes 官方的迁移逻辑中，`hermes claw migrate` 默认只会查找标准的 `workspace/` 或 `workspace-main/` 路径。由于 OpenClaw 的多 Agent 架构会将不同的工作区存储在类似 `workspace-project-a` 或 `workspace-project-b` 这样的独立目录下，迁移工具在没有明确指引时会跳过这些「非标」路径（即上面看到的 `workspace-agents No workspace target was provided`）。
+
+要迁移这些额外的 workspace，需要采取**分步指定目标**或**手动补齐**的策略。
+
+#### 方法一：使用 `--workspace-target` 参数（推荐）
+
+Hermes 提供了一个专门的参数来解决 workspace 路径匹配问题。可以针对每个特定的 workspace 运行一次迁移命令，并手动指定其目标位置：
+
+```bash
+# 迁移 workspace-project-a 到指定的 Hermes 目录
+hermes claw migrate --preset full \
+  --source ~/.openclaw/workspace-project-a \
+  --workspace-target ~/.hermes/workspaces/project-a
+```
+
+> **注意**：如果该 workspace 中包含 API Key（`.env` 文件），请记得带上 `--migrate-secrets` 标志。
+
+#### 方法二：手动搬运关键文件（最稳妥的办法）
+
+由于 Hermes 的核心架构（如 `SOUL.md` 和 `MEMORY.md`）与 OpenClaw 高度兼容，如果自动化工具识别不到，手动复制通常是最快的。
+
+对于上面列出的 `workspace-project-a` 等目录，手动迁移路径如下：
+
+| OpenClaw 源文件（每个 workspace 下） | Hermes 目标路径 | 说明 |
+| --- | --- | --- |
+| `SOUL.md` | `~/.hermes/memories/SOUL_{name}.md` | 代理的人格定义 |
+| `MEMORY.md` | `~/.hermes/memories/MEMORY.md`（追加） | 长期记忆（建议合并） |
+| `USER.md` | `~/.hermes/memories/USER.md` | 用户画像信息 |
+| `skills/` | `~/.hermes/skills/` | 自定义技能脚本 |
+
+操作建议：
+
+1. **合并记忆**：将不同 workspace 下的 `MEMORY.md` 内容复制并粘贴到 `~/.hermes/memories/MEMORY.md` 中。Hermes 在启动时会自动对内容进行语义去重。
+2. **迁移技能**：直接将 `.openclaw/skills` 下的文件夹拷贝到 `.hermes/skills` 下。
+
+#### 方法三：处理冲突（Conflicts）
+
+在前面的 Dry Run 中，出现了大量的 `Conflict (skipped)`，这是因为 `.hermes` 目录下已经存在同名文件。如果确定要以 OpenClaw 的配置为准（覆盖现有的 Hermes 配置），请在命令中加入 `--overwrite`：
+
+```bash
+hermes claw migrate --preset full --overwrite --migrate-secrets
+```
+
+#### 推荐操作流
+
+1. **停止 Gateway**：先运行 `hermes stop`，避免出现 feishu 连接冲突。
+2. **全量强制迁移一次**：
+
+   ```bash
+   hermes claw migrate --preset full --overwrite --migrate-secrets
+   ```
+
+3. **针对特殊 workspace 补录**：手动将 `workspace-project-a` 和 `workspace-project-b` 里的 `SOUL.md` 或 `AGENTS.md` 内容补充到 Hermes 的相应配置文件或 `memories` 文件夹中。
