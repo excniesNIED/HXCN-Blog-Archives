@@ -237,20 +237,6 @@ hermes chat
 hermes setup
 ```
 
-如果对话时出现 `API call failed (attempt 1/3): AuthenticationError [HTTP 401]` 报错：
-
-![image-20260418152644914](https://gastigado.cnies.org/d/20260418_openclaw2hermes_migration/image-20260418152644914.webp)
-
-原因可能是此前使用了 Clawx 等第三方 OpenClaw 客户端。这类客户端并不会把 API Key 明文存入 OpenClaw 的配置文件，因此迁移时无法读取到密钥。使用下面的命令编辑环境变量文件：
-
-```bash
-vim ~/.hermes/.env
-```
-
-以本人订阅的火山引擎编码计划为例，对应的环境变量是 `ARK_API_KEY`。核对后发现该值确实为空，填入正确的 Key 即可：
-
-![image-20260418153204888](https://gastigado.cnies.org/d/20260418_openclaw2hermes_migration/image-20260418153204888.webp)
-
 ### 6. 设置多个模型提供商
 
 新开一个干净的终端窗口（Terminal 或 iTerm2 均可），输入以下命令并回车：
@@ -278,6 +264,22 @@ hermes model
 终端提示 `Default model set to: MiniMax-M2.7 (via MiniMax (China))`，模型设置完成。
 
 ## 常见问题
+
+### 对话时出现 `AuthenticationError [HTTP 401]` 报错怎么办
+
+如果对话时出现 `API call failed (attempt 1/3): AuthenticationError [HTTP 401]` 报错：
+
+![image-20260418152644914](https://gastigado.cnies.org/d/20260418_openclaw2hermes_migration/image-20260418152644914.webp)
+
+原因可能是此前使用了 Clawx 等第三方 OpenClaw 客户端。这类客户端并不会把 API Key 明文存入 OpenClaw 的配置文件，因此迁移时无法读取到密钥。使用下面的命令编辑环境变量文件：
+
+```bash
+vim ~/.hermes/.env
+```
+
+以本人订阅的火山引擎编码计划为例，对应的环境变量是 `ARK_API_KEY`。核对后发现该值确实为空，填入正确的 Key 即可：
+
+![image-20260418153204888](https://gastigado.cnies.org/d/20260418_openclaw2hermes_migration/image-20260418153204888.webp)
 
 ### Hermes 无法迁移 OpenClaw 的其他 workspace 怎么办
 
