@@ -117,6 +117,8 @@ Would you like to see what can be imported? [Y/n]: Y
 Proceed with migration? [y/N]: y
 ```
 
+> 迁移工具默认只处理标准的 `workspace/` 路径。如果你在 OpenClaw 中使用了多个自定义 workspace（如 `workspace-project-a`），这些目录不会被自动迁移，需要额外操作。详见[常见问题：无法迁移其他 workspace](#无法迁移其他-workspace)。如果迁移完成后对话时出现 `AuthenticationError [HTTP 401]` 报错，请参阅[常见问题：认证报错](#认证报错-authenticationerror)。
+
 ### 2. 配置模型提供商
 
 迁移完成后即进入设置阶段。设置向导会询问采用快速设置还是完整设置，这里使用 <kbd>↑</kbd><kbd>↓</kbd> 键选中快速设置（Quick setup），按 <kbd>Space</kbd> 勾选该选项，再按 <kbd>Enter</kbd> 进入下一步：
@@ -217,25 +219,7 @@ hermes setup
 
 ![image-20260418022548383](https://gastigado.cnies.org/d/20260418_openclaw2hermes_migration/image-20260418022548383.webp)
 
-如果遇到以下报错：
-
-```bash
-  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
-
-Goodbye! ⚕
-```
-
-请关闭当前终端，新开一个终端窗口，执行下面的命令，即可正常进入聊天界面：
-
-```bash
-hermes chat
-```
-
-如果仍然失败，重新执行一次 setup（向导会跳过已完成的步骤，或让你重新确认配置）：
-
-```bash
-hermes setup
-```
+如果启动时遇到 `tirith security scanner enabled but not available` 报错导致直接退出，请参阅[常见问题：启动时 Tirith 报错](#启动时-tirith-报错)；如果对话时出现 `AuthenticationError [HTTP 401]` 报错，请参阅[常见问题：认证报错](#认证报错-authenticationerror)。
 
 ### 6. 设置多个模型提供商
 
@@ -265,7 +249,29 @@ hermes model
 
 ## 常见问题
 
-### 对话时出现 `AuthenticationError [HTTP 401]` 报错怎么办
+### 启动时 Tirith 报错
+
+如果启动 Hermes 时遇到以下报错并直接退出：
+
+```bash
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+
+Goodbye! ⚕
+```
+
+请关闭当前终端，新开一个终端窗口，执行下面的命令，即可正常进入聊天界面：
+
+```bash
+hermes chat
+```
+
+如果仍然失败，重新执行一次 setup（向导会跳过已完成的步骤，或让你重新确认配置）：
+
+```bash
+hermes setup
+```
+
+### 认证报错 `AuthenticationError`
 
 如果对话时出现 `API call failed (attempt 1/3): AuthenticationError [HTTP 401]` 报错：
 
@@ -281,7 +287,7 @@ vim ~/.hermes/.env
 
 ![image-20260418153204888](https://gastigado.cnies.org/d/20260418_openclaw2hermes_migration/image-20260418153204888.webp)
 
-### Hermes 无法迁移 OpenClaw 的其他 workspace 怎么办
+### 无法迁移其他 workspace
 
 执行 `hermes claw migrate --dry-run` 时，可能会看到 `workspace-agents  No workspace target was provided` 这类提示，并且某些自定义 workspace 没有被识别：
 
