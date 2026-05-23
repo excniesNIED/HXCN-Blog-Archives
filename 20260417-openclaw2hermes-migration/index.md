@@ -390,6 +390,19 @@ hermes claw migrate --preset full \
 1. **合并记忆**：将不同 workspace 下的 `MEMORY.md` 内容复制并粘贴到 `~/.hermes/memories/MEMORY.md` 中。Hermes 在启动时会自动对内容进行语义去重。
 2. **迁移技能**：直接将 `.openclaw/skills` 下的文件夹拷贝到 `.hermes/skills` 下。
 
+也可以直接在终端中，让 Hermes 主动读取和迁移关键文件：
+
+```
+@~/.openclaw中有三个工作区，分别为workspace、workspace-1、workspace-2，请
+1. 将SOUL.md完整继承到~/.hermes/hermes-persona.md，USER.md完整继承到~/.hermes/memories/USER.md ，skills/完整继承到~/.hermes/skills/
+2. memory/ 保存的记忆完整继承到~/.hermes/memories/MEMORY.md，
+2. TOOLS.md主要部分继承到~/.hermes/AGENTS.md，如工具使用习惯、约定、本地路径、偏好（如 “用 pnpm”、“避免某些命令”）等，
+3. 具体工具使用细节在~/.hermes/skills/ 目录下创建 SKILL.md 文件，并在~/.hermes/AGENTS.md严格且详细规定使用工具使用 skills 完成任务
+4. 继承配置文件时务必确保内容完整详细，而不是将内容总结后进行继承
+```
+
+![image-20260521151429812](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260521151429812.png)
+
 #### 方法三：处理冲突（Conflicts）
 
 在前面的 Dry Run 中，出现了大量的 `Conflict (skipped)`，这是因为 `.hermes` 目录下已经存在同名文件。如果确定要以 OpenClaw 的配置为准（覆盖现有的 Hermes 配置），请在命令中加入 `--overwrite`：

@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="notranslate" translate="no">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>火山方舟管理控制台 - 用量统计</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f7fa;
+            color: #1d2129;
+            line-height: 1.5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+        .header h1 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1d2129;
+        }
+        .header .date-range {
+            font-size: 14px;
+            color: #86909c;
+            background: #fff;
+            padding: 8px 16px;
+            border-radius: 6px;
+            border: 1px solid #e5e6eb;
+        }
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+        }
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1d2129;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .card-title .amount {
+            font-size: 24px;
+            font-weight: 700;
+            color: #165dff;
+        }
+        .chart-container {
+            position: relative;
+            height: 250px;
+            margin-top: 16px;
+            padding-left: 60px;
+        }
+        .chart-area {
+            position: relative;
+            height: 200px;
+            border-left: 1px solid #e5e6eb;
+            border-bottom: 1px solid #e5e6eb;
+        }
+        .chart-grid {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+        .chart-grid-line {
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #f2f3f5;
+        }
+        .chart-bars {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            padding: 0 10px;
+        }
+        .chart-bar-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        .chart-bar {
+            width: 24px;
+            background: linear-gradient(180deg, #165dff 0%, #7ea8ff 100%);
+            border-radius: 4px 4px 0 0;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .chart-bar:hover {
+            background: linear-gradient(180deg, #4080ff 0%, #a0c4ff 100%);
+        }
+        .chart-bar-tooltip {
+            position: absolute;
+            top: -28px;
+            background: #1d2129;
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.2s;
+            pointer-events: none;
+        }
+        .chart-bar:hover .chart-bar-tooltip {
+            opacity: 1;
+        }
+        .chart-line {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 100%;
+        }
+        .chart-line svg {
+            width: 100%;
+            height: 100%;
+        }
+        .chart-labels {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 8px;
+        }
+        .chart-labels span {
+            font-size: 12px;
+            color: #86909c;
+        }
+        .chart-axis {
+            position: absolute;
+            left: -60px;
+            top: 0;
+            bottom: 0;
+            width: 55px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-bottom: 0;
+        }
+        .chart-axis span {
+            font-size: 12px;
+            color: #86909c;
+            text-align: right;
+        }
+        .chart-legend {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 16px;
+        }
+        .chart-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #4e5969;
+        }
+        .chart-legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+        }
+        .model-list {
+            margin-top: 16px;
+        }
+        .model-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #f2f3f5;
+        }
+        .model-item:last-child {
+            border-bottom: none;
+        }
+        .model-name {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .model-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+        }
+        .model-name span {
+            font-size: 14px;
+            color: #1d2129;
+            font-family: 'SF Mono', 'Monaco', 'Menlo', 'Consolas', monospace;
+        }
+        .model-amount {
+            font-size: 14px;
+            color: #1d2129;
+            font-variant-numeric: tabular-nums;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .stat-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+        }
+        .stat-label {
+            font-size: 14px;
+            color: #86909c;
+            margin-bottom: 8px;
+        }
+        .stat-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1d2129;
+        }
+        .stat-value.blue {
+            color: #165dff;
+        }
+        .export-btn {
+            background: #165dff;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .export-btn:hover {
+            background: #4080ff;
+        }
+        .tooltip {
+            position: absolute;
+            background: #1d2129;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        .chart-bar:hover .tooltip {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>火山方舟管理控制台</h1>
+            <div class="date-range">
+                <span>📅</span>
+                <span>2026-04-01 ~ 2026-04-30</span>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">总消耗（元）</div>
+                <div class="stat-value blue">¥8,078.68</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">请求次数</div>
+                <div class="stat-value">12,847</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">输入 Token</div>
+                <div class="stat-value">2,847,392</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">输出 Token</div>
+                <div class="stat-value">1,293,847</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">
+                <span>费用趋势</span>
+                <button class="export-btn">导出</button>
+            </div>
+            <div class="chart-legend">
+                <div class="chart-legend-item">
+                    <div class="chart-legend-color" style="background: #165dff;"></div>
+                    <span>每日消耗金额</span>
+                </div>
+                <div class="chart-legend-item">
+                    <div class="chart-legend-color" style="background: #ff7d00;"></div>
+                    <span>请求次数趋势</span>
+                </div>
+            </div>
+            <div class="chart-container">
+                <div class="chart-axis">
+                    <span>¥400</span>
+                    <span>¥300</span>
+                    <span>¥200</span>
+                    <span>¥100</span>
+                    <span>¥0</span>
+                </div>
+                <div class="chart-area">
+                    <div class="chart-grid">
+                        <div class="chart-grid-line" style="top: 0;"></div>
+                        <div class="chart-grid-line" style="top: 25%;"></div>
+                        <div class="chart-grid-line" style="top: 50%;"></div>
+                        <div class="chart-grid-line" style="top: 75%;"></div>
+                    </div>
+                    <div class="chart-bars">
+                        <!-- 4-1: ¥287.45 (71.9%) -->
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 71.9%;">
+                                <div class="chart-bar-tooltip">¥287.45</div>
+                            </div>
+                        </div>
+                        <!-- 4-2: ¥312.18 (78.0%) -->
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 78.0%;">
+                                <div class="chart-bar-tooltip">¥312.18</div>
+                            </div>
+                        </div>
+                        <!-- 4-3: ¥198.56 (49.6%) -->
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 49.6%;">
+                                <div class="chart-bar-tooltip">¥198.56</div>
+                            </div>
+                        </div>
+                        <!-- 4-4: ¥345.92 (86.5%) -->
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 86.5%;">
+                                <div class="chart-bar-tooltip">¥345.92</div>
+                            </div>
+                        </div>
+                        <!-- 4-5: ¥267.34 (66.8%) -->
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 66.8%;">
+                                <div class="chart-bar-tooltip">¥267.34</div>
+                            </div>
+                        </div>
+                        <!-- 4-6: ¥178.23 (44.6%) -->
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 44.6%;">
+                                <div class="chart-bar-tooltip">¥178.23</div>
+                            </div>
+                        </div>
+                        <!-- 4-7: ¥298.67 (74.7%) -->
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 74.7%;">
+                                <div class="chart-bar-tooltip">¥298.67</div>
+                            </div>
+                        </div>
+                        <!-- 4-8: ¥234.45 (58.6%) -->
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 58.6%;">
+                                <div class="chart-bar-tooltip">¥234.45</div>
+                            </div>
+                        </div>
+                        <!-- 4-9: ¥356.78 (89.2%) -->
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 89.2%;">
+                                <div class="chart-bar-tooltip">¥356.78</div>
+                            </div>
+                        </div>
+                        <!-- 4-10: ¥289.12 (72.3%) -->
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 72.3%;">
+                                <div class="chart-bar-tooltip">¥289.12</div>
+                            </div>
+                        </div>
+                        <!-- 4-11: ¥312.45 (78.1%) -->
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 78.1%;">
+                                <div class="chart-bar-tooltip">¥312.45</div>
+                            </div>
+                        </div>
+                        <!-- 4-12: ¥198.23 (49.6%) -->
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 49.6%;">
+                                <div class="chart-bar-tooltip">¥198.23</div>
+                            </div>
+                        </div>
+                        <!-- 4-13: ¥267.89 (67.0%) -->
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 67.0%;">
+                                <div class="chart-bar-tooltip">¥267.89</div>
+                            </div>
+                        </div>
+                        <!-- 4-14: ¥345.67 (86.4%) -->
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 86.4%;">
+                                <div class="chart-bar-tooltip">¥345.67</div>
+                            </div>
+                        </div>
+                        <!-- 4-15: ¥278.34 (69.6%) -->
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 69.6%;">
+                                <div class="chart-bar-tooltip">¥278.34</div>
+                            </div>
+                        </div>
+                        <!-- 4-16: ¥189.56 (47.4%) -->
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 47.4%;">
+                                <div class="chart-bar-tooltip">¥189.56</div>
+                            </div>
+                        </div>
+                        <!-- 4-17: ¥312.78 (78.2%) -->
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 78.2%;">
+                                <div class="chart-bar-tooltip">¥312.78</div>
+                            </div>
+                        </div>
+                        <!-- 4-18: ¥245.67 (61.4%) -->
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 61.4%;">
+                                <div class="chart-bar-tooltip">¥245.67</div>
+                            </div>
+                        </div>
+                        <!-- 4-19: ¥298.45 (74.6%) -->
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 74.6%;">
+                                <div class="chart-bar-tooltip">¥298.45</div>
+                            </div>
+                        </div>
+                        <!-- 4-20: ¥178.89 (44.7%) -->
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 44.7%;">
+                                <div class="chart-bar-tooltip">¥178.89</div>
+                            </div>
+                        </div>
+                        <!-- 4-21: ¥334.23 (83.6%) -->
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 83.6%;">
+                                <div class="chart-bar-tooltip">¥334.23</div>
+                            </div>
+                        </div>
+                        <!-- 4-22: ¥267.56 (66.9%) -->
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 66.9%;">
+                                <div class="chart-bar-tooltip">¥267.56</div>
+                            </div>
+                        </div>
+                        <!-- 4-23: ¥289.34 (72.3%) -->
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 72.3%;">
+                                <div class="chart-bar-tooltip">¥289.34</div>
+                            </div>
+                        </div>
+                        <!-- 4-24: ¥198.67 (49.7%) -->
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 49.7%;">
+                                <div class="chart-bar-tooltip">¥198.67</div>
+                            </div>
+                        </div>
+                        <!-- 4-25: ¥345.12 (86.3%) -->
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 86.3%;">
+                                <div class="chart-bar-tooltip">¥345.12</div>
+                            </div>
+                        </div>
+                        <!-- 4-26: ¥278.89 (69.7%) -->
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 69.7%;">
+                                <div class="chart-bar-tooltip">¥278.89</div>
+                            </div>
+                        </div>
+                        <!-- 4-27: ¥212.34 (53.1%) -->
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 53.1%;">
+                                <div class="chart-bar-tooltip">¥212.34</div>
+                            </div>
+                        </div>
+                        <!-- 4-28: ¥323.56 (80.9%) -->
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 80.9%;">
+                                <div class="chart-bar-tooltip">¥323.56</div>
+                            </div>
+                        </div>
+                        <!-- 4-29: ¥256.78 (64.2%) -->
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 64.2%;">
+                                <div class="chart-bar-tooltip">¥256.78</div>
+                            </div>
+                        </div>
+                        <!-- 4-30: ¥298.12 (74.5%) -->
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 74.5%;">
+                                <div class="chart-bar-tooltip">¥298.12</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 折线图 - 请求次数趋势 -->
+                    <div class="chart-line">
+                        <svg viewBox="0 0 1000 200" preserveAspectRatio="none">
+                            <polyline points="17,117 50,103 83,140 117,93 150,110 183,130 217,113 250,123 283,97 317,117 350,103 383,140 417,120 450,100 483,113 517,137 550,103 583,120 617,110 650,140 683,93 717,120 750,113 783,140 817,103 850,120 883,130 917,100 950,120 983,110" 
+                                  fill="none" stroke="#ff7d00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="17" cy="117" r="4" fill="#ff7d00"/>
+                            <circle cx="83" cy="140" r="4" fill="#ff7d00"/>
+                            <circle cx="150" cy="110" r="4" fill="#ff7d00"/>
+                            <circle cx="217" cy="113" r="4" fill="#ff7d00"/>
+                            <circle cx="283" cy="97" r="4" fill="#ff7d00"/>
+                            <circle cx="350" cy="103" r="4" fill="#ff7d00"/>
+                            <circle cx="417" cy="120" r="4" fill="#ff7d00"/>
+                            <circle cx="483" cy="100" r="4" fill="#ff7d00"/>
+                            <circle cx="550" cy="103" r="4" fill="#ff7d00"/>
+                            <circle cx="617" cy="110" r="4" fill="#ff7d00"/>
+                            <circle cx="683" cy="93" r="4" fill="#ff7d00"/>
+                            <circle cx="750" cy="113" r="4" fill="#ff7d00"/>
+                            <circle cx="817" cy="103" r="4" fill="#ff7d00"/>
+                            <circle cx="883" cy="130" r="4" fill="#ff7d00"/>
+                            <circle cx="950" cy="120" r="4" fill="#ff7d00"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="chart-labels">
+                    <span>4-1</span>
+                    <span>4-5</span>
+                    <span>4-10</span>
+                    <span>4-15</span>
+                    <span>4-20</span>
+                    <span>4-25</span>
+                    <span>4-30</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">
+                <span>模型消耗分布</span>
+            </div>
+            <div class="model-list">
+                <div class="model-item">
+                    <div class="model-name">
+                        <div class="model-color" style="background: #165dff;"></div>
+                        <span>Doubao-Seedream-4.5</span>
+                    </div>
+                    <div class="model-amount">¥5,847.32</div>
+                </div>
+                <div class="model-item">
+                    <div class="model-name">
+                        <div class="model-color" style="background: #ff7d00;"></div>
+                        <span>Doubao-Seed-1.6-Lite</span>
+                    </div>
+                    <div class="model-amount">¥1,293.85</div>
+                </div>
+                <div class="model-item">
+                    <div class="model-name">
+                        <div class="model-color" style="background: #0fc6c2;"></div>
+                        <span>GLM-4.7-Flash</span>
+                    </div>
+                    <div class="model-amount">¥684.23</div>
+                </div>
+                <div class="model-item">
+                    <div class="model-name">
+                        <div class="model-color" style="background: #722ed1;"></div>
+                        <span>CosyVoice2-0.5B</span>
+                    </div>
+                    <div class="model-amount">¥253.28</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">
+                <span>每日详细消耗</span>
+            </div>
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                    <thead>
+                        <tr style="background: #f7f8fa; border-bottom: 1px solid #e5e6eb;">
+                            <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #1d2129;">日期</th>
+                            <th style="padding: 12px 16px; text-align: right; font-weight: 600; color: #1d2129;">消耗金额</th>
+                            <th style="padding: 12px 16px; text-align: right; font-weight: 600; color: #1d2129;">请求次数</th>
+                            <th style="padding: 12px 16px; text-align: right; font-weight: 600; color: #1d2129;">输入Token</th>
+                            <th style="padding: 12px 16px; text-align: right; font-weight: 600; color: #1d2129;">输出Token</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid #f2f3f5;">
+                            <td style="padding: 12px 16px; color: #1d2129;">2026-04-01</td>
+                            <td style="padding: 12px 16px; text-align: right; color: #165dff; font-variant-numeric: tabular-nums;">¥287.45</td>
+                            <td style="padding: 12px 16px; text-align: right; font-variant-numeric: tabular-nums;">423</td>
+                            <td style="padding: 12px 16px; text-align: right; font-variant-numeric: tabular-nums;">98,234</td>
+                            <td style="padding: 12px 16px; text-align: right; font-variant-numeric: tabular-nums;">45,123</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f2f3f5;">
+                            <td style="padding: 12px 16px; color: #1d2129;">2026-04-02</td>
+                            <td style="padding: 12px 16px; text-align: right; color: #165dff; font-variant-numeric: tabular-nums;">¥312.18</td>
+                            <td style="padding: 12px 16px; text-align: right; font-variant-numeric: tabular-nums;">467</td>
+                            <td style="padding: 12px 16px; text-align: right; font-variant-numeric: tabular-nums;">105,678</td>
+                            <td style="padding: 12px 16px; text-align: right; font-variant-numeric: tabular-nums;">48,932</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f2f3f5;">
+                            <td style="padding: 12px 16px; color: #1d2129;">2026-04-03</td>
+                            <td style="padding: 12px 16px; text-align: right; color: #165dff; font-variant-numeric: tabular-nums;">¥198.56</td>
+                            <td style="padding: 12px 16px; text-align: right; font-variant-numeric: tabular-nums;">298</td>
+                            <td style="padding: 12px 16px; text-align: right; font-variant-numeric: tabular-nums;">67,234</td>
+                            <td style="padding: 12px 16px; text-align: right; font-variant-numeric: tabular-nums;">31,456</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f2f3f5;">
+                            <td style="padding: 12px 16px; color: #1d2129;">2026-04-04</td>
+                            <td style="padding: 12px 16px; text-align: right; color: #165dff; font-variant-numeric: tabular-nums;">¥345.92</td>
+                            <td style="padding: 12px 16px; text-align: right; font-variant-numeric: tabular-nums;">512</td>
+                            <td style="padding: 12px 16px; text-align: right; font-variant-numeric: tabular-nums;">118,456</td>
+                            <td style="padding: 12px 16px; text-align: right; font-variant-numeric: tabular-nums;">54,231</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f2f3f5;">
+                            <td style="padding: 12px 16px; color: #1d2129;">2026-04-05</td>
+                            <td style="padding: 12px 16px; text-align: right; color: #165dff; font-variant-numeric: tabular-nums;">¥267.34</td>
+                            <td style="padding: 12px 16px; text-align: right; font-variant-numeric: tabular-nums;">389</td>
+                            <td style="padding: 12px 16px; text-align: right; font-variant-numeric: tabular-nums;">89,123</td>
+                            <td style="padding: 12px 16px; text-align: right; font-variant-numeric: tabular-nums;">41,567</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f2f3f5;">
+                            <td style="padding: 12px 16px; color: #1d2129;">2026-04-06</td>
+                            <td style="padding: 12px 16px; text-align: right; color: #165dff; font-variant-numeric: tabular-nums;">¥178.23</td>
+                            <td style="padding: 12px 16px; text-align: right; font-variant-numeric: tabular-nums;">267</td>
+                            <td style="padding: 12px 16px; text-align: right; font-variant-numeric: tabular-nums;">56,789</td>
+                            <td style="padding: 12px 16px; text-align: right; font-variant-numeric: tabular-nums;">26,345</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f2f3f5;">
+                            <td style="padding: 12px 16px; color: #1d2129;">2026-04-07</td>
+                            <td style="padding: 12px 16px; text-align: right; color: #165dff; font-variant-numeric: tabular-nums;">¥298.67</td>
+                            <td style="padding: 12px 16px; text-align: right; font-variant-numeric: tabular-nums;">445</td>
+                            <td style="padding: 12px 16px; text-align: right; font-variant-numeric: tabular-nums;">95,234</td>
+                            <td style="padding: 12px 16px; text-align: right; font-variant-numeric: tabular-nums;">44,123</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f2f3f5;">
+                            <td style="padding: 12px 16px; color: #1d2129;">2026-04-08</td>
+                            <td style="padding: 12px 16px; text-align: right; color: #165dff; font-variant-numeric: tabular-nums;">¥234.45</td>
+                            <td style="padding: 12px 16px; text-align: right; font-variant-numeric: tabular-nums;">356</td>
+                            <td style="padding: 12px 16px; text-align: right; font-variant-numeric: tabular-nums;">78,456</td>
+                            <td style="padding: 12px 16px; text-align: right; font-variant-numeric: tabular-nums;">36,234</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f2f3f5;">
+                            <td style="padding: 12px 16px; color: #1d2129;">2026-04-09</td>
+                            <td style="padding: 12px 16px; text-align: right; color: #165dff; font-variant-numeric: tabular-nums;">¥356.78</td>
+                            <td style="padding: 12px 16px; text-align: right; font-variant-numeric: tabular-nums;">534</td>
+                            <td style="padding: 12px 16px; text-align: right; font-variant-numeric: tabular-nums;">123,456</td>
+                            <td style="padding: 12px 16px; text-align: right; font-variant-numeric: tabular-nums;">56,789</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f2f3f5;">
+                            <td style="padding: 12px 16px; color: #1d2129;">2026-04-10</td>
+                            <td style="padding: 12px 16px; text-align: right; color: #165dff; font-variant-numeric: tabular-nums;">¥289.12</td>
+                            <td style="padding: 12px 16px; text-align: right; font-variant-numeric: tabular-nums;">423</td>
+                            <td style="padding: 12px 16px; text-align: right; font-variant-numeric: tabular-nums;">92,345</td>
+                            <td style="padding: 12px 16px; text-align: right; font-variant-numeric: tabular-nums;">42,567</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
