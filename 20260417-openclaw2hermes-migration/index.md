@@ -365,9 +365,9 @@ exec-approvals.json     openclaw.json.bak.1     tasks
 
 要迁移这些额外的 workspace，需要采取**分步指定目标**或**手动补齐**的策略。
 
-#### 方法一：使用 `--workspace-target` 参数（推荐）
+#### 方法一：指定目标路径（推荐）
 
-Hermes 提供了一个专门的参数来解决 workspace 路径匹配问题。可以针对每个特定的 workspace 运行一次迁移命令，并手动指定其目标位置：
+使用 `--workspace-target` 参数，针对每个特定的 workspace 运行一次迁移命令，手动指定其目标位置：
 
 ```bash
 # 迁移 workspace-project-a 到指定的 Hermes 目录
@@ -378,9 +378,9 @@ hermes claw migrate --preset full \
 
 > **注意**：如果该 workspace 中包含 API Key（`.env` 文件），请记得带上 `--migrate-secrets` 标志。
 
-#### 方法二：手动搬运关键文件（最稳妥的办法）
+#### 方法二：手动搬运
 
-由于 Hermes 的核心架构（如 `SOUL.md` 和 `MEMORY.md`）与 OpenClaw 高度兼容，如果自动化工具识别不到，手动复制通常是最快的。
+由于 Hermes 的核心架构（如 `SOUL.md` 和 `MEMORY.md`）与 OpenClaw 高度兼容，自动化工具识别不到时，手动复制关键文件通常是最快最稳妥的办法。
 
 对于上面列出的 `workspace-project-a` 等目录，手动迁移路径如下：
 
@@ -409,9 +409,9 @@ hermes claw migrate --preset full \
 
 ![image-20260521151429812](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260521151429812.png)
 
-#### 方法三：处理冲突（Conflicts）
+#### 方法三：处理冲突
 
-在前面的 Dry Run 中，出现了大量的 `Conflict (skipped)`，这是因为 `.hermes` 目录下已经存在同名文件。如果确定要以 OpenClaw 的配置为准（覆盖现有的 Hermes 配置），请在命令中加入 `--overwrite`：
+Dry Run 中出现大量 `Conflict (skipped)`，是因为 `.hermes` 目录下已存在同名文件。如果确定以 OpenClaw 的配置为准覆盖现有 Hermes 配置，在命令中加入 `--overwrite`：
 
 ```bash
 hermes claw migrate --preset full --overwrite --migrate-secrets
