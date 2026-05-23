@@ -114,93 +114,53 @@ Would you like to see what can be imported? [Y/n]: Y
 Proceed with migration? [y/N]: y
 ```
 
+> The migration tool only handles the standard `workspace/` path by default. If you keep multiple custom workspaces in OpenClaw (e.g. `workspace-project-a`), those directories are not migrated automatically and need extra steps — see [FAQ: Additional workspaces aren't migrated](#additional-workspaces-arent-migrated). If a chat turn later surfaces `AuthenticationError [HTTP 401]`, see [FAQ: AuthenticationError on chat](#authenticationerror-on-chat).
+
 ### 2. Set Up a Provider
 
 With the migration done, the setup phase begins. The wizard asks whether you want Quick setup or Full setup. Use <kbd>↑</kbd><kbd>↓</kbd> to highlight **Quick setup**, press <kbd>Space</kbd> to select it, then <kbd>Enter</kbd> to move on:
 
-![image-20260418012955409](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260418012955409.png)
+![image-20260418012955409](https://gastigado.cnies.org/d/20260418_openclaw2hermes_migration/image-20260418012955409.webp)
 
 Now pick a model provider. I'll use ark (Volcano Engine's coding plan), which I subscribe to, and enter the model name `ark-code-latest`:
 
-![image-20260418013325785](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260418013325785.png)
+![image-20260418013325785](https://gastigado.cnies.org/d/20260418_openclaw2hermes_migration/image-20260418013325785.webp)
 
-Pick whichever provider suits your needs. If you don't have a subscription yet, I recommend the [MiniMax Token Plan](https://platform.minimaxi.com/subscribe/token-plan?code=L5Ua6ZLLoY&source=link). MiniMax M2.7 is currently one of the most widely used models inside Hermes Agent, delivering strong results on tool-call accuracy, complex-Skill adherence, and Agent Harness compatibility, all at a compelling price. You can skip this for now and configure the model later by following [6. Adding extra model providers](#6-adding-extra-model-providers).
+Pick whichever provider suits your needs. If you don't have a subscription yet, I recommend the [MiniMax Token Plan](https://platform.minimaxi.com/subscribe/token-plan?code=L5Ua6ZLLoY&source=link). MiniMax M2.7 is currently one of the most widely used models inside Hermes Agent, delivering strong results on tool-call accuracy, complex-Skill adherence, and Agent Harness compatibility, all at a compelling price. You can skip this for now and configure additional providers later via [FAQ: Adding extra model providers](#adding-extra-model-providers).
 
 ### 3. Set Up a Platform
 
-Next, choose the chat platform to hook up. Here we'll use Lark (Feishu): log in via APP ID and bind the Lark bot:
+Next, choose the messaging platform to hook up. The configuration flow here is **identical to OpenClaw** — the wizard will prompt you for the same credentials (e.g. bot token for Telegram/Discord/Slack, APP ID + APP Secret for Lark, etc.), connection mode, DM authorization, and group-chat handling that you already filled in for OpenClaw. If you migrated from OpenClaw, just re-use the existing bot and credentials; if you're setting things up from scratch, follow the bot-creation docs for your platform of choice and feed the resulting credentials into the wizard.
 
-![image-20260418013430828](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260418013430828.png)
+A couple of prompts are worth calling out because they aren't platform-specific:
 
-I already created a Lark bot while setting up OpenClaw earlier. If you haven't done so, head over to the [Lark Open Platform](https://open.feishu.cn/app) to create one. After signing in, click **Create Custom App**, fill in the app name and description, optionally set an icon, then click **Create**:
+- **How should direct messages be authorized?** The default `Use DM pairing approval` is the safest choice and is what we'll rely on later in step 6.
+- **How should group chats be handled?** The default `Respond only when @mentioned in groups` is usually right. If you don't want Hermes active in groups at all, choose `Disable group chats`.
+- **Home Chat ID** is optional. It funnels scheduled-task (Cron) results, system notifications, alerts, tool output, long-term memory updates, and skill-generation summaries into a single chat. If you've only wired up one platform, pressing <kbd>Enter</kbd> to accept the default is enough.
 
-![image-20260418014150010](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260418014150010.png)
+### 4. Register the gateway as a service
 
-Click **Add Features** on the left, then add a **Bot**:
+Registering the gateway as a system service makes Hermes start automatically when the machine boots, with no need to bring it up by hand. If you need to revisit gateway configuration later, drop back into the gateway wizard at any time:
 
-![image-20260418020151521](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260418020151521.png)
+```bash
+hermes gateway setup
+```
 
-Click **Events & Callbacks** on the left, hit the edit button next to **Subscription Method**, switch the subscription mode to **Long Connection**, then click **Save**:
+If you'd rather not register the gateway as a system service, you can run it in the foreground and keep it alive with tmux instead — see [FAQ: Run the gateway in the background with tmux](#run-the-gateway-in-the-background-with-tmux).
 
-![image-20260418015229088](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260418015229088.png)
+#### macOS
 
-Still on **Events & Callbacks**, click **Add Event**, search for **Receive Message**, tick it, click **Add**, and confirm the permission grant in the popup:
+On macOS, Hermes registers the gateway as a launchd service. At this prompt, enter `Y` to confirm:
 
-![image-20260418015803619](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260418015803619.png)
-
-Go to **Permissions**, choose **Enable Permissions**, tick every permission, and confirm:
-
-![image-20260418020425172](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260418020425172.png)
-
-![image-20260418020446781](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260418020446781.png)
-
-Finally, open **Version Management & Release** on the left, click **Create Version**, enter a version number (e.g. 1.0.0) and release notes, click **Save**, then **Confirm Release**:
-
-![image-20260418020601681](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260418020601681.png)
-
-![image-20260418020652380](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260418020652380.png)
-
-![image-20260418020731932](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260418020731932.png)
-
-![image-20260418020811484](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260418020811484.png)
-
-Open **Credentials & Basic Info**. If you need to update bot metadata, edit the relevant fields here (note: any change has to be re-released):
-
-![image-20260418021101878](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260418021101878.png)
-
-Copy **APP ID** and **APP Secret**, then paste them into the terminal in order:
-
-![image-20260418013746135](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260418013746135.png)
-
-Select the Lark China edition:
-
-![image-20260418013820810](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260418013820810.png)
-
-For the connection mode, choose **WebSocket**:
-
-![image-20260418021214604](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260418021214604.png)
-
-For **How should direct messages be authorized?**, keep the default **Use DM pairing approval**:
-
-![image-20260418021242947](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260418021242947.png)
-
-For **How should group chats be handled?**, keep the default **Respond only when @mentioned in groups**, which means the bot only replies in group chats when explicitly @-mentioned. If you don't want Hermes active in groups at all, choose **Disable group chats**:
-
-![image-20260418021343280](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260418021343280.png)
-
-**Home Chat ID** is optional. It lets you funnel scheduled-task (Cron) results and reminders, system notifications, alerts, tool-execution output, long-term memory updates, and summaries of newly generated skills into a single chat channel. Since Lark is my only connected platform here, pressing <kbd>Enter</kbd> to accept the default is enough; if you've wired up multiple platforms, set it to taste.
-
-![image-20260418021853819](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260418021853819.png)
-
-### 4. Install the gateway as a launchd service
-
-Registering the gateway as a system service makes Hermes start automatically when the machine boots. Enter `Y` to confirm:
-
-![image-20260418021920240](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260418021920240.png)
+![image-20260418021920240](https://gastigado.cnies.org/d/20260418_openclaw2hermes_migration/image-20260418021920240.webp)
 
 At the **Start the service now?** prompt, enter `Y` to bring the service up immediately:
 
-![image-20260418022036777](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260418022036777.png)
+![image-20260418022036777](https://gastigado.cnies.org/d/20260418_openclaw2hermes_migration/image-20260418022036777.webp)
+
+#### Linux
+
+TBD.
 
 ### 5. Getting started
 
@@ -212,9 +172,62 @@ hermes setup
 
 The wizard will then ask **Launch hermes chat now?**. Enter `Y` to start Hermes. When you see the prompt below, Hermes is up and running:
 
-![image-20260418022548383](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260418022548383.png)
+![image-20260418022548383](https://gastigado.cnies.org/d/20260418_openclaw2hermes_migration/image-20260418022548383.webp)
 
-If you run into this error:
+If startup fails with `tirith security scanner enabled but not available` and exits straight away, see [FAQ: Tirith scanner error on startup](#tirith-scanner-error-on-startup); if a chat turn surfaces `AuthenticationError [HTTP 401]`, see [FAQ: AuthenticationError on chat](#authenticationerror-on-chat).
+
+### 6. Pair your messaging account
+
+The first message you send to the bot will come back unpaired, because Hermes doesn't yet know which Hermes user the messaging account belongs to. The bot replies with `Hi~ I don't recognize you yet!` plus a one-time pairing code.
+
+Open a fresh terminal and run the pairing command, replacing the placeholder with the code you received in the chat (and the platform name with whatever you wired up in step 3 — `telegram`, `discord`, `slack`, `feishu`, etc.):
+
+```bash
+hermes pairing approve <platform> <pairing-code>
+```
+
+The terminal prints a confirmation like:
+
+```bash
+user@host:~$ hermes pairing approve feishu EFS7PRQ6
+
+  Approved! User Alice (a*****e) on feishu can now use the bot~
+  They'll be recognized automatically on their next message.
+```
+
+Send another message from the same account and the bot will respond normally.
+
+## FAQ
+
+### Adding extra model providers
+
+Open a clean new terminal window (Terminal or iTerm2 both work) and run:
+
+```bash
+hermes model
+```
+
+In the menu, use <kbd>↑</kbd><kbd>↓</kbd> to highlight **Quick setup**, press <kbd>Space</kbd> to select, then <kbd>Enter</kbd> to confirm. To wire up the MiniMax Token Plan, choose **MiniMax China**:
+
+![image-20260418151551231](https://gastigado.cnies.org/d/20260418_openclaw2hermes_migration/image-20260418151551231.webp)
+
+Next, supply the API key. Grab it from the [MiniMax Token Plan console](https://platform.minimaxi.com/user-center/payment/token-plan):
+
+![image-20260418151742782](https://gastigado.cnies.org/d/20260418_openclaw2hermes_migration/image-20260418151742782.webp)
+
+Paste it into the terminal:
+
+![image-20260418151822881](https://gastigado.cnies.org/d/20260418_openclaw2hermes_migration/image-20260418151822881.webp)
+
+When asked for a BaseURL, press <kbd>Enter</kbd> to accept the default, then pick `MiniMax-M2.7` as the model:
+
+![image-20260418152012768](https://gastigado.cnies.org/d/20260418_openclaw2hermes_migration/image-20260418152012768.webp)
+
+The terminal prints `Default model set to: MiniMax-M2.7 (via MiniMax (China))` and the provider is configured.
+
+### Tirith scanner error on startup
+
+If Hermes prints the following and exits straight away on launch:
 
 ```bash
   ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
@@ -228,15 +241,17 @@ Close the current terminal, open a fresh terminal window, and run the following 
 hermes chat
 ```
 
-If it still fails, run setup once more (it will skip already-completed steps or ask you to reconfirm the configuration):
+If it still fails, run setup once more — the wizard will skip already-completed steps or ask you to reconfirm the configuration:
 
 ```bash
 hermes setup
 ```
 
+### AuthenticationError on chat
+
 If a chat turn surfaces `API call failed (attempt 1/3): AuthenticationError [HTTP 401]`:
 
-![image-20260418152644914](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260418152644914.png)
+![image-20260418152644914](https://gastigado.cnies.org/d/20260418_openclaw2hermes_migration/image-20260418152644914.webp)
 
 The likely cause is that you were running a third-party OpenClaw client such as Clawx. These clients don't persist the API key in plain text inside OpenClaw's config file, so the migration has nothing to read. Edit the env file with:
 
@@ -246,30 +261,247 @@ vim ~/.hermes/.env
 
 In my case the Volcano Engine coding plan uses `ARK_API_KEY`. Once I checked the file, the value was indeed empty. Fill in the correct key and you're set:
 
-![image-20260418153204888](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260418153204888.png)
+![image-20260418153204888](https://gastigado.cnies.org/d/20260418_openclaw2hermes_migration/image-20260418153204888.webp)
 
-### 6. Adding extra model providers
+### Run the gateway in the background with tmux
 
-Open a clean new terminal window (Terminal or iTerm2 both work) and run:
+If you'd rather not register Hermes as a system service, the simplest path is to launch the gateway manually:
 
 ```bash
-hermes model
+$ hermes gateway run
+┌─────────────────────────────────────────────────────────┐
+│           ⚕ Hermes Gateway Starting...                 │
+├─────────────────────────────────────────────────────────┤
+│  Messaging platforms + cron scheduler                    │
+│  Press Ctrl+C to stop                                   │
+└─────────────────────────────────────────────────────────┘
 ```
 
-In the menu, use <kbd>↑</kbd><kbd>↓</kbd> to highlight **Quick setup**, press <kbd>Space</kbd> to select, then <kbd>Enter</kbd> to confirm. To wire up the MiniMax Token Plan, choose **MiniMax China**:
+That works, but it requires keeping the terminal open: close the window and the gateway dies with it. Compared with older tools like screen or nohup, **tmux** is more modern, easier to use, and more reliable. Its sessions are completely decoupled from the terminal, so closing the window or dropping the SSH connection doesn't affect the process inside, and you can re-attach whenever you want to check on it. tmux is the recommended way to keep the gateway resident in the background.
 
-![image-20260418151551231](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260418151551231.png)
+If tmux isn't installed yet, pick the command that matches your distribution:
 
-Next, supply the API key. Grab it from the [MiniMax Token Plan console](https://platform.minimaxi.com/user-center/payment/token-plan):
+```bash
+# macOS (requires Homebrew)
+brew update && brew install tmux
 
-![image-20260418151742782](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260418151742782.png)
+# Debian family (Debian / Ubuntu / Kali / Pop!_OS, etc.)
+sudo apt update && sudo apt install tmux -y
 
-Paste it into the terminal:
+# RHEL family (CentOS / Rocky Linux / openEuler / Fedora, etc.)
+sudo dnf makecache && sudo dnf install tmux -y
 
-![image-20260418151822881](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260418151822881.png)
+# Arch family (Arch Linux / Manjaro / CachyOS, etc.)
+sudo pacman -Syu tmux
 
-When asked for a BaseURL, press <kbd>Enter</kbd> to accept the default, then pick `MiniMax-M2.7` as the model:
+# SUSE family (openSUSE Leap / Tumbleweed / SLES, etc.)
+sudo zypper refresh && sudo zypper install tmux
+```
 
-![image-20260418152012768](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260418152012768.png)
+Then create a session named `hermes` and start the gateway inside it:
 
-The terminal prints `Default model set to: MiniMax-M2.7 (via MiniMax (China))` and the provider is configured.
+```bash
+tmux new -s hermes 'hermes gateway run'
+```
+
+Press <kbd>Ctrl</kbd>+<kbd>b</kbd> then <kbd>d</kbd> to detach and send the session to the background. To check on the gateway later, re-attach:
+
+```bash
+tmux attach -t hermes
+```
+
+List every active tmux session:
+
+```bash
+tmux ls
+```
+
+When you no longer need the gateway, kill the session outright:
+
+```bash
+tmux kill-session -t hermes
+```
+
+If your environment can't run tmux, fall back to a traditional session tool — see the next entry, [Run the gateway in the background with traditional sessions](#run-the-gateway-in-the-background-with-traditional-sessions).
+
+### Run the gateway in the background with traditional sessions
+
+The [previous entry](#run-the-gateway-in-the-background-with-tmux) recommends tmux for keeping `hermes gateway run` resident in the background. If tmux isn't available in your environment, screen and nohup can serve as fallbacks.
+
+**screen** is an older terminal multiplexer that ships pre-installed on some legacy distributions, and its workflow is close to tmux. Start and enter a session named `hermes`:
+
+```bash
+screen -S hermes hermes gateway run
+```
+
+Detach with <kbd>Ctrl</kbd>+<kbd>a</kbd> then <kbd>d</kbd>; re-attach with:
+
+```bash
+screen -r hermes
+```
+
+List every session and kill a named session:
+
+```bash
+screen -ls
+screen -X -S hermes quit
+```
+
+**nohup** wins on being available everywhere out of the box. Combined with `&`, it detaches the process from the terminal so it can keep running in the background, at the cost of clumsier log and process management:
+
+```bash
+nohup hermes gateway run > ~/.hermes/hermes.log 2>&1 &
+```
+
+Tail the log live:
+
+```bash
+tail -f ~/.hermes/hermes.log
+```
+
+Stop the background process:
+
+```bash
+pkill -f "hermes gateway run"
+```
+
+### Additional workspaces aren't migrated
+
+When you run `hermes claw migrate --dry-run`, you may see messages like `workspace-agents  No workspace target was provided`, and notice that some custom workspaces aren't picked up:
+
+```bash
+user@Mac ~ % hermes claw migrate --dry-run
+
+┌─────────────────────────────────────────────────────────┐
+│          ⚕ Hermes — OpenClaw Migration                 │
+└─────────────────────────────────────────────────────────┘
+
+
+◆ Migration Settings
+  Source:      /Users/user/.openclaw
+  Target:      /Users/user/.hermes
+  Preset:      full
+  Overwrite:   no (skip conflicts)
+  Secrets:     yes (allowlisted only)
+
+
+✗ Hermes gateway is running with active connections: feishu
+  Migrating bot tokens while the gateway is active will cause conflicts (Telegram, Discord, and Slack only allow one active session per token).
+  Recommendation: stop the gateway first with 'hermes stop'.
+
+Continue anyway? [y/N]: y
+
+
+◆ Migration Preview — 7 item(s) would be imported
+  No changes have been made yet. Review the list below:
+
+
+◆ Dry Run Results
+  No files were modified. This is a preview of what would happen.
+
+  ✓ Would migrate:
+      user-profile           → ~/.hermes/memories/USER.md
+      daily-memory           → ~/.hermes/memories/MEMORY.md
+      agent-config           → config.yaml agent/compression/terminal
+      env-var                → .env HERMES_GATEWAY_TOKEN
+      env-var                → .env ARK_API_KEY
+      env-var                → .env UNICOM_CLOUD_API_KEY
+      env-var                → .env MINIMAX_PORTAL_API_KEY
+
+  ⚠ Conflicts (skipped — use --overwrite to force):
+      soul                    Target exists and overwrite is disabled
+      provider-keys           Destination .env already has different values
+      model-config            Model already set and overwrite is disabled
+      shared-skills           Destination skill already exists
+      ......
+      personal-skills         Destination skill already exists
+      full-providers          Provider 'ark' already exists
+      full-providers          Provider 'unicom-cloud' already exists
+      full-providers          Provider 'minimax-portal' already exists
+
+  ─ Skipped:
+      workspace-agents        No workspace target was provided
+      memory                  Source file not found
+      ......
+
+  Summary: 7 would migrate, 157 conflict(s), 23 skipped
+
+  To execute the migration, run without --dry-run:
+    hermes claw migrate --preset full
+user@Mac ~ % ls .openclaw
+agents                  extensions              openclaw.json.bak.2     update-check.json
+browser                 identity                openclaw.json.bak.3     wechat-access-guid
+canvas                  logs                    openclaw.json.bak.4     workspace
+completions             media                   openclaw_copy.json      workspace-project-a
+cron                    memory                  qqbot                   workspace-project-b
+delivery-queue          openclaw.json           skills
+devices                 openclaw.json.bak       subagents
+exec-approvals.json     openclaw.json.bak.1     tasks
+```
+
+In Hermes's official migration logic, `hermes claw migrate` only looks for the standard `workspace/` or `workspace-main/` path by default. Because OpenClaw's multi-agent architecture stores different workspaces in dedicated directories like `workspace-project-a` or `workspace-project-b`, the tool silently skips these "non-standard" paths when not told otherwise (that's the `workspace-agents  No workspace target was provided` message above).
+
+To pull these additional workspaces across, you'll need to either **point the migration at each one explicitly** or **copy the key files by hand**.
+
+#### Option 1: Specify the target path (recommended)
+
+Use the `--workspace-target` flag and run the migration once per workspace, telling it where to land:
+
+```bash
+# Migrate workspace-project-a to a dedicated Hermes directory
+hermes claw migrate --preset full \
+  --source ~/.openclaw/workspace-project-a \
+  --workspace-target ~/.hermes/workspaces/project-a
+```
+
+> **Note**: If the workspace contains an API key (in a `.env` file), remember to pass `--migrate-secrets`.
+
+#### Option 2: Move the files manually
+
+Hermes's core layout (`SOUL.md`, `MEMORY.md`, etc.) is highly compatible with OpenClaw's, so when the automation can't pick up a directory, copying the key files by hand is usually the fastest and safest route.
+
+For the directories listed above (e.g. `workspace-project-a`), the manual mapping is:
+
+| OpenClaw source (per workspace) | Hermes target | Notes |
+| --- | --- | --- |
+| `SOUL.md` | `~/.hermes/memories/SOUL_{name}.md` | Agent persona definition |
+| `MEMORY.md` | `~/.hermes/memories/MEMORY.md` (append) | Long-term memory (merge recommended) |
+| `USER.md` | `~/.hermes/memories/USER.md` | User profile |
+| `skills/` | `~/.hermes/skills/` | Custom skill scripts |
+
+Recommended steps:
+
+1. **Merge memories**: paste `MEMORY.md` content from each workspace into `~/.hermes/memories/MEMORY.md`. Hermes performs semantic dedup on startup.
+2. **Move skills**: copy the directories under `.openclaw/skills` directly into `.hermes/skills`.
+
+You can also let Hermes itself read and migrate the key files from the chat:
+
+```
+@~/.openclaw contains three workspaces: workspace, workspace-1, workspace-2. Please:
+1. Copy SOUL.md verbatim to ~/.hermes/hermes-persona.md, USER.md to ~/.hermes/memories/USER.md, and skills/ to ~/.hermes/skills/.
+2. Copy the contents of memory/ verbatim to ~/.hermes/memories/MEMORY.md.
+3. Carry over the substantive parts of TOOLS.md into ~/.hermes/AGENTS.md — tool usage conventions, local paths, preferences (e.g. "use pnpm", "avoid certain commands"), etc.
+4. Put detailed tool-usage specifics into SKILL.md files under ~/.hermes/skills/, and have ~/.hermes/AGENTS.md spell out strictly and in detail how to use these skills to complete tasks.
+5. When inheriting config files, preserve content in full — do not summarize before copying.
+```
+
+![image-20260521151429812](https://gastigado.cnies.org/d/20260418_openclaw2hermes_migration/image-20260521151429812.webp)
+
+#### Option 3: Resolving conflicts
+
+The mass of `Conflict (skipped)` entries in the dry run is caused by same-named files already living under `.hermes`. If you're sure you want OpenClaw's config to take precedence over the existing Hermes setup, add `--overwrite`:
+
+```bash
+hermes claw migrate --preset full --overwrite --migrate-secrets
+```
+
+#### Recommended flow
+
+1. **Stop the gateway**: run `hermes stop` first to avoid messaging-connection conflicts.
+2. **Run one full forced migration**:
+
+   ```bash
+   hermes claw migrate --preset full --overwrite --migrate-secrets
+   ```
+
+3. **Fill in the gaps for special workspaces**: manually move `SOUL.md` or `AGENTS.md` from `workspace-project-a` and `workspace-project-b` into the appropriate Hermes config files or the `memories` folder.
