@@ -129,7 +129,7 @@ Proceed with migration? [y/N]: y
 
 ![image-20260418013325785](https://gastigado.cnies.org/d/20260418_openclaw2hermes_migration/image-20260418013325785.webp)
 
-你也可以根据自身需求选择其他供应商。如果此前没有订阅，推荐[购买 MiniMax Token Plan](https://platform.minimaxi.com/subscribe/token-plan?code=L5Ua6ZLLoY&source=link)。MiniMax M2.7 是目前 Hermes Agent 中使用量最高的模型之一，在工具调用准确度、复杂 Skills 遵循、Agent Harness 适配等方面表现俱佳，性价比也相当出色。此处可以暂时跳过，阅读 [6. 设置多个模型提供商](#6. 设置多个模型提供商) 章节设置模型。
+你也可以根据自身需求选择其他供应商。如果此前没有订阅，推荐[购买 MiniMax Token Plan](https://platform.minimaxi.com/subscribe/token-plan?code=L5Ua6ZLLoY&source=link)。MiniMax M2.7 是目前 Hermes Agent 中使用量最高的模型之一，在工具调用准确度、复杂 Skills 遵循、Agent Harness 适配等方面表现俱佳，性价比也相当出色。此处可以暂时跳过，阅读[常见问题：设置多个模型提供商](#设置多个模型提供商)章节设置模型。
 
 ### 3. 配置聊天平台
 
@@ -221,7 +221,9 @@ hermes setup
 
 如果启动时遇到 `tirith security scanner enabled but not available` 报错导致直接退出，请参阅[常见问题：启动时 Tirith 报错](#启动时-tirith-报错)；如果对话时出现 `AuthenticationError [HTTP 401]` 报错，请参阅[常见问题：认证报错](#认证报错-authenticationerror)。
 
-### 6. 设置多个模型提供商
+## 常见问题
+
+### 设置多个模型提供商
 
 新开一个干净的终端窗口（Terminal 或 iTerm2 均可），输入以下命令并回车：
 
@@ -246,8 +248,6 @@ hermes model
 ![image-20260418152012768](https://gastigado.cnies.org/d/20260418_openclaw2hermes_migration/image-20260418152012768.webp)
 
 终端提示 `Default model set to: MiniMax-M2.7 (via MiniMax (China))`，模型设置完成。
-
-## 常见问题
 
 ### 启动时 Tirith 报错
 
