@@ -197,15 +197,29 @@ Home Chat ID 为可选项，用于将定时任务（Cron）的执行结果和提
 
 ![image-20260418021853819](https://gastigado.cnies.org/d/20260418_openclaw2hermes_migration/image-20260418021853819.webp)
 
-### 4. 将网关注册为 launchd 服务
+### 4. 将网关注册为服务
 
-将网关注册为系统服务后，Hermes 便可在电脑开机时自动启动。输入「Y」确认即可：
+将网关注册为系统服务后，Hermes 便能随系统开机自动启动，不再需要手动拉起。如果后续想要调整网关配置，可以随时执行下面命令重新进入网关设置：
+
+```bash
+hermes gateway setup
+```
+
+如果不希望将网关注册为系统服务，也可以选择前台运行 + tmux 常驻的方式，详见[常见问题：使用 tmux 让网关后台运行](#使用-tmux-让网关后台运行)。
+
+#### MacOS
+
+在 macOS 上，Hermes 会将网关注册为 launchd 服务。到这一步直接输入「Y」确认即可：
 
 ![image-20260418021920240](https://gastigado.cnies.org/d/20260418_openclaw2hermes_migration/image-20260418021920240.webp)
 
 在「Start the service now?」提示处输入「Y」立即启动服务：
 
 ![image-20260418022036777](https://gastigado.cnies.org/d/20260418_openclaw2hermes_migration/image-20260418022036777.webp)
+
+#### Linux
+
+未完待续
 
 ### 5. 开始使用
 
@@ -220,6 +234,31 @@ hermes setup
 ![image-20260418022548383](https://gastigado.cnies.org/d/20260418_openclaw2hermes_migration/image-20260418022548383.webp)
 
 如果启动时遇到 `tirith security scanner enabled but not available` 报错导致直接退出，请参阅[常见问题：启动时 Tirith 报错](#启动时-tirith-报错)；如果对话时出现 `AuthenticationError [HTTP 401]` 报错，请参阅[常见问题：认证报错](#认证报错-authenticationerror)。
+
+### 6. 绑定飞书
+
+首次在飞书中给机器人发送消息，由于尚未完成身份配对，Hermes Agent 会回复 `Hi~ I don't recognize you yet!`，并附带一段一次性的配对码：
+
+![image-20260524012459748](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260524012459748.png)
+
+此时新开一个终端，执行配对命令，将飞书账号与 Hermes Agent 关联起来（请将下面的占位符替换为飞书消息中收到的配对码）：
+
+```bash
+hermes pairing approve feishu <改为你的配对码>
+```
+
+终端返回类似下面的提示即说明配对成功：
+
+```bash
+excnies@HXCN-Win-Magic:~$ hermes pairing approve feishu EFS7PRQ6
+
+  Approved! User 萑澈 (c*****a) on feishu can now use the bot~
+  They'll be recognized automatically on their next message.
+```
+
+回到飞书再次发送消息，机器人即可正常响应：
+
+![image-20260524013020255](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260524013020255.png)
 
 ## 常见问题
 
@@ -286,6 +325,108 @@ vim ~/.hermes/.env
 以本人订阅的火山引擎编码计划为例，对应的环境变量是 `ARK_API_KEY`。核对后发现该值确实为空，填入正确的 Key 即可：
 
 ![image-20260418153204888](https://gastigado.cnies.org/d/20260418_openclaw2hermes_migration/image-20260418153204888.webp)
+
+### 使用 tmux 让网关后台运行
+
+如果不希望将 Hermes 注册为系统服务，最直接的办法是手动拉起网关：
+
+```bash
+$ hermes gateway run
+┌─────────────────────────────────────────────────────────┐
+│           ⚕ Hermes Gateway Starting...                 │
+├─────────────────────────────────────────────────────────┤
+│  Messaging platforms + cron scheduler                    │
+│  Press Ctrl+C to stop                                   │
+└─────────────────────────────────────────────────────────┘
+```
+
+但这种方式需要终端持续保持开启，一旦关闭窗口，网关也会随之停止。相比 screen、nohup 等老牌方案，tmux 更现代、用法更简单、配置也更可靠，会话与终端完全解耦，关掉窗口、断开 SSH 都不会影响里面运行的进程，需要查看时随时重新接入即可，因此推荐配合 **tmux** 让网关在后台常驻。
+
+如果系统中尚未安装 tmux，按所用发行版执行对应命令安装：
+
+```bash
+# macOS（需先安装 Homebrew）
+brew update && brew install tmux
+
+# Debian 系（Debian / Ubuntu / Kali / Pop!_OS 等）
+sudo apt update && sudo apt install tmux -y
+
+# RHEL 系（CentOS / Rocky Linux / openEuler / Fedora 等）
+sudo dnf makecache && sudo dnf install tmux -y
+
+# Arch 系（Arch Linux / Manjaro / CachyOS 等）
+sudo pacman -Syu tmux
+
+# SUSE 系（openSUSE Leap / Tumbleweed / SLES 等）
+sudo zypper refresh && sudo zypper install tmux
+```
+
+随后新建一个名为 `hermes` 的会话，并在其中启动网关：
+
+```bash
+tmux new -s hermes 'hermes gateway run'
+```
+
+启动后按 <kbd>Ctrl</kbd>+<kbd>b</kbd>，再按 <kbd>d</kbd> 即可 detach，把会话挂到后台。需要查看运行状态时，重新接入：
+
+```bash
+tmux attach -t hermes
+```
+
+查看当前所有 tmux 会话：
+
+```bash
+tmux ls
+```
+
+不再需要这个网关进程时，直接杀掉对应会话即可：
+
+```bash
+tmux kill-session -t hermes
+```
+
+如果环境受限无法使用 tmux，可改用更传统的会话工具作为兜底方案，具体用法参见下一节[用传统会话让网关后台运行](#用传统会话让网关后台运行)。
+
+### 用传统会话让网关后台运行
+
+[上一节](#使用-tmux-让网关后台运行)推荐使用 tmux 让 `hermes gateway run` 在后台常驻。如果所处环境无法安装 tmux，screen 和 nohup 也可以作为兜底方案。
+
+**screen** 是更早期的终端复用工具，部分老旧发行版自带，使用习惯与 tmux 接近。启动并进入名为 `hermes` 的会话：
+
+```bash
+screen -S hermes hermes gateway run
+```
+
+挂起会话按 <kbd>Ctrl</kbd>+<kbd>a</kbd>，再按 <kbd>d</kbd>；想重新接入时执行：
+
+```bash
+screen -r hermes
+```
+
+查看所有 screen 会话，以及结束指定会话分别是：
+
+```bash
+screen -ls
+screen -X -S hermes quit
+```
+
+**nohup** 则胜在开箱即用、几乎所有发行版都自带，配合 `&` 即可让进程脱离终端在后台运行，缺点是日志和进程管理都较为简陋。启动命令如下：
+
+```bash
+nohup hermes gateway run > ~/.hermes/hermes.log 2>&1 &
+```
+
+实时查看运行日志：
+
+```bash
+tail -f ~/.hermes/hermes.log
+```
+
+停止后台进程：
+
+```bash
+pkill -f "hermes gateway run"
+```
 
 ### 无法迁移其他 workspace
 
