@@ -9,6 +9,30 @@ category: 踩坑日志
 description: 手把手带你拿下 Xiaomi MiMo Orbit 百万亿 Token 计划：从注册、表单填写、小作文撰写到额外 2 亿 Token 的隐藏玩法，附 mimo-v2.5 与 DeepSeek、MiniMax 的速度横评。
 ---
 
+点击控制台，左下角的“**填邀请码领￥10**”，输入邀请码 `92HC57`，可获得 10 元体验金（领取后可以到账户余额查看）：
+
+![img](https://gastigado.cnies.org/d/20260503_mimo_orbit_100t_application/ScreenShot_2026-05-23_21-28-24.jpg)
+
+> **官方公告转述（2026.05.27 更新）**
+>
+> 据 Xiaomi MiMo 团队公告，团队近期持续优化推理性能，并将阶段性降本成果回馈给开发者，调整内容已于北京时间 **2026.05.27 00:00** 正式生效：
+>
+> - **MiMo-V2.5 系列按量计费最高降幅 99%**
+> - **Token Plan 加量不加价**，Credits 用量提升至原来的 **5–8 倍**
+> - 有效期内**已使用的 Credits 额度全量重置**
+>
+> 同时，**MiMo Orbit 百万亿 Token 创造者激励计划已圆满收官**。该计划自 2026.04.28 上线以来反响热烈，截至 **2026.05.26 16:08**，100T Tokens 已全部发放完毕，活动提前结束。
+>
+> ![5d2ae8b089428050952813e3a7480edb](https://gastigado.cnies.org/d/20260503-mimo-orbit-100t-application/5d2ae8b089428050952813e3a7480edb.webp)
+>
+> ![image-20260527010933244](https://gastigado.cnies.org/d/20260503-mimo-orbit-100t-application/image-20260527010933244.webp)
+
+**雷总的恩情还不完✋😭🤚✋😭🤚** 
+
+由于活动已于 2026 年 5 月 26 日提前结束，以下流程仅作为申请方法的存档供参考。
+
+------
+
 Xiaomi MiMo Orbit 百万亿 Token 创造者激励计划，是小米 MiMo 团队配合 MiMo-V2.5 系列发布搞的一波大额 Token 福利。从 2026 年 4 月 28 日开始到 5 月 28 日 00:00 截止，30 天里总共要发出去 100 万亿 Token。
 
 主包一上午就拿到了 Pro 档计划，约 7 亿 Token，外加薅到了 2 亿 Token 的补偿额度。
