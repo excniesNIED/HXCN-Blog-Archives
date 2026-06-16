@@ -239,7 +239,7 @@ hermes setup
 
 首次在飞书中给机器人发送消息，由于尚未完成身份配对，Hermes Agent 会回复 `Hi~ I don't recognize you yet!`，并附带一段一次性的配对码：
 
-![image-20260524012459748](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260524012459748.png)
+![image-20260524012459748](https://gastigado.cnies.org/d/20260418_openclaw2hermes_migration/image-20260524012459748.webp)
 
 此时新开一个终端，执行配对命令，将飞书账号与 Hermes Agent 关联起来（请将下面的占位符替换为飞书消息中收到的配对码）：
 
@@ -258,7 +258,7 @@ excnies@HXCN-Win-Magic:~$ hermes pairing approve feishu EFS7PRQ6
 
 回到飞书再次发送消息，机器人即可正常响应：
 
-![image-20260524013020255](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260524013020255.png)
+![image-20260524013020255](https://gastigado.cnies.org/d/20260418_openclaw2hermes_migration/image-20260524013020255.webp)
 
 ## 常见问题
 
@@ -548,7 +548,7 @@ hermes claw migrate --preset full \
 4. 继承配置文件时务必确保内容完整详细，而不是将内容总结后进行继承
 ```
 
-![image-20260521151429812](C:\Users\excnies\AppData\Roaming\Typora\typora-user-images\image-20260521151429812.png)
+![image-20260521151429812](https://gastigado.cnies.org/d/20260418_openclaw2hermes_migration/image-20260521151429812.webp)
 
 #### 方法三：处理冲突
 
