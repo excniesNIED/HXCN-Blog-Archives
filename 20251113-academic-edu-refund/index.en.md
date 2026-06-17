@@ -15,11 +15,11 @@ It all began on September 6, 2025. Back then I was knee-deep in the CUMCM (Conte
 
 Fast-forward to October 23. A notification email from PayPal hit me like a bolt from the blue: my account had just paid Academia.edu &dollar;89. And the timing was almost cruel — the charge went through the day after my school research stipend landed, so there happened to be just enough money sitting in my card to be scooped up. My stomach dropped. From September 6 right up to that moment, I hadn't received a single email warning me that anything was about to renew.
 
-![SnowShot_2026-02-18_14-01-11](https://gastigado.cnies.org/d/halo20251113_academic_edu_refund/SnowShot_2026-02-18_14-01-11_1773483099278_69.webp)
+![SnowShot_2026-02-18_14-01-11](https://gastigado.cnies.org/d/halo20251113_academic_edu_refund/ScreenShot_2026-06-17_17-24-46.png)
 
 I'd actually been through something eerily similar not long before. Scribd once hit me with a &dollar;10 charge after I forgot to cancel an auto-renewal — but that time, getting my money back was painless. I just followed the prompts from the little AI assistant tucked into the bottom-right corner of the page, and the refund landed in no time.
 
-![PixPin_2025-11-13_02-08-00](https://gastigado.cnies.org/d/halo20251113_academic_edu_refund/PixPin_2025-11-13_02-08-00.png)
+![ScribdRefund](https://gastigado.cnies.org/d/halo20251113_academic_edu_refund/ScribdRefundEN.png)
 
 Academia.edu, though, was a flat-out maze. Nowhere on the site was there a clear self-service refund button — just a tutorial cheerfully titled "Cancel my Academia Premium subscription Auto-Renewal." To follow it, I had to wade through a long questionnaire and bat away one "exclusive discount" and "members-only perk you won't want to miss" after another before I could finally strip PayPal of its license to keep charging me. And even that only stopped the bleeding; it did nothing to claw back the &dollar;89 already gone.
 
@@ -201,6 +201,6 @@ May my story serve as a warning — and a torch. If you ever find yourself backe
 
 And one last reminder — the most important of all: **be extremely careful with any payment method tied to auto-renewal.** Especially cards used for foreign-currency payments or linked to recurring charges — **don't leave large balances sitting in them**, or an "accidental" charge like this one could cost you dearly. Because some traps, from the very instant you click "Agree," have already sprung open.
 
-![PixPin_2025-11-13_02-07-29](https://gastigado.cnies.org/d/halo20251113_academic_edu_refund/PixPin_2025-11-13_02-07-29.png)
+![AcademiaRefundEN](https://gastigado.cnies.org/d/halo20251113_academic_edu_refund/AcademiaRefundEN.png)
 
 If you've ever run into a similar auto-renewal trap or fought your own refund battle, you're warmly welcome to leave a comment below and share your story and experience. Together we can help more people see these tricks for what they are and avoid the same pitfalls.
