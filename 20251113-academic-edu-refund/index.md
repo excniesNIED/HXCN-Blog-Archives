@@ -15,11 +15,11 @@ description: Academia.edu 自动续费退款维权实录，从 1 美元文献下
 
 时间快进到 10 月 23 日，一封来自 PayPal 的邮件通知，如遭晴天霹雳。邮件显示，我的账户向 Academia.edu 支付了 89 美元。这笔扣款发生的前一天，主包收到学校的科研补助，银行卡里有了足够的钱被扣除。主包心里咯噔一下，因为主包从 9 月 6 日到现在，没有收到任何邮件提醒我会续费。
 
-![SnowShot_2026-02-18_14-01-11](https://gastigado.cnies.org/d/halo20251113_academic_edu_refund/SnowShot_2026-02-18_14-01-11_1773483099278_69.webp)
+![SnowShot_2026-02-18_14-01-11](https://gastigado.cnies.org/d/halo20251113_academic_edu_refund/ScreenShot_2026-06-17_17-24-46.png)
 
 类似的经历不久前才发生过。之前主包曾因忘记取消 Scribd 的自动续费而被扣除了 10 美元，但那次退款过程异常顺利，通过平台右下角的智能客服的指示进行操作，很快就拿到了退款。
 
-![PixPin_2025-11-13_02-08-00](https://gastigado.cnies.org/d/halo20251113_academic_edu_refund/PixPin_2025-11-13_02-08-00.png)
+![ScribdRefund](https://gastigado.cnies.org/d/halo20251113_academic_edu_refund/ScribdRefund.png)
 
 然而，Academia.edu 的流程堪称「迷宫」。官网没有明确的自助退款入口，只有一篇“如何取消自动续费”的教程。按照指引，我必须先完成一长串问卷、拒绝数次“专属折扣”与“不可错过的会员福利”，才能真正关闭 PayPal 的自动扣款权限。这只是止血，而非拿回已被扣走的 89 美元。
 
@@ -199,6 +199,6 @@ description: Academia.edu 自动续费退款维权实录，从 1 美元文献下
 
 最后，也是最重要的提醒：**谨慎管理绑定自动续费的支付方式。** 尤其是用于外币支付或绑定自动续费的银行卡，**避免卡内长期留存大额资金**，以防类似“意外”扣款造成重大损失。因为有些陷阱，从你点击“同意”的那一刻起，就已经张开了。
 
-![PixPin_2025-11-13_02-07-29](https://gastigado.cnies.org/d/halo20251113_academic_edu_refund/PixPin_2025-11-13_02-07-29.png)
+![AcademiaRefundEN](https://gastigado.cnies.org/d/halo20251113_academic_edu_refund/AcademiaRefund.png)
 
 如果你也曾遭遇类似的自动续费陷阱，或有过自己的维权经历，欢迎在评论区留言，分享你的故事与经验。让我们一起看清这些套路，帮助更多人少走弯路。
