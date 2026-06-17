@@ -203,4 +203,4 @@ And one last reminder — the most important of all: **be extremely careful with
 
 ![PixPin_2025-11-13_02-07-29](https://gastigado.cnies.org/d/halo20251113_academic_edu_refund/PixPin_2025-11-13_02-07-29.png)
 
-*Cover image source: [Omorphia (@Omorphia1) on X](https://x.com/Omorphia1/status/1986055899748712558)*
+If you've ever run into a similar auto-renewal trap or fought your own refund battle, you're warmly welcome to leave a comment below and share your story and experience. Together we can help more people see these tricks for what they are and avoid the same pitfalls.

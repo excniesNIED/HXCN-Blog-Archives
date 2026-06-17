@@ -201,4 +201,4 @@ description: Academia.edu 自动续费退款维权实录，从 1 美元文献下
 
 ![PixPin_2025-11-13_02-07-29](https://gastigado.cnies.org/d/halo20251113_academic_edu_refund/PixPin_2025-11-13_02-07-29.png)
 
-*本文封面图片来源：[Omorphia (@Omorphia1) on X](https://x.com/Omorphia1/status/1986055899748712558)*
+如果你也曾遭遇类似的自动续费陷阱，或有过自己的维权经历，欢迎在评论区留言，分享你的故事与经验。让我们一起看清这些套路，帮助更多人少走弯路。
