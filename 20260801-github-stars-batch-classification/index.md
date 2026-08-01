@@ -1,5 +1,5 @@
 ---
-title: GitHub Star 批量分类：用 gh CLI 整理 2098 个仓库
+title: GitHub Star 批量分类：gh CLI 一键搞定 2098 个仓库！
 pubDatetime: 2026-08-01T00:00:00.000+08:00
 slug: github-stars-batch-classification
 tags:
@@ -13,7 +13,7 @@ category: 配置环境的日常
 description: 用 gh CLI 和 GitHub GraphQL 批量分类 2098 个 Star：备份 31 个旧列表，重建 25 个 Lists，并记录权限、分页、静默失败与逐分类核验。
 ---
 
-# GitHub Star 批量分类：用 gh CLI 整理 2098 个仓库
+# GitHub Star 批量分类：gh CLI 一键搞定 2098 个仓库！
 
 这次干了件积压了很久的事：把账号里 2098 个 GitHub Star 重新分了一遍类。
 
