@@ -1,5 +1,5 @@
 ---
-title: "Sorting 2098 GitHub Stars from Scratch: Rebuilding 25 Lists with gh CLI and GraphQL"
+title: "How I Organized 2,098 GitHub Stars with gh CLI and GraphQL"
 pubDatetime: 2026-08-01T00:00:00.000+08:00
 slug: github-stars-batch-classification-en
 tags:
@@ -10,10 +10,10 @@ tags:
   - Automation
   - AI Agent
 category: 配置环境的日常
-description: A real-world account of batch-reclassifying 2098 starred GitHub repos using gh CLI and GraphQL, covering backup of old lists, full snapshot, two-pass classification, rebuilding 25 lists from scratch, scope issues, silent failure debugging, and per-category verification.
+description: "Organize 2,098 GitHub Stars with gh CLI and GraphQL: back up 31 old lists, rebuild 25 categories, batch-assign repos, and verify every count."
 ---
 
-# Sorting 2098 GitHub Stars from Scratch: Rebuilding 25 Lists with gh CLI and GraphQL
+# How I Organized 2,098 GitHub Stars with gh CLI and GraphQL
 
 I finally got around to something I'd been putting off for a long time: going through all 2098 GitHub stars on my account and sorting them properly.
 

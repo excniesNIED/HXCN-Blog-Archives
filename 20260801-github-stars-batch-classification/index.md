@@ -1,5 +1,5 @@
 ---
-title: 2098 个 GitHub Star 怎么批量重分类：用 gh CLI 与 GraphQL 重建 25 个列表
+title: GitHub Star 批量分类：用 gh CLI 整理 2098 个仓库
 pubDatetime: 2026-08-01T00:00:00.000+08:00
 slug: github-stars-batch-classification
 tags:
@@ -10,10 +10,10 @@ tags:
   - 自动化
   - AI Agent
 category: 配置环境的日常
-description: 使用 gh CLI 和 GitHub GraphQL 批量整理 2098 个 Star 的真实实录，包含旧列表备份、全量拉取、两轮分类、25 个列表重建、权限问题、静默失败复盘和逐分类核验。
+description: 用 gh CLI 和 GitHub GraphQL 批量分类 2098 个 Star：备份 31 个旧列表，重建 25 个 Lists，并记录权限、分页、静默失败与逐分类核验。
 ---
 
-# 2098 个 GitHub Star 怎么批量重分类：用 gh CLI 与 GraphQL 重建 25 个列表
+# GitHub Star 批量分类：用 gh CLI 整理 2098 个仓库
 
 这次干了件积压了很久的事：把账号里 2098 个 GitHub Star 重新分了一遍类。
 
