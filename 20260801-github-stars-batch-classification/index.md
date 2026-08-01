@@ -15,32 +15,23 @@ description: 使用 gh CLI 和 GitHub GraphQL 批量整理 2098 个 Star 的真�
 
 # 2098 个 GitHub Star 怎么批量重分类：用 gh CLI 与 GraphQL 重建 25 个列表
 
-我把这个账号的 GitHub Star 从头清了一遍。
+这次干了件积压了很久的事：把账号里 2098 个 GitHub Star 重新分了一遍类。
 
-2026 年 8 月 1 日开始处理时，`/user/starred` 返回 **2098 个仓库**。账号里已有 **31 个旧列表**，名称从 `LLM`、`Text2Pic`、`WebSecurity` 一直细分到 `Fonts`、`Shell`、`WordProcess`，但这些列表总共只留下 **89 条成员关系**。分类越建越细，真正需要找项目时，还是得在两千多个 Star 里翻。
+Star 是慢慢堆起来的，Lists 也跟着越建越多：`LLM`、`AIStudy`、`AICollections`、`Benchmark4AI`……最后搞出 **31 个**，离 32 的上限就差一个坑位。但这 31 个列表加起来只有 **89 条成员关系**，大多数 Star 根本没进任何列表。每次新收藏，想不清楚该往哪里放，干脆就放着不管了。
 
-这次没有继续修补旧体系。我先拉取全部仓库，逐个确认用途，再把分类重做成 25 类。任务结束时，GitHub 上 25 个列表的数量与本地分类结果逐项一致，**25/25 全部通过，2098/2098 个仓库归位**。
-
-整个过程没有取消任何 Star。真正被替换的是 Lists 里的分组关系。
+做完之后，GitHub 上 25 个列表和本地分类文件逐项对上，2098 个没有漏的。Star 本身一个没动，换掉的只是 Lists 里的归属关系。
 
 > GitHub 官方帮助页目前仍把 Lists 标记为 Public Preview，接口和限制以后可能调整。下面的 GraphQL 字段、32 个列表上限和权限表现，均为 2026 年 8 月 1 日在个人账号上的实测结果。
 
-## 背景：31 个旧列表已经装不下另一套分类
+## 旧列表为什么要全部删掉重建
 
-旧分类的问题不只是多。
+`LLM`、`AIStudy`、`AICollections`、`Benchmark4AI` 四个分类严重重叠，`WebSrc`、`WebCollections`、`Blog&Theme` 的边界我自己也说不清。每次收藏新仓库，都要先想一遍当初为什么建这个列表，再决定放哪里——想了半天经常还是放错，或者干脆跳过不放。久了之后，新 Star 基本不分类，列表只剩一堆名字。
 
-`LLM`、`AIStudy`、`AICollections`、`Benchmark4AI` 之间有明显重叠；`WebSrc`、`WebCollections`、`Blog&Theme` 的边界也说不清。看到一个新仓库时，我经常要先回忆当初为什么建这个列表，再决定该往哪里放。久而久之，新 Star 直接不分类，列表只剩名字。
+再一个问题是上限。GitHub Lists 在这个账号上最多 32 个，旧列表已经用了 31 个，没位置在旁边慢慢建 25 个新列表再迁移，只能先把旧的备份、删干净，再重建。
 
-GitHub Lists 在这个账号上实测最多创建 32 个。旧列表已有 31 个，不可能把 25 个新列表放在旁边慢慢迁移，只能先做好可恢复备份，再删旧建新。
+分类规则也不能只有一句"按项目类型分组"。同一个仓库可能同时是前端、AI 和开发者工具，不定好命中顺序，换一批仓库处理就会给出不同的分类。
 
-另一个现实问题是数量。2098 个仓库不适合按名称猜用途，也不能把分类规则写成一句“按项目类型分组”。同一个项目可能同时是前端、AI、桌面应用和开发者工具。如果没有固定的命中顺序，换一批仓库或换一个人操作，结果会完全不同。
-
-我最后采用两轮处理：
-
-1. 第一轮只了解仓库，不急着分类。读取名称、描述、语言、Topics；信息不够时再看 README。
-2. 汇总全部仓库后确定 25 类和边界规则，第二轮才逐仓库归类。
-
-这比边看边建列表慢一点，但不用在处理到第 1500 个仓库时推翻前面的标准。
+所以分了两轮做：第一轮只读仓库，把每个仓库是什么搞清楚；第二轮再归类。慢了一些，但不用在处理到第 1500 个时发现前面的标准对不上后面，然后全推翻重来。
 
 ## 完成后的 25 类
 
@@ -60,19 +51,19 @@ GitHub Lists 在这个账号上实测最多创建 32 个。旧列表已有 31 �
 | Backend | 24 | Games | 20 |
 | Robotics | 17 | 合计 | **2098** |
 
-最初设想的九个大类不够用。真正看完仓库分布后，应用、AI、系统工具和内容资源的数量都很大，硬塞在一起只会重演旧问题。25 类仍低于 32 个上限，也留出了以后调整的空间。
+最开始参考的九个大类远远不够。真正扫完仓库分布才知道，应用、AI、网络工具、内容资源每一块都有几十上百个，硬塞在一起只会重演旧问题。25 类还在 32 个上限以内，也留了余量以后调整。
 
-## 先讲清楚 API 边界
+## Star 用 REST，Lists 只能走 GraphQL
 
-GitHub 的 Star 和 Lists 不是一套接口。
+这是最容易搞混的部分，下面拆开说一下。
 
-收藏仓库可以用 REST 拉取：
+收藏仓库用 REST 拉取：
 
 ```text
 GET /user/starred
 ```
 
-Lists 的创建、删除、查询和成员更新，这次实测只能走 GraphQL。当前 schema 中用到的字段是：
+Lists 没有 REST 端点，我试过 `/user/starred_lists`，直接 404。创建、删除、查询和成员更新全部只能走 GraphQL，当前用到的字段：
 
 ```text
 viewer.lists
@@ -88,13 +79,13 @@ updateUserListsForItem
 - 仓库 GraphQL Node ID，例如 `R_kgDOTXJF9Q`，加入列表时传给 `itemId`。
 - 列表 GraphQL ID，例如 `UL_...`，传给 `listIds`。
 
-`updateUserListsForItem` 不是“追加一个列表”的专用接口。它接收的是该条目最终应该属于的列表集合。我的规则是每个仓库只进一个列表，所以每次传一个 `listIds`；如果你允许多重分类，就必须把需要保留的全部列表 ID 一次传进去。
+`updateUserListsForItem` 不是追加，是替换——传进去的 `listIds` 是该仓库最终属于的完整集合。每个仓库只进一个列表时没问题；要一个仓库进多个列表，就必须把全部目标 ID 一次传进去，不能一条一条加。
 
-还有一个容易误判的地方：删掉 List 不会取消仓库的 Star，但列表名称、描述和成员关系会消失。动删除之前，备份必须能独立恢复，不能只留在 `/tmp`。
+另外，删掉一个 List 不会取消仓库的 Star，但列表名称和成员关系一起消失了。备份要在删除之前做好，而且不能只放在 `/tmp`。
 
 ## 准备 gh CLI 和权限
 
-先确认当前登录的是准备整理的账号：
+先确认账号和 scope 都对：
 
 ```bash
 gh --version
@@ -107,15 +98,15 @@ gh auth status
 gh auth login
 ```
 
-读取 Star 时，普通登录通常已经够用；本次写入 Lists 时，当前 token 缺少 `user` scope，GraphQL 返回了 `INSUFFICIENT_SCOPES`。补权限：
+拉 Star 没问题，到写 Lists 的 mutation 时，GraphQL 直接返回 `INSUFFICIENT_SCOPES`——当前 token 没有 `user` scope。补一下：
 
 ```bash
 gh auth refresh -s user
 ```
 
-`gh auth refresh` 会打开浏览器完成授权。如果 `gh auth status` 里有多个账号，先用 `gh auth switch` 切到目标账号，再刷新权限。
+`gh auth refresh` 会开浏览器走设备流，打印一个 15 分钟有效的一次性验证码。有多个账号时，先 `gh auth switch` 再刷新。
 
-设备授权反复失败时，也可以使用带 `user` scope 的 classic PAT。不要把 token 直接写进命令、脚本或 Markdown。下面这种方式不会把 PAT 留在 shell history 中：
+设备流反复卡时，直接去 [settings/tokens](https://github.com/settings/tokens) 生成一个带 `user` scope 的 classic PAT，用下面方式导入，不会把 PAT 留在 shell history 里：
 
 ```bash
 read -rsp 'GitHub PAT: ' GH_PAT
@@ -127,7 +118,7 @@ unset GH_PAT
 
 ## 固定一份 Star 快照
 
-先在长期保留的目录工作，不要把唯一副本放进临时目录：
+不要在临时目录工作。后面会提到，我第一版备份脚本输出到了会话临时目录，环境重置后文件没了。直接用 `~/stars-work`：
 
 ```bash
 mkdir -p ~/stars-work
@@ -292,25 +283,20 @@ jq -r '.[] | [.name, (.repositories | length)] | @tsv' \
 
 因此上面的版本直接写到 `~/stars-backup/old-lists-backup.json`。删除前还要人工打开一次，确认列表数量、成员数量和文件位置都对。
 
-## 先看完仓库，再决定分几类
+## 先搞清楚自己收藏的是什么
 
-把 2098 个仓库一次塞给模型，输出通常会很快变形：前两百个分得很细，后面开始偷懒，最后大量项目落进 Misc。分类名称也会不断漂移。
+2098 个仓库一次全塞给模型不现实：前面分得很细，后面就开始偷懒，分类名开始漂移，最后大量项目全堆进一个 Misc。
 
-我把数据切成 8 份并行处理。第一轮只要求回答两件事：
-
-- 每个仓库主要做什么；
-- 这批仓库暴露出了哪些可复用的大类。
-
-仓库描述足够明确时，`description + language + topics` 基本能判断。描述为空、名称含糊或同时跨多个领域的项目，再用 `gh` 读取 README：
+我把 `stars.jsonl` 切成 8 份并行跑，第一轮只问两件事：每个仓库主要做什么，以及这批里能看出哪些可复用的大类。`description + language + topics` 通常够判断，描述为空或名字含糊的再去拉 README：
 
 ```bash
 gh api repos/OWNER/REPO/readme \
   -H 'Accept: application/vnd.github.raw+json'
 ```
 
-第一轮结束后再合并建议。收藏分布很快说明了哪些类不能合并：Information 有 327 个，AI & LLM 有 204 个，博客与网站相关项目有 158 个；Minecraft 和 Robotics 数量不大，却有非常清楚的领域边界，保留独立分类反而省事。
+八份跑完合起来看：Information 327 个，AI & LLM 204 个，博客建站类 158 个；Minecraft 和 Robotics 数量虽然不大，但领域边界太清楚了，单独一类比塞进 Applications 好找得多。这些数字才是分类粒度的依据，不是拍脑袋想出来的。
 
-第二轮才把全部仓库映射到正式分类，输出格式固定为：
+第二轮才把全部仓库映射到正式分类，格式固定为：
 
 ```json
 {
@@ -329,14 +315,15 @@ gh api repos/OWNER/REPO/readme \
 
 本地使用数字 ID 做键，是因为仓库改名或转移 owner 后，`full_name` 可能变化；仓库 ID 更稳定。真正写入 Lists 时，再通过 `stars.jsonl` 找到对应的 `node_id`。
 
-## 分类手册要写到文件里
+## 把分类边界写死在文件里
 
-只有 25 个名字还不够。我在备份目录写了 `AGENTS.md`，内容包括：
+25 个名字列出来不够用。问题出在边界上——同一个仓库，是放进 AI & LLM 还是 Agent？是 SRE 还是 Network & Proxy？没有固定规则，下次操作（或者下次的我）会给出不同答案。
 
-- 从上到下的决策顺序，命中即停；
+在备份目录写了一份 `AGENTS.md`，记了：
+
+- 决策顺序（自上而下，命中即停）；
 - 每一类的描述和划入标准；
-- 常见反例；
-- 容易混淆的边界；
+- 反例和容易混淆的边界；
 - 新 Star 的增量入库命令。
 
 决策顺序的前几项是：
@@ -371,7 +358,7 @@ Applications and Tools（最后兜底）
 | 自主执行任务的 AI | Agent |
 | 文生图、文生视频、语音合成 | AI Generation |
 
-这份手册不是为了写得漂亮，而是防止第二轮分类和以后新增 Star 时换标准。分类规则一旦只存在于对话里，下一次基本等于重做。
+这东西不是为了好看。规则只存在记忆里的话，下次就等于重做一遍。
 
 ## 写入前先校验 classification.json
 
@@ -758,24 +745,23 @@ gh api graphql -f 'query=mutation {
 
 然后同步更新 `stars.jsonl`、`classification.json`、分类清单和数量总览。
 
-## 这次真正浪费时间的地方
+## 坑都踩在哪里
 
-回头看，GraphQL mutation 本身不难。时间主要耗在几处边界上：
+GraphQL mutation 本身不复杂，但几处细节真的不好猜。
 
-1. `gh api -f` 自动改用 POST，导致 REST 列表请求 404；显式 GET 或内联 query string 即可。
-2. Star 用 REST 拉取，Lists 用 GraphQL 管理。猜一个 `/user/starred_lists` REST endpoint 只会得到 404。
-3. 写 Lists 需要当前凭据具备 `user` scope；读取 Star 成功不代表 mutation 也有权限。
-4. `-f` 后面必须是 `query=...`。CLI 参数解析失败时，输出不会带 GraphQL `errors`。
-5. `UserList.items.nodes` 是联合类型，读取仓库字段要写 `... on Repository`。
-6. GraphQL 数组变量不能用看起来像 JSON 的单个字符串冒充；按 `key[]=value` 传，或像本次一样内联单个 ID。
-7. `updateUserListsForItem` 应按“完整目标集合”使用。只传一个 List ID，会把该仓库最终归到这一张表里。
-8. 备份放在临时目录等于没有备份。文件存在、数量正确、能离线读取，三项都确认后再删除旧列表。
-9. 总数相等不代表逐类相等。最终验收必须比较 25 个分类的 expected/actual。
-10. Star 会在分类期间继续增加。批量任务验固定快照，新增部分走增量流程。
+接口和权限是最常踩的。Star 走 REST，Lists 只能走 GraphQL，这是两套不相干的接口。我一开始就去试 `/user/starred_lists`，404。能成功拉到 Star 也不代表 mutation 有权限——写列表需要 `user` scope，`repo` scope 完全不够，GraphQL 直接报 `INSUFFICIENT_SCOPES`。
 
-现在这个备份目录里保留了完整 Star 快照、REST ID 到 Node ID 的映射、2098 条分类结果、25 份按分类生成的仓库清单，以及一份长期使用的 `AGENTS.md` 分类手册。以后新增仓库时，真正要做的只有三步：读仓库、按手册判类、写入对应 List。
+然后是 `gh api` 的几个细节。加了 `-f` 参数，请求方法自动变成 POST；`/user/starred` 这个 GET 端点加完 `-f per_page=100` 就 404，换成内联 query string 就好了。GraphQL 字段名必须是 `query=`，写成 `-f 'mutation {...}'` 会在 CLI 层失败，输出里没有 `errors` 字段——如果脚本只搜索 `"errors"` 来判断失败，这些错误会全部静默漏掉。`-F 'listIds=["UL_xxx"]'` 看起来像 JSON 数组，实际上传给服务器的是字符串，解析 Global ID 时报错。
 
-第一次整理两千多个 Star，最费事的是把分类边界定清楚。边界一旦落进文件，后面的 GraphQL 只是搬运。
+`UserList.items.nodes` 是联合类型，直接读仓库字段会触发 `selectionMismatch`，要加 `... on Repository`。`updateUserListsForItem` 不是追加，是替换——传一个 List ID，就是说这个仓库只属于这一个列表，而不是说"把它加进去"。
+
+备份我实际丢过一次。第一版脚本输出到会话临时目录，环境重置后文件没了，89 条旧列表成员关系丢失，无法恢复。新体系已经覆盖全部 2098 个仓库，对最终结果影响不大，但回滚安全网就没有了。
+
+验收别只看总数。两个分类一多一少，总数还是 2098，但分错了。这次是逐分类比 expected/actual，25 个全过才算完。
+
+Star 会在分类期间继续增加，批量任务只验固定快照，新收藏走增量流程。写这篇文章时重新拉了一次，实时数量已经是 2099 了。
+
+现在备份目录里有完整 Star 快照、REST ID 到 Node ID 的映射、2098 条分类结果、25 份仓库清单和 `AGENTS.md`。下次新增 Star 时，按手册判类，发一条 mutation，更新本地文件，完事。
 
 ## 参考资料
 
