@@ -71,6 +71,20 @@ npm run generate -- "<提示词>"
 
 要点：50–150 字；覆盖关键词（工具名、系统名、技术栈）；结尾必须给出目标读者；英文版同结构译写。
 
+## 标题风格
+
+博客现有标题以教程直述式为主（「从零开始 X」「X 教程」「X 指南」），需要新闻感时可参考以下风格。规则均蒸馏自公开语料，**不得脱离事实**：数字、竞品对比、称号必须来自正文素材。
+
+**可选标题风格**（后续会继续增加）：
+
+- [量子位炸裂式](https://github.com/a77ming/ai-title-trio/blob/main/references/qbitai-style.md)
+- [机器之心克制式](https://github.com/a77ming/ai-title-trio/blob/main/references/jiqizhixin-style.md)
+- [新智元冲击式](https://github.com/a77ming/ai-title-trio/blob/main/references/xinzhiyuan-style.md)
+- [蓝点网两段式](https://www.landian.news/feed)：主语开头，前段事件、后段结果/影响，数字密集的陈述性长标题（可达 40 字），无感叹号。
+- [IT之家参数式](https://www.ithome.com/rss/)：产品/公告类「厂商+动作+产品：卖点顿号分隔，价格收尾」的精简标题（20–30 字）。
+
+三大号风格同一素材可一键生成三种变体，未装 skill 时用 `python3 scripts/render_prompt.py "<素材>"`；英文版同结构译写。
+
 ## llms.txt 维护
 
 `llms.txt` 位于仓库根，遵循 https://llmstxt.org 规范，是站点的 LLM 友好索引。结构固定：
