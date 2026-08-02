@@ -1,0 +1,57 @@
+# 萑澈的寒舍
+
+> 萑澈的寒舍 - 一个专注于Linux、Ubuntu、Windows、Python、C++等技术的计算机爱好者个人主页。就是为了这点醋才包了这顿饺子。提供技术文章、开发资源和个人项目展示。
+
+站点口号：于无声处听惊雷。博客基于 Halo 搭建，内容以中文为主，部分文章提供英文版本，可通过 `/archives/<slug>` 访问原文。
+
+站点文章按以下分类组织（与站点导航一致）：
+
+- [配置环境的日常](https://hs.cnies.org/categories/envs)：开发环境搭建与工具配置
+- [折腾Linux的日常](https://hs.cnies.org/categories/linux)：Linux 安装、双系统与系统优化
+- [被算法折磨的日常](https://hs.cnies.org/categories/algorithms)：算法竞赛与编程学习
+- [踩坑日志](https://hs.cnies.org/categories/exception)：问题排查与维权实录
+- [天空之镜](https://hs.cnies.org/categories/hevspecu)：山东师范大学课表工具「时序同笺」系列
+
+## 中文文章
+
+- [从零开始安装 Windows 11 和 Ubuntu 22.04 双系统](https://hs.cnies.org/archives/dual-boot-ubuntu-2204-and-windows-11): Ubuntu 22.04 LTS 与 Windows 11 双系统完整安装教程，含 BitLocker 关闭、启动盘制作、磁盘分区、BIOS 与安全启动设置。
+- [使用WSL2编译Webots](https://hs.cnies.org/archives/wsl-webots): 在 WSL 中从源码编译 Webots 的完整流程，含依赖安装、PEP 668 处理、emsdk 配置与 GUI 运行。
+- [从零配置 Choregraphe 和 NAOqi SDK](https://hs.cnies.org/archives/naoqisdk-choregraphe-setup): NAO 机器人开发环境配置教程，含 Python 2.7、环境变量、PyCharm 解释器与 ALProxy 测试。
+- [从零开始：2026年Ubuntu 24.04 LTS + Win11双系统安装教程](https://hs.cnies.org/archives/dual-boot-ubuntu2404-win11): Ubuntu 24.04 LTS 与 Windows 11 双系统安装教程，含设备加密、BitLocker、Ventoy 启动盘、VMD 设置与分区。
+- [Ubuntu 24.04 安装后如何开荒？2026年必装软件、使用技巧与系统优化指南](https://hs.cnies.org/archives/ubuntu2404-optimize): Ubuntu 24.04 安装后的完整配置指南，涵盖软件源、输入法、开发环境、包管理器与常用软件。
+- [从VSCode无痛迁移设置、扩展与快捷键到VSCodium教程](https://hs.cnies.org/archives/vscodium-migrate): 将 VS Code 设置与扩展迁移到 VSCodium 的教程，含 Open VSX/Microsoft Marketplace 配置与远程开发替代方案。
+- [Conda配置完全指南：Windows系统Anaconda/Miniconda的安装、配置、基础使用、清理缓存空间和Pycharm/VSCode配置指南](https://hs.cnies.org/archives/conda-win): Windows 下 Anaconda/Miniconda 完整配置教程，含环境变量、虚拟环境、缓存清理、镜像源与 IDE 配置。
+- [【MkDocs踩坑】图片路径问题的排查与解决](https://hs.cnies.org/archives/mkdocs-404-imgs): MkDocs 图片 404 问题排查，分析 use_directory_urls、Markdown/HTML 图片解析差异与路径修正。
+- [【MkDocs踩坑】解决MathJax公式渲染失败问题（以\boldsymbol不生效为例）](https://hs.cnies.org/archives/mkdocs-mathjax-rendering-issue): MkDocs 中 MathJax 渲染失败排查，含 arithmatex 配置、脚本加载时序与主题覆盖。
+- [算法竞赛入门：C++ STL核心用法与时空复杂度速查手册](https://hs.cnies.org/archives/algorithm-STL-time-complexity-2025): C++ STL 与算法复杂度入门教程，覆盖 Big O 分析、常用容器与算法，附练习题。
+- [Lagrange.OneBot + NoneBot 搭建 QQ 机器人详细指南](https://hs.cnies.org/archives/lagrange-onebot-nonebot): 在 Debian 12 上部署 QQ 机器人的完整教程，含 Lagrange 协议层、NoneBot 项目与 systemd 后台运行。
+- [时序同笺 (SDNUChronoSync)](https://hs.cnies.org/archives/chronosync): 山东师范大学课表与日程管理 Web 应用的项目文档，含功能特性、自托管部署与管理员指南。
+- [时序同笺使用教程](https://hs.cnies.org/archives/chronosync-user-guide): 时序同笺使用教程导航，按新用户、团队管理者、开发者分别指向对应文档。
+- [时序同笺保姆级用户教程](https://hs.cnies.org/archives/chronosync-nanny-user-tutorial): 时序同笺完整用户教程，含课表导入、团队协作、空教室查询与个人中心设置。
+- [在Rocky Linux 8单节点集群上安装Apache Hadoop超详细教程](https://hs.cnies.org/archives/install-hadoop-on-rokey-8): Rocky Linux 8 上 Hadoop 单节点伪分布式安装教程，含 OpenJDK、SSH 免密、HDFS/YARN 启动与示例任务。
+- [换SIM卡不知道绑定了哪些账号？ADB+Python筛选双卡短信，搞定验证码换绑](https://hs.cnies.org/archives/sim-message-export): 用 ADB 导出并筛选指定 SIM 卡短信的教程，含 USB 调试、content query、Python 转 CSV 与按 sub_id 筛选。
+- [与 Academia.edu 的退款拉锯战：89 美元的年费维权实录](https://hs.cnies.org/archives/academic-edu-refund): Academia.edu 自动续费退款维权全过程记录，含邮件申诉、工单升级与 PayPal 拒付施压。
+- [Cloudflare Pages部署VitePress+Slidev：单Pages方案](https://hs.cnies.org/archives/vitepress-slidev-intergration-on-cloudflare): 将 VitePress 文档站与 Slidev 课件合并部署到 Cloudflare Pages 的教程。
+- [我用 Cloudflare 搭了一个 FlashInbox 临时邮箱](https://hs.cnies.org/archives/build-flashinbox): 自建私有临时邮箱服务教程，含 Cloudflare Workers、Email Routing、D1 与 Turnstile 配置。
+- [2026年最新Windows11下VSCode配置GCC开发C语言环境保姆级教程](https://hs.cnies.org/archives/vscode-gcc-setup): Windows 11 下用 VS Code 配置 GCC 开发 C 语言环境的教程，含 MSYS2、tasks/launch 配置与 F5 调试。
+- [龙虾跑路指南：从 OpenClaw 迁移到 Hermes Agent 保姆级教程](https://hs.cnies.org/archives/openclaw2hermes-migration): 从 OpenClaw 迁移到 Hermes Agent 的教程，含记忆与技能机制对比、配置迁移与飞书机器人接入。
+- [【已结束】Xiaomi MiMo Orbit 百亿 Token 计划申请保姆级教程](https://hs.cnies.org/archives/mimo-orbit-100t-application): 申请 Xiaomi MiMo Orbit 百万亿 Token 计划的完整流程，含表单填写、小作文撰写与速度横评。
+- [GitHub Star 批量分类：gh CLI 一键搞定 2098 个仓库！](https://hs.cnies.org/archives/github-stars-batch-classification): 用 gh CLI 与 GitHub GraphQL 批量分类 2098 个 Star 的实践记录，含 Lists 备份重建与逐分类核验。
+
+## English Posts
+
+- [Migrating Visual Studio Code Settings and Extensions to VSCodium](https://hs.cnies.org/archives/vscodium-migrate-en): A FLOSS-focused guide to moving from VS Code to VSCodium, including extension galleries and Remote WSL/SSH alternatives.
+- [An Introduction to Algorithms: STL Usage and Time & Space Complexity](https://hs.cnies.org/archives/algorithm-STL-time-complexity-2025-en): Beginner-friendly C++ STL and algorithm complexity guide with practice problems.
+- [Apache Hadoop Single Node Installation on Rocky Linux 8: Complete Step-by-Step Tutorial](https://hs.cnies.org/archives/install-hadoop-on-rokey-8-en): Single-node Hadoop setup tutorial covering OpenJDK 8, passwordless SSH, pseudo-distributed config, and MapReduce testing.
+- [Using ADB to Export and Filter SMS Messages by SIM Card](https://hs.cnies.org/archives/sim-message-export-en): Export and filter SMS by SIM card via ADB and Python before replacing a phone number.
+- [How I Fought Academia.edu for an $89 Annual Subscription Refund](https://hs.cnies.org/archives/academic-edu-refund-en): A full account of an Academia.edu auto-renewal refund dispute, from tickets to PayPal chargeback threats.
+- [Deploying VitePress + Slidev on Cloudflare Pages: The Single-Pages Approach](https://hs.cnies.org/archives/vitepress-slidev-intergration-on-cloudflare-en): Merge a VitePress docs site and Slidev decks into one Cloudflare Pages deployment.
+- [How to Set Up FlashInbox on Cloudflare for a Private Temp Mail Service](https://hs.cnies.org/archives/build-flashinbox-en): Self-host a private temporary email service with Cloudflare Workers, Email Routing, and D1.
+- [Migrating from OpenClaw to Hermes Agent: Leaving the Lobster Farm](https://hs.cnies.org/archives/openclaw2hermes-migration-en): OpenClaw to Hermes Agent migration guide covering harness, memory, and skill differences plus practical setup steps.
+- [How I Organized 2,098 GitHub Stars with gh CLI and GraphQL](https://hs.cnies.org/archives/github-stars-batch-classification-en): Batch-organize GitHub Stars by backing up old lists, rebuilding categories, and verifying counts.
+
+## Optional
+
+- [关于本站](https://hs.cnies.org/about): 站点简介与作者信息。
+- [友情链接](https://hs.cnies.org/links): 站点友链页面。
+- [GitHub 仓库（HXCN-Blog-Archives）](https://github.com/excniesNIED/HXCN-Blog-Archives): 博客文章的 Markdown 归档源仓库，可按需获取原文进行全文阅读。
