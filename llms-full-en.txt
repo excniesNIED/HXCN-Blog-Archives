@@ -1,8 +1,8 @@
-# 萑澈的寒舍
+# Churnie HXCN's Humble Blog
 
-> 萑澈的寒舍 - 一个专注于Linux、Ubuntu、Windows、Python、C++等技术的计算机爱好者个人主页。就是为了这点醋才包了这顿饺子。提供技术文章、开发资源和个人项目展示。
+> Churnie HXCN's Humble Blog - 一个专注于Linux、Ubuntu、Windows、Python、C++等技术的计算机爱好者个人主页。就是为了这点醋才包了这顿饺子。提供技术文章、开发资源和个人项目展示。
 
-站点口号：于无声处听惊雷。本文档为英文完整版（llms-full-en），收录全部英文文章全文；文章索引与链接见 llms.txt。
+Slogan: One hears the thunder of revolution where silence reigns. This is the English full edition (llms-full-en) containing the full text of all English articles; the index and links are in llms.txt.
 
 ## English Posts
 
