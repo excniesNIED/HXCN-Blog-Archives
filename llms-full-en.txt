@@ -1,6 +1,6 @@
 # Churnie HXCN's Humble Blog
 
-> Churnie HXCN's Humble Blog - 一个专注于Linux、Ubuntu、Windows、Python、C++等技术的计算机爱好者个人主页。就是为了这点醋才包了这顿饺子。提供技术文章、开发资源和个人项目展示。
+> Churnie HXCN's Humble Blog - A personal homepage of a computer enthusiast focused on Linux, Ubuntu, Windows, Python, C++ and other technologies. All this effort for the sake of that little bit of vinegar. Offering technical articles, development resources, and personal project showcases.
 
 Slogan: One hears the thunder of revolution where silence reigns. This is the English full edition (llms-full-en) containing the full text of all English articles; the index and links are in llms.txt.
 
@@ -8,7 +8,7 @@ Slogan: One hears the thunder of revolution where silence reigns. This is the En
 
 ### Migrating Visual Studio Code Settings and Extensions to VSCodium
 
-> 原文：https://hs.cnies.org/archives/vscodium-migrate-en
+> Original: https://hs.cnies.org/archives/vscodium-migrate-en
 
 Visual Studio Code (hereinafter referred to as VS Code) is undoubtedly one of the most widely used code editors today. Although the source code of Microsoft's VS Code is open-sourced under the MIT License (meaning the core code is transparent), the final user license agreement (EULA) of the "Visual Studio Code" client that users actually download and use is **not a Free and Open Source Software (Non-FLOSS)** license**, and it includes a "telemetry" feature built-in. Microsoft clearly states in the license:
 
@@ -112,7 +112,7 @@ Recommended installation options (pick one):
 
 ### An Introduction to Algorithms: STL Usage and Time & Space Complexity
 
-> 原文：https://hs.cnies.org/archives/algorithm-STL-time-complexity-2025-en
+> Original: https://hs.cnies.org/archives/algorithm-STL-time-complexity-2025-en
 
 ## 1. Time & Space Complexity
 
@@ -692,7 +692,7 @@ Mastering these STL tools will significantly improve your problem-solving effici
 
 ### Apache Hadoop Single Node Installation on Rocky Linux 8: Complete Step-by-Step Tutorial
 
-> 原文：https://hs.cnies.org/archives/install-hadoop-on-rokey-8-en
+> Original: https://hs.cnies.org/archives/install-hadoop-on-rokey-8-en
 
 Apache Hadoop is a free and open-source software framework written in Java. It is designed for the distributed storage and processing of big data using the MapReduce programming model. The framework processes massive datasets by splitting them into large blocks and distributing them across multiple computers in a cluster.
 
@@ -1191,7 +1191,7 @@ This guide has covered the entire process of configuring Hadoop on Rocky Linux 8
 
 ### Using ADB to Export and Filter SMS Messages by SIM Card
 
-> 原文：https://hs.cnies.org/archives/sim-message-export-en
+> Original: https://hs.cnies.org/archives/sim-message-export-en
 
 ## Prequel
 
@@ -1370,7 +1370,7 @@ It is an especially effective workaround for users who cannot or do not wish to 
 
 ### How I Fought Academia.edu for an $89 Annual Subscription Refund
 
-> 原文：https://hs.cnies.org/archives/academic-edu-refund-en
+> Original: https://hs.cnies.org/archives/academic-edu-refund-en
 
 It all began on September 6, 2025. Back then I was knee-deep in the CUMCM (Contemporary Undergraduate Mathematical Contest in Modeling), digging for reference material, and I paid &dollar;1 on Academia.edu to download two papers I badly needed. Not for a second did it cross my mind that such an ordinary little click had already, quietly, set the stage for the storm that would break a month later.
 
@@ -1569,7 +1569,7 @@ If you've ever run into a similar auto-renewal trap or fought your own refund ba
 
 ### Deploying VitePress + Slidev on Cloudflare Pages: The Single-Pages Approach
 
-> 原文：https://hs.cnies.org/archives/vitepress-slidev-intergration-on-cloudflare-en
+> Original: https://hs.cnies.org/archives/vitepress-slidev-intergration-on-cloudflare-en
 
 `VitePress` and `Slidev` make a very nice pair for documentation sites, course websites, and knowledge bases. `VitePress` handles navigation, structure, and prose. `Slidev` handles the presentation layer. Put them together, and you get a site that can serve both as a reading space and a slide library.
 
@@ -1849,7 +1849,7 @@ For Cloudflare Pages, the cleanest answer is usually to accept the platform for 
 
 ### How to Set Up FlashInbox on Cloudflare for a Private Temp Mail Service
 
-> 原文：https://hs.cnies.org/archives/build-flashinbox-en
+> Original: https://hs.cnies.org/archives/build-flashinbox-en
 
 This guide walks through deploying `FlashInbox` on Cloudflare as a self-managed temporary email service.
 
@@ -2192,7 +2192,7 @@ This setup is not a replacement for a business mailbox, and it is not intended f
 
 ### Migrating from OpenClaw to Hermes Agent: Leaving the Lobster Farm
 
-> 原文：https://hs.cnies.org/archives/openclaw2hermes-migration-en
+> Original: https://hs.cnies.org/archives/openclaw2hermes-migration-en
 
 ## Why this "horse" is taking off
 
@@ -2692,7 +2692,7 @@ hermes claw migrate --preset full --overwrite --migrate-secrets
 
 ### How I Organized 2,098 GitHub Stars with gh CLI and GraphQL
 
-> 原文：https://hs.cnies.org/archives/github-stars-batch-classification-en
+> Original: https://hs.cnies.org/archives/github-stars-batch-classification-en
 
 # How I Organized 2,098 GitHub Stars with gh CLI and GraphQL
 
