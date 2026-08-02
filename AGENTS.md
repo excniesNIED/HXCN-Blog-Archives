@@ -53,6 +53,9 @@ npm run generate -- "<提示词>"
 **可选封面风格**（后续会继续增加）：
 
 - [Anthropic 编辑插画风](https://github.com/HalfAI1102/anthropic-art)：满版柔和背景 + 不规则象牙白承载形 + 近黑色粗手绘线条。
+- [cover-prompt-skills](https://github.com/imartinstudio/cover-prompt-skills)：15 个 `cover-*` 风格技能集，含黑白极简、潮流彩色海报、布达佩斯复古电影感、撕纸编辑拼贴、东方茶风、巨型透视标题、知识海报、手绘知识图谱、3D Eye 黑绿终端、深夜工作室、像素头像、浅色产品、麦肯锡简报等，`$cover-tips` 统一入口。
+- [baoyu-cover-image](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-cover-image)：五维参数化封面生成（6 类型 × 11 配色 × 7 渲染 × 文本 × 情绪），支持 2.35:1、16:9、1:1 等画幅。
+- [gc-minimal-zine-poster](https://github.com/LiamGvchi/gc-minimal-zine-poster)：安静极简 zine 编辑海报，3:5 做旧纸张画布、70–90% 负空间、单色高饱和锚点、复古印刷瑕疵。
 
 ## description 模板
 
