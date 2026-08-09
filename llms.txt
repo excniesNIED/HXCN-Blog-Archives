@@ -26,8 +26,8 @@
 - [算法竞赛入门：C++ STL核心用法与时空复杂度速查手册](https://hs.cnies.org/archives/algorithm-STL-time-complexity-2025): C++ STL 与算法复杂度入门教程，覆盖 Big O 分析、常用容器与算法，附练习题。
 - [Lagrange.OneBot + NoneBot 搭建 QQ 机器人详细指南](https://hs.cnies.org/archives/lagrange-onebot-nonebot): 在 Debian 12 上部署 QQ 机器人的完整教程，含 Lagrange 协议层、NoneBot 项目与 systemd 后台运行。
 - [时序同笺 (SDNUChronoSync)](https://celplume.hxcn.space/zh/chronosync/): 山东师范大学课表与日程管理 Web 应用的项目文档，含功能特性、自托管部署与管理员指南。
-- [时序同笺使用教程](https://celplume.hxcn.space/zh/chronosync/chronosync-user-guide/): 时序同笺使用教程导航，按新用户、团队管理者、开发者分别指向对应文档。
-- [时序同笺保姆级用户教程](https://celplume.hxcn.space/zh/chronosync/nanny-user-tutorial/): 时序同笺完整用户教程，含课表导入、团队协作、空教室查询与个人中心设置。
+- [时序同笺使用教程](https://celplume.hxcn.space/zh/chronosync/tutorials/chronosync-user-guide/): 时序同笺使用教程导航，按新用户、团队管理者、开发者分别指向对应文档。
+- [时序同笺保姆级用户教程](https://celplume.hxcn.space/zh/chronosync/tutorials/nanny-user-tutorial/): 时序同笺完整用户教程，含课表导入、团队协作、空教室查询与个人中心设置。
 - [在Rocky Linux 8单节点集群上安装Apache Hadoop超详细教程](https://hs.cnies.org/archives/install-hadoop-on-rokey-8): Rocky Linux 8 上 Hadoop 单节点伪分布式安装教程，含 OpenJDK、SSH 免密、HDFS/YARN 启动与示例任务。
 - [换SIM卡不知道绑定了哪些账号？ADB+Python筛选双卡短信，搞定验证码换绑](https://hs.cnies.org/archives/sim-message-export): 用 ADB 导出并筛选指定 SIM 卡短信的教程，含 USB 调试、content query、Python 转 CSV 与按 sub_id 筛选。
 - [与 Academia.edu 的退款拉锯战：89 美元的年费维权实录](https://hs.cnies.org/archives/academic-edu-refund): Academia.edu 自动续费退款维权全过程记录，含邮件申诉、工单升级与 PayPal 拒付施压。

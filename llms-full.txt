@@ -3958,8 +3958,8 @@ netstat -tuln | grep 1145
 时序同笺系列文档已迁移至新文档站 [celplume.hxcn.space/zh/chronosync/](https://celplume.hxcn.space/zh/chronosync/)：
 
 - [时序同笺 (SDNUChronoSync)](https://celplume.hxcn.space/zh/chronosync/)
-- [时序同笺使用教程](https://celplume.hxcn.space/zh/chronosync/chronosync-user-guide/)
-- [时序同笺保姆级用户教程](https://celplume.hxcn.space/zh/chronosync/nanny-user-tutorial/)
+- [时序同笺使用教程](https://celplume.hxcn.space/zh/chronosync/tutorials/chronosync-user-guide/)
+- [时序同笺保姆级用户教程](https://celplume.hxcn.space/zh/chronosync/tutorials/nanny-user-tutorial/)
 
 ### 在Rocky Linux 8单节点集群上安装Apache Hadoop超详细教程
 
