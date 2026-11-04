@@ -1,0 +1,5 @@
+# 抓取/修复过程中的原始二进制与日志，不入库（保留脚本与文档）
+20261102-win11-bad-system-config-info/sessions/
+20261102-win11-bad-system-config-info/_fix/hives/
+20261102-win11-bad-system-config-info/_fix/experiments/
+20261102-win11-bad-system-config-info/_fix/logs/
